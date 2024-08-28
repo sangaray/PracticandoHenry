@@ -28,3 +28,14 @@ for (var i = 0; i < 5; i++) {
 setTimeout(function () {
 	console.log("Valor final de 'i' usando 'var': " + i);
 }, 6000);
+
+// Ejemplo con Let
+for (let i = 0; i < 5; i++) {
+	setTimeout(function () {
+		console.log(i);
+	});
+}
+
+setTimeout(function () {
+	console.log("Valor final de 'i' usando 'var': " + i);
+}, 6000);
