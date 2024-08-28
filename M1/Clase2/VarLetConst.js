@@ -1,4 +1,5 @@
-//Usando VAR
+// Tema 1 - Var, Let, Const
+// Usando VAR
 var a = 5;
 var b = 10;
 var suma = a + b;
@@ -14,7 +15,7 @@ let c = 5;
 let d = 10;
 let suma1 = c + d;
 console.log(suma1);
-//let c = 15; Error
+// let c = 15; Error
 c = 15;
 let suma2 = c + d;
 console.log(suma2);
