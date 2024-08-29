@@ -18,7 +18,8 @@ console.log(persona);
 
 console.log(persona1);
 
-// Reas operator
+// Tema 11
+// Rest operator
 function sumar(...numeros) {
 	let suma = 0;
 	for (let i = 0; i < numeros.length; i++) suma += numeros[i];
