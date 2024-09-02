@@ -1,4 +1,3 @@
-// Tema 7
 // Template Literals
 // Concatenar Cadenas Antes ES6
 function antesDeES6(nombre, identidadSecreta) {
