@@ -52,8 +52,32 @@ console.log(persona);
 
 console.log(persona1);
 
-// Tema 11
-// Rest operator
+// Rest operator (Video 8)
+// Si quiero sumar diferentes cantidades de números, en una función sumar estándar deberíamos cambiar la cantidad de parámetros y variables para reflejar los distintos casos
+// Este operador me permite indicar que la cantidad de parámetros son indeterminados y los va a recibir todos y guardarlos  en una variable
+function sumar1(a, b, c) {
+	const suma1 = a + b + c;
+	return suma1;
+}
+
+console.log(sumar1(5, 9, 3));
+console.log(sumar1(5, 9));
+console.log(sumar1(5, 9, 3, 8, 4, 6));
+
+function sumar2(...valores) {
+	console.log(valores);
+	let suma2 = 0;
+	for (let i = 0; i < valores.length; i++) {
+		suma2 += valores[i];
+	}
+	return suma2;
+}
+
+console.log(sumar2(5, 9, 3));
+console.log(sumar2(5, 9));
+console.log(sumar2(5, 9, 3, 8, 4, 6));
+
+// Ejemplo Teoría Henry
 function sumar(...numeros) {
 	let suma = 0;
 	for (let i = 0; i < numeros.length; i++) suma += numeros[i];
