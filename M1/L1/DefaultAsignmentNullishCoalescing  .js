@@ -1,4 +1,3 @@
-// Tema 12
 // Asignación por Default
 function saludar(nombre = "Invitado") {
 	console.log(`Hola ${nombre}!`);
@@ -7,7 +6,6 @@ function saludar(nombre = "Invitado") {
 saludar();
 saludar("Severus");
 
-// Tema 13
 // Nulling Coalescing
 let valor1 = null;
 let valor2 = "Valor por defecto";
@@ -21,5 +19,11 @@ let b = "Texto1";
 let c = "Texto2";
 let d = undefined;
 
-let resultado1 = d ?? c;
+let resultado1 = a ?? b;
+let resultado2 = b ?? a;
+let resultado3 = c ?? a;
+let resultado4 = d ?? c;
 console.log(resultado1);
+console.log(resultado2);
+console.log(resultado3);
+console.log(resultado4);
