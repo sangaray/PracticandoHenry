@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+/* Eliminamos estilos de listas no ordenadas y ordenadas */
+ol,
+ul {
+	list-style: none;
+}

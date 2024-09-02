@@ -1,0 +1,42 @@
+body {
+	background: linear-gradient(40deg, #000, #463d06);
+	width: 100vw;
+	color: burlywood;
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	width: 60%;
+}
+
+section {
+	width: 100%;
+}
+
+.activities {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	width: 150px;
+	border-radius: 25px;
+	filter: grayscale(100%);
+	margin: 20px;
+	transition: transform 2s ease-in-out;
+}
+
+img:hover {
+	filter: none;
+	transform: scale(10px) translateY(-10px);
+}
