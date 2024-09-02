@@ -1,4 +1,4 @@
-// Tema 3 - Hoisting
+// Hoisting
 // Con Var
 console.log(x);
 var x = 5;
