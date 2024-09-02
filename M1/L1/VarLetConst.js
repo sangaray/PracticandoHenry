@@ -1,9 +1,14 @@
-// Tema 1 - Var, Let, Const
+// Var, Let, Const (Video 3)
+// VAR permite declarar, inicializar y reasignar una variable, e incluso permite redeclarar una variable con el mismo nombre de otra ya existente
+// LET permite declarar, inicializar y reasignar una variable, pero no permite declarar una variable con el mismo nombre que una existente   dentro del mismo scope
+// CONST permite declarar e inicializar una variable, pero no permite reasignarla ni volver a inicializar una variable con el mismo nombre que una existente
+
 // Usando VAR
 var a = 5;
 var b = 10;
 var suma = a + b;
 console.log(suma);
+
 var a = 15;
 var suma = a + b;
 console.log(suma);

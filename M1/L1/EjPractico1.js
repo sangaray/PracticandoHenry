@@ -1,4 +1,4 @@
-// Ejercicios sobre Temas 1 y 2
+// Ejercicios sobre Var, Let, Const, Scope y Hoisting
 // Ejemplo 1
 var caja = 5;
 if (true) {
@@ -29,7 +29,7 @@ setTimeout(function () {
 	console.log("Valor final de 'i' usando 'var': " + i);
 }, 6000);
 
-// Ejemplo con Let
+// Ejemplo 4
 for (let i = 0; i < 5; i++) {
 	setTimeout(function () {
 		console.log(i);
