@@ -2,10 +2,16 @@
 	box-sizing: border-box;
 }
 
-body {
+body,
+form,
+input,
+label,
+button,
+p,
+h2,
+span {
 	margin: 0;
 	padding: 0;
-	line-height: 1;
 }
 
 /* Eliminamos estilos de listas no ordenadas y ordenadas */
