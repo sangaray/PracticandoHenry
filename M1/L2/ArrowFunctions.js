@@ -46,7 +46,7 @@ arr.forEach((elemento) => elemento);
 
 console.log(arr);
 
-// This
+// This (M1-L1 - Video 2)
 // Difiere en la froma de definir el contexto dende se ejecuta.
 // Al ejecutar la función flecha, no logra establecer la referencia del this con persona a diferencia de la función declarada con function, esta establece esa referencia al momento de ejecutarse, en el contexto de ejecución, la otra se establece en el momento en que la función es definida, no ejecutada, por lo que no hay ningún objeto al que referirse
 // En el uso diario en que trabajamos con una u otra función puede traernos problemas hasta que nos acostumbremos a trabajar con ellas. Al trabajar con objetos o clases y al crear métodos en ellos
