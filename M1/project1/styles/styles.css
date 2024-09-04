@@ -103,7 +103,8 @@ label {
 	padding: 5px;
 }
 
-input {
+input,
+textarea {
 	border: 1px solid #e8d0d0;
 	width: 90%;
 	outline: none;
@@ -113,25 +114,35 @@ input {
 	padding: 5px;
 }
 
-input::placeholder {
+textarea {
+	border-radius: 10px;
+}
+
+input::placeholder,
+textarea::placeholder {
 	color: #deb887;
 }
-input input::placeholder:focus {
+
+input::placeholder:focus,
+text::placeholder:focus {
 	background-color: transparent;
 }
 
-input:-webkit-autofill {
+input:-webkit-autofill,
+textarea:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 30px #0b0b2c inset !important;
 	-webkit-text-fill-color: #deb887 !important;
 }
 
-input:-webkit-autofill:focus {
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
 	-webkit-box-shadow: 0 0 0 30px #0b0b2c inset !important;
 	-webkit-text-fill-color: #deb887 !important;
 	transition: background-color 5000s ease-in-out 0s;
 }
 
-input:focus::placeholder {
+input:focus::placeholder,
+textarea:focus::placeholder {
 	color: #deb887;
 }
 
