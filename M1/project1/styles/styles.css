@@ -78,7 +78,7 @@ img:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: #ffffff33;
+	background: #8e8a8a26;
 	border-radius: 20px;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -91,7 +91,7 @@ img:hover {
 .input-container {
 	width: 80%;
 	padding: 10px 15px;
-	background-color: #b196c150;
+	background-color: #b5b3b630;
 	margin: 5px 40px;
 	border-radius: 10px;
 }
