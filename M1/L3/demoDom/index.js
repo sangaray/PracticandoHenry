@@ -15,9 +15,9 @@ const setNameHandler = () => {
 
 	const name = nameInput.value;
 
-	createdBy.innerHTML = createdBy.innerHTML + name;
+	createdBy.innerHTML = `Aplicación creada por: ${name}`;
 
-	console.log(createdBy);
+	nameInput.value = "";
 };
 
 setNameButton.addEventListener("click", setNameHandler);
@@ -42,3 +42,36 @@ const imagenes = [
 	"destructor.jpg",
 	"krang.jpg",
 ];
+
+const cargarImagen = (imgName) => {
+	return `assets/${imgName}`;
+};
+
+/* Probando src
+	cosnt imgPrueba = document.createElement("img")
+	const src = cargarImagen("donatello.jpg")
+	imgPrueba.src = src
+
+	console.log(imgPrueba)
+
+	No podemos usar forEach proque recorre todas las imagenes de una vez y muestra la última solamente
+	*/
+let index = 0;
+
+const renderizarImagen = () => {
+	const characterImg = document.getElementById("characterImg");
+
+	characterImg.src = cargarImagen(imagenes[index]);
+
+	if (index === imagenes.length - 1) {
+		index = 0;
+	} else {
+		index++;
+	}
+};
+
+renderizarImagen();
+
+const characterChange = document.getElementById("characterChange");
+
+characterChange.addEventListener("click", renderizarImagen);
