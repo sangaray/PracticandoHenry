@@ -159,3 +159,32 @@ textarea:focus::placeholder {
 	font-size: 2em;
 	box-shadow: 0 0 10px 2px #deb887;
 }
+
+/* 8.	Asignar al <div> la clase CSS que tengas implementada para darle estilos. */
+.activity-card {
+	border: 2px solid #deb887;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 20px 0;
+	background-color: #463d06;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.activity-title {
+	font-size: 2.5em;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+.activity-description {
+	font-size: 1.5em;
+	margin-bottom: 15px;
+	color: #deb887;
+}
+
+.activity-image {
+	width: 100%;
+	border-radius: 10px;
+	max-width: 300px;
+	margin-top: 15px;
+}
