@@ -152,7 +152,7 @@ textarea:focus::placeholder {
 	align-items: center;
 }
 
-.submit {
+#submit {
 	width: 90%;
 	border-radius: 20px;
 	padding: 10px 20px;
@@ -161,29 +161,41 @@ textarea:focus::placeholder {
 }
 
 /* 8.	Asignar al <div> la clase CSS que tengas implementada para darle estilos. */
-.activity-card {
+#cardsContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 20px; /* Espacio entre tarjetas */
+}
+
+.activityCard {
 	border: 2px solid #deb887;
 	border-radius: 10px;
 	padding: 20px;
 	margin: 20px 0;
 	background-color: #463d06;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 5px 10px #0000004d;
+	width: calc(33.33% - 20px); /* Tres columnas, restando el gap */
+	box-sizing: border-box; /* Asegura que el padding y el border no agranden la tarjeta */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.activity-title {
+.activityTitle {
 	font-size: 2.5em;
 	margin-bottom: 10px;
 	color: #fff;
 }
 
-.activity-description {
+.activityDescription {
 	font-size: 1.5em;
 	margin-bottom: 15px;
 	color: #deb887;
 }
 
-.activity-image {
-	width: 100%;
+.activityImage {
+	width: 80%;
 	border-radius: 10px;
 	max-width: 300px;
 	margin-top: 15px;
