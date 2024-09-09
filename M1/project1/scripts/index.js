@@ -22,9 +22,13 @@ class Repository {
 
 	// Método que permite agregar nuevas actividades
 	createActivity(title, description, imgUrl) {
-		const activity = new Activity(this.currentId, title, description, imgUrl);
-		this.activities.push(activity);
-		this.currentId++;
+		if (title && description && imgUrl) {
+			const activity = new Activity(this.currentId, title, description, imgUrl);
+			this.activities.push(activity);
+			this.currentId++;
+		} else {
+			console.log("Datos incompletos. La película no ha sido agregada.");
+		}
 	}
 
 	deleteActivity(id) {
@@ -55,7 +59,7 @@ repo.createActivity(
 );
 repo.getAllActivities();
 
-// console.log(repo);
+console.log(repo);
 
 // ACTIVIDAD 02
 // Implementar una función que tomará UNA instancia de Activity y la convertirá en elemento HTML. Esta función nos servirá más adelante. La función deberá:
@@ -72,6 +76,7 @@ function createActivityCard(activity) {
 	// console.log(`Title: ${title}, Descripción ${description}, Image ${imgUrl}`);
 
 	// 3.	Crear los elementos HTML que formarán parte de la tarjeta. Ej: <h3> para el título, <p> para la descripción, <img> para la imagen.
+	const deleteButton = document.createElement("div");
 	const titleElement = document.createElement("h3");
 	const descriptionElement = document.createElement("p");
 	const imgElement = document.createElement("img");
@@ -79,6 +84,7 @@ function createActivityCard(activity) {
 	// console.log(titleElement, descriptionElement, imgElement);
 
 	// 4.	Asignar los valores a las propiedades correspondientes a cada uno de los elementos. Ej: a la propiedad innerHTML del elemento del título, asignar el valor correspondiente. A la propiedad src del elemento de la imagen, asignar el valor correspondiente.
+	deleteButton.innerHTML = "X";
 	titleElement.innerHTML = title;
 	descriptionElement.innerHTML = description;
 	imgElement.src = imgUrl;
@@ -90,16 +96,18 @@ function createActivityCard(activity) {
 	titleElement.classList.add("activityTitle");
 	descriptionElement.classList.add("activityDescription");
 	imgElement.classList.add("activityImage");
+	deleteButton.id = "deleteButton";
 
-	// console.log(titleElement, descriptionElement, imgElement);
+	//console.log(titleElement, descriptionElement, imgElement);
 
 	// 6.	Crear un elemento <div> que será la tarjeta donde incluiremos todos los demás elementos.
 	const cardDiv = document.createElement("div");
 	cardDiv.classList.add("activityCard");
 
-	// console.log(cardDiv);
+	//console.log(cardDiv);
 
-	// 7.	“Appendear” al nuevo <div> los elementos creados anteriormente .
+	// 7.	“Appendear” al nuevo <div> los elementos creados anteriormente
+	cardDiv.appendChild(deleteButton);
 	cardDiv.appendChild(titleElement);
 	cardDiv.appendChild(descriptionElement);
 	cardDiv.appendChild(imgElement);
@@ -150,7 +158,7 @@ function handleCreateActivity() {
 	const descriptionInput = document.getElementById("description");
 	const imgUrlInput = document.getElementById("image");
 
-	console.log(titleInput, descriptionInput, imgUrlInput);
+	//console.log(titleInput, descriptionInput, imgUrlInput);
 
 	// 2.	Tomar los valores ingresados en los inputs y guardarlos en variables.
 	const title = titleInput.value.trim();
@@ -160,10 +168,10 @@ function handleCreateActivity() {
 	// console.log(title, description, imgUrl);
 
 	// 3.	Validar que estos valores estén completos. De lo contrario deberá cortar el proceso y mostrar un mensaje avisando al usuario de que hay datos incompletos.
-	/* if (!title || !description || !imgUrl) {
+	if (!title || !description || !imgUrl) {
 		alert("Por favor, completa todos los campos antes de continuar.");
 		return; // Cortar el proceso si los datos no están completos
-	} */
+	}
 
 	// 4.	Llamar al método correspondiente de la instancia de Repository para crear una nueva actividad.
 	repo.createActivity(title, description, imgUrl);
@@ -177,7 +185,7 @@ function handleCreateActivity() {
 	imgUrlInput.value = "";
 }
 
-handleCreateActivity();
+// handleCreateActivity();
 
 // ACTIVIDAD 05
 // 1.	Seleccionar el botón que disparará el evento de agregar actividad y agregar un Event Listener. El evento, al dispararse, debe ejecutar la función que creamos en el punto anterior.
@@ -193,4 +201,20 @@ submitButton.addEventListener("click", () => {
 
 // 2.	EXTRA CREDIT. Implementar la funcionalidad de eliminar tarjetas del contenedor al hacer click sobre ellas o sobre algún nuevo botón que podamos agregar a las mismas. Eres libre de encarar esta funcionalidad de la manera que consideres adecuada.  Puedes apoyarte en la IA para ayudarte a realizar este punto.
 // Renderizar actividades predefinidas
+// Event Listener para eliminar la tarjeta
+const deleteCard = document.getElementById("deleteButton");
+
+console.log(deleteCard);
+
+deleteCard.addEventListener("click", () => {
+	// Eliminar la actividad del repositorio (opcional)
+	console.log("El botón eliminar card fue clickeado");
+	repo.deleteActivity(id);
+
+	// Remover la tarjeta del DOM
+	card.remove();
+
+	console.log(`Actividad con id ${id} eliminada.`);
+});
+
 renderAllActivities(repo);

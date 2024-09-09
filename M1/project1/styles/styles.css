@@ -164,7 +164,7 @@ textarea:focus::placeholder {
 #cardsContainer {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	gap: 20px; /* Espacio entre tarjetas */
 }
 
@@ -199,4 +199,12 @@ textarea:focus::placeholder {
 	border-radius: 10px;
 	max-width: 300px;
 	margin-top: 15px;
+}
+
+#deleteButton {
+	text-align: center;
+	width: 25px;
+	height: 25px;
+	font-size: 20px;
+	border-radius: 50%;
 }
