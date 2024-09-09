@@ -70,7 +70,7 @@ const testActivity = new Activity(1, "Trekking", "Visitando unas hermosas monta�
 // 1.	Recibir por parámetro un objeto instancia de Activity.
 function createActivityCard(activity) {
 	// 2.	Extraer sus propiedades en variables utilizando destructuring.
-	const { title, description, imgUrl } = activity;
+	const { id, title, description, imgUrl } = activity;
 
 	// console.log(activity);
 	// console.log(`Title: ${title}, Descripción ${description}, Image ${imgUrl}`);
@@ -115,6 +115,22 @@ function createActivityCard(activity) {
 	// console.log(cardDiv);
 
 	// 9.	Retornar el <div> finalizado con todos los elementos correspondientes dentro.
+
+	// 2.	EXTRA CREDIT. Implementar la funcionalidad de eliminar tarjetas del contenedor al hacer click sobre ellas o sobre algún nuevo botón que podamos agregar a las mismas. Eres libre de encarar esta funcionalidad de la manera que consideres adecuada.  Puedes apoyarte en la IA para ayudarte a realizar este punto.
+	// Renderizar actividades predefinidas
+	// Event Listener para eliminar la tarjeta
+	deleteButton.addEventListener("click", () => {
+		console.log(`El botón de eliminar para la actividad con id ${id} fue clickeado`);
+
+		// Eliminar la actividad del repositorio
+		repo.deleteActivity(id);
+
+		// Remover la tarjeta del DOM
+		cardDiv.remove();
+
+		console.log(`Actividad con id ${id} eliminada.`);
+		console.log(repo);
+	});
 
 	return cardDiv;
 }
@@ -197,24 +213,7 @@ const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click", () => {
 	console.log("Botón 'Enviar' clickeado");
 	handleCreateActivity();
-});
-
-// 2.	EXTRA CREDIT. Implementar la funcionalidad de eliminar tarjetas del contenedor al hacer click sobre ellas o sobre algún nuevo botón que podamos agregar a las mismas. Eres libre de encarar esta funcionalidad de la manera que consideres adecuada.  Puedes apoyarte en la IA para ayudarte a realizar este punto.
-// Renderizar actividades predefinidas
-// Event Listener para eliminar la tarjeta
-const deleteCard = document.getElementById("deleteButton");
-
-console.log(deleteCard);
-
-deleteCard.addEventListener("click", () => {
-	// Eliminar la actividad del repositorio (opcional)
-	console.log("El botón eliminar card fue clickeado");
-	repo.deleteActivity(id);
-
-	// Remover la tarjeta del DOM
-	card.remove();
-
-	console.log(`Actividad con id ${id} eliminada.`);
+	console.log(repo);
 });
 
 renderAllActivities(repo);
