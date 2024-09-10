@@ -7,7 +7,7 @@ export default {
 	env: {
 		stopSpecOnExpectationFailure: false,
 		stopOnSpecFailure: false,
-		random: true,
+		random: false,
 	},
 
 	// For security, listen only to localhost. You can also specify a different
