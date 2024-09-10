@@ -1,15 +1,16 @@
 {
-  "name": "testingexercice",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jasmine"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jasmine": "^5.3.0"
-  }
+	"name": "testingexercice",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jasmine",
+		"test-browser": "jasmine-browser-runner serve"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"jasmine": "^5.3.0"
+	}
 }

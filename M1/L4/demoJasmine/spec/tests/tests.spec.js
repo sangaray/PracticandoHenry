@@ -4,6 +4,12 @@
 // - getTodos, debe retornar la lista de tareas
 // - addToDo, debe pushear al array una nueva tarea
 // - deleteTodo, debe eliminar la última tarea
+// PASOS A SEGUIR
+// 1. Pienso en palabras
+// 2. Tests
+// 3. Escribir el código
+
+const ToDoList = require("../../src/index");
 
 describe("La clase ToDoList", () => {
 	it("Debe ser una clase", () => {
@@ -11,43 +17,37 @@ describe("La clase ToDoList", () => {
 	});
 
 	it("Debe tener inplementado el método getTodos", () => {
-		const lista = new ToDpList();
+		const lista = new ToDoList();
 
-		expect(list).getTodos.toBeDefined();
+		expect(lista.getTodos).toBeDefined();
 	});
 
 	it("Debe tener inplementado el método addTodo", () => {
-		const lista = new ToDpList();
+		const lista = new ToDoList();
 
-		expect(list).addTodo.toBeDefined();
-	});
-
-	it("Debe tener inplementado el método getTodos", () => {
-		const lista = new ToDpList();
-
-		expect(list).getTodos.toBeDefined();
+		expect(lista.addTodo).toBeDefined();
 	});
 
 	it("Debe tener inplementado el método deleteTodo", () => {
-		const lista = new ToDpList();
+		const lista = new ToDoList();
 
-		expect(list).delete.toBeDefined();
+		expect(lista.deleteTodo).toBeDefined();
 	});
 
 	it("El método getTodos() debe retornar un array", () => {
-		const lista = new ToDpList();
+		const lista = new ToDoList();
 
 		expect(Array.isArray(lista.getTodos()));
 	});
 
 	it("El método addTodo() debe agregar un nuevo elemento", () => {
-		const lista = new ToDpList();
-		list.addTodo("Hacer la HW de la clase de hoy");
+		const lista = new ToDoList();
+		lista.addTodo("Hacer la HW de la clase de hoy");
 		expect(lista.getTodos()).toContain("Hacer la HW de la clase de hoy");
 	});
 
 	it("el método deleteTodo() debe eliminar la última tarea", () => {
-		const lista = new ToDpList();
+		const lista = new ToDoList();
 		lista.addTodo("A");
 		lista.addTodo("B");
 		lista.addTodo("C");
