@@ -11,10 +11,15 @@
 // JASMINE
 // Framework de pruebas unitarias
 // Provee un entorno de trabajo, es un pequeño taller con un montón de herramientas para realizar un trabajo
-// describe() grupo de pruebas que voy a realizar, que tienen el mismo objetivo o funcionalidad
+// describe(string, callback) grupo de pruebas que voy a realizar, que tienen el mismo objetivo o funcionalidad. String, descripción. Callback, conjunto de test individuales específicos que se van a aplicar a ese grupo
+// it(string, callback), dice que voy aevaluar especificamente, indica un test específico. String, descripción del test específico, prueba que va a realizar
+// expect(expresión a evaluar).prueba a aplicar(valor de comparación),
 
 describe("Este es mi primer grupo de tests", () => {
 	it("El número 2 debe ser igual al número 2", () => {
 		expect(2).toEqual(2);
+	});
+	it("El número 2 debe estar definido", () => {
+		expect(2).toBeDefined();
 	});
 });
