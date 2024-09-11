@@ -217,3 +217,8 @@ submitButton.addEventListener("click", () => {
 });
 
 renderAllActivities(repo);
+
+module.exports = {
+	Activity,
+	Repository,
+};
