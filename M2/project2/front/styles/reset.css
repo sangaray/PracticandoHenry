@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+}
+
+body,
+form,
+input,
+label,
+button,
+p,
+h2,
+span {
+	margin: 0;
+	padding: 0;
+}
+
+/* Eliminamos estilos de listas no ordenadas y ordenadas */
+ol,
+ul {
+	list-style: none;
+}
