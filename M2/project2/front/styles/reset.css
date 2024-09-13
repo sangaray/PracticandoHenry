@@ -1,21 +1,12 @@
+/* Reseteo y Configuración Inicial de Propiedades */
 * {
 	box-sizing: border-box;
+	background-color: #111;
 }
 
-body,
-form,
-input,
-label,
-button,
-p,
-h2,
-span {
-	margin: 0;
-	padding: 0;
-}
-
-/* Eliminamos estilos de listas no ordenadas y ordenadas */
-ol,
-ul {
-	list-style: none;
+/* prettier-ignore */
+body, header, div, img, ul, li, nav, h1, h2, span, button{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
