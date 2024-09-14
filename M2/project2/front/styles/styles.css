@@ -81,7 +81,7 @@ h1 {
 	border-radius: 10px;
 	padding: 20px;
 	margin: 20px 0;
-	background-color: #463d06;
+	background-color: #143bc7;
 	box-shadow: 0 0 10px 2px #f0ffff;
 	width: calc(33.33% - 20px); /* Tres columnas, restando el gap */
 	box-sizing: border-box; /* Asegura que el padding y el border no agranden la tarjeta */
