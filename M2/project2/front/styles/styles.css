@@ -118,3 +118,54 @@ h2 {
 	max-width: 300px;
 	margin-top: 15px;
 }
+
+/* Historia del Cine*/
+.mainTitle {
+	margin-top: 25px;
+}
+
+.subtitle {
+	font-size: 2.5em;
+	padding: 15px;
+}
+
+.subSubTitle {
+	font-size: 2em;
+	padding: 10px;
+	margin: 0;
+}
+
+.paragraph {
+	font-size: 1.8em;
+	padding: 10px;
+	text-align: left;
+}
+
+.cabecera {
+	width: 100%;
+	height: 300px;
+}
+
+.images {
+	width: 300px;
+	margin: 10px auto;
+}
+
+.textContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Proyecto */
+.listaTecnologias {
+	list-style-position: inside; /*permite trabajar la posición de la viñeta, inside o outside*/
+	list-style-type: disc; /*define la forma de la viñeta, upper or lower roman, upper or lower latin, alfa*/
+	/*list-style-image: ; permite usar una imagen como bullet */
+	font-size: 1.5em;
+	padding: 5px 0;
+}
+
+.proyectoTecnologias {
+	margin: 7px 20px;
+}

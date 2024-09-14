@@ -14,34 +14,39 @@
 			rel="stylesheet" />
 
 		<title>Proyecto M2</title>
-		<link rel="stylesheet" href="./styles/reset.css" />
-		<link rel="stylesheet" href="./styles/styles.css" />
+		<link rel="stylesheet" href="../styles/reset.css" />
+		<link rel="stylesheet" href="../styles/styles.css" />
 	</head>
 	<body>
 		<header class="header">
 			<div class="header__nav-container">
 				<div class="header__nav-logo">
-					<img src="./assets/images/yourMoviesLogo1.svg" alt="logo de Your Movies website" class="header__logo-image" />
+					<img
+						src="../assets/images/yourMoviesLogo1.svg"
+						alt="logo de Your Movies website"
+						class="header__logo-image" />
 				</div>
 				<nav class="header__navbar">
 					<ul class="header__navbar-ul">
-						<li class="header__navbar-item"><a href="#" class="header__navbar-link">Home</a></li>
+						<li class="header__navbar-item"><a href="../index.html" class="header__navbar-link">Home</a></li>
 						<li class="header__navbar-item">
-							<a href="./pages/historia.html" class="header__navbar-link">Historia del Cine</a>
+							<a href="./historia.html" class="header__navbar-link">Historia del Cine</a>
 						</li>
-						<li class="header__navbar-item">
-							<a href="./pages/projecto.html" class="header__navbar-link">Sobre el Proyecto</a>
-						</li>
+						<li class="header__navbar-item"><a href="#" class="header__navbar-link">Sobre el Proyecto</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
-
 		<main class="main">
-			<h1 class="main__title">Mis Películas Favoritas</h1>
-			<div class="cardsContainer" id="cardsContainer"></div>
+			<h1 class="mainTitle">Acerca de este Proyecto</h1>
+			<p class="paragraph">Este proyecto fue creado por Sandra Garaycochea como parte del bootcamp SoyHenry</p>
+			<h2 class="subtitle">Tecnologías Utilizadas</h2>
+			<ul class="listaTecnologias">
+				<li class="proyectoTecnologias">HTML5</li>
+				<li class="proyectoTecnologias">CSS3</li>
+				<li class="proyectoTecnologias">JavaScript Vanilla</li>
+				<li class="proyectoTecnologias">Live Server para trabajo en real time</li>
+			</ul>
 		</main>
-		<script src="./scripts/tempData.js"></script>
-		<script type="module" src="./scripts/index.js"></script>
 	</body>
 </html>
