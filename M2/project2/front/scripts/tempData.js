@@ -1,4 +1,4 @@
-const template = [
+export const template = [
 	{
 		title: "Guardians of the Galaxy Vol. 2",
 		year: 2017,
@@ -6,7 +6,7 @@ const template = [
 		duration: "2h 16min",
 		genre: ["Action", "Adventure", "Comedy"],
 		rate: 7.7,
-		poster: "",
+		poster: "https://i.pinimg.com/originals/37/f5/08/37f508a760f05f9a9d3f143dadceed2e.png",
 	},
 	{
 		title: "Star Wars: Episode IV - A new Hope",
@@ -15,7 +15,7 @@ const template = [
 		duration: "2h 1min",
 		genre: ["Action", "Adventure", "Fantasy", "Sci-Fi"],
 		rate: 8.7,
-		poster: "",
+		poster: "https://i.pinimg.com/originals/fc/12/81/fc12814f7f32b766409faf48df15ddf0.jpg",
 	},
 	{
 		title: "The Lord of the Rings: The Fellowship of the King",
@@ -24,6 +24,6 @@ const template = [
 		duration: "2h 58min",
 		genre: ["Action", "Adventure", "Drama", "Fantasy"],
 		rate: 8.8,
-		poster: "",
+		poster: "https://image.tmdb.org/t/p/original/p6QjtBmO6U105l44U0qMDSLxT0L.jpg",
 	},
 ];
