@@ -149,6 +149,7 @@ h2 {
 .images {
 	width: 300px;
 	margin: 10px auto;
+	border-radius: 10px;
 }
 
 .textContainer {
