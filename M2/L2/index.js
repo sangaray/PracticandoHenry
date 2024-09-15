@@ -24,3 +24,20 @@ console.log("Tarea 5"); */
 
 // JQuery, librería que tiene funciones para realizar peticiones, es una caja de herramientas
 // JSON Placeholder - Permite usar una api, para hacer una solicitud http, nos brinda un jason con insormación
+
+// JQuery
+// $ es una herramienta
+
+const addUserButton = document.getElementById("addUserButton");
+
+let i = 1;
+
+const addUser = () => {
+	if (i > 10) return alert("No hay más usuarios");
+	$.get(`https://jsonplaceholder.typicode.com/users/${i}`, (data, status) => {
+		console.log(data);
+		i++;
+	});
+};
+
+addUserButton.addEventListener("click", addUser);
