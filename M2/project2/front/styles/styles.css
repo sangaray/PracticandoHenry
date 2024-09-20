@@ -67,14 +67,14 @@ h2 {
 
 h1 {
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 
 #cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px; /* Espacio entre tarjetas */
+  gap: 25px; /* Espacio entre tarjetas */
 }
 
 .movieCard {
@@ -84,7 +84,7 @@ h1 {
   margin: 20px 0;
   background-color: #143bc7;
   box-shadow: 0 0 10px 2px #f0ffff;
-  width: calc(33.33% - 20px); /* Tres columnas, restando el gap */
+  width: calc(33.33% - 50px); /* Tres columnas, restando el gap */
   box-sizing: border-box; /* Asegura que el padding y el border no agranden la tarjeta */
   display: flex;
   flex-direction: column;
