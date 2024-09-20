@@ -5,7 +5,8 @@
 	"scripts": {
 		"start1": "node server.js",
 		"test": "jasmine",
-		"start": "live-server"
+		"start": "live-server",
+		"build": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
@@ -14,7 +15,9 @@
 	},
 	"devDependencies": {
 		"jasmine": "^5.3.0",
-		"live-server": "^1.2.2"
+		"live-server": "^1.2.2",
+		"webpack": "^5.94.0",
+		"webpack-cli": "^5.1.4"
 	},
 	"keywords": [],
 	"description": ""

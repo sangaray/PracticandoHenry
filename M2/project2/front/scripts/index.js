@@ -1,5 +1,13 @@
+// En este proyecto tenemos, quiero modularizar tengo que tener todos los scripts, todos los módulos en el index.html y además tienen que estar en el orden en que son llamados después desde index.js.
+// Aún cuando use el modlule.exports y el require, la información no va a pasar al navegador, porque estas opciones sólo sirven para node, no para el navegador. El navegador no entiende node, sólo entiende javascript.
+// Bandler, tenemos el index.js que requiere de renderCards y así sucesivamente. Permite ingresando por el enterpoint va a seguir la secuencia de llamadas de los módulos y convierte todo lo que va encontrando en un único módulo que es el que se envía al navegador
+// Entre los bandles que hay, tenemos uno que se llama Webpack. npm install -D webpack webpack-cli
+// Le tengo que dar el entrypoing. Propiedades de configuracion, entry punto de entrada, output donde guarda el contenido y ouput, lugar y nombre del archivo que se va a crear
+// Una vez creado el bundles, cada vez que realice un cambio en cualquira de los archivos de mi proyecto se debe ejecutar nuevamente webpack con nmp run build
+
 // Importando el array de datos
 // import { template } from "./tempData.js";
+const renderAllMovies = require("./scripts/renderAllCards.js");
 
 const apiUrl = "https://students-api.up.railway.app/movies";
 
@@ -7,65 +15,3 @@ $.get(apiUrl, (data) => {
   console.log(data);
   renderAllMovies(data);
 });
-
-// Obtener el contenedor donde se agregarán las cards
-const cardsContainer = document.getElementById("cardsContainer");
-
-function createMovieCard(movie) {
-  const { title, year, director, duration, genre, rate, poster } = movie;
-
-  // creando los elementos de la card
-  const titleElement = document.createElement("h2");
-  const yearElement = document.createElement("p");
-  const directorElement = document.createElement("h3");
-  const durationElement = document.createElement("p");
-  const genreElement = document.createElement("p");
-  const rateElement = document.createElement("p");
-  const posterElement = document.createElement("img");
-
-  // Asignando contenido a los elementos de la card
-  titleElement.innerHTML = title;
-  yearElement.innerHTML = `Year: ${year}`;
-  directorElement.innerHTML = `Director: ${director}`;
-  durationElement.innerHTML = `Duration: ${duration}`;
-  genreElement.innerHTML = `Genre: ${genre.join(", ")}`; // convertir el array de géneros en string
-  rateElement.innerHTML = `Rating: ${rate}`;
-  posterElement.src = poster || "default-image.jpg"; // Si no hay poster, usa una imagen por defecto
-
-  // Asignando las clases a los elementos de la card
-  titleElement.classList.add("movieTitle");
-  yearElement.classList.add("movieYear");
-  directorElement.classList.add("movieDirector");
-  durationElement.classList.add("movieDuration");
-  genreElement.classList.add("movieGenre");
-  rateElement.classList.add("movieRate");
-  posterElement.classList.add("moviePoster");
-
-  // Creando el div para la card
-  const cardDiv = document.createElement("div");
-  cardDiv.classList.add("movieCard");
-
-  cardDiv.appendChild(titleElement);
-  cardDiv.appendChild(posterElement);
-  cardDiv.appendChild(directorElement);
-  cardDiv.appendChild(yearElement);
-  cardDiv.appendChild(durationElement);
-  cardDiv.appendChild(genreElement);
-  cardDiv.appendChild(rateElement);
-
-  return cardDiv;
-}
-
-function renderAllMovies(data) {
-  // Seleccionado el contenedor de las cards
-  cardsContainer.innerHTML = ""; // Limpia el contenedor antes de agregar nuevas cards
-
-  // Usar el array `template` directamente
-  data.forEach((movie) => {
-    const card = createMovieCard(movie);
-    cardsContainer.appendChild(card); // Agregar la card al contenedor
-  });
-}
-
-// Llamar a la función para renderizar las películas
-renderAllMovies();
