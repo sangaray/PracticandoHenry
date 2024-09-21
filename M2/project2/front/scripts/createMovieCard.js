@@ -1,6 +1,3 @@
-// Obtener el contenedor donde se agregarán las cards
-const cardsContainer = document.getElementById("cardsContainer");
-
 function createMovieCard(movie) {
   const { title, year, director, duration, genre, rate, poster } = movie;
 
@@ -46,18 +43,4 @@ function createMovieCard(movie) {
   return cardDiv;
 }
 
-function renderAllMovies(data) {
-  // Seleccionado el contenedor de las cards
-  cardsContainer.innerHTML = ""; // Limpia el contenedor antes de agregar nuevas cards
-
-  // Usar el array `template` directamente
-  data.forEach((movie) => {
-    const card = createMovieCard(movie);
-    cardsContainer.appendChild(card); // Agregar la card al contenedor
-  });
-}
-
-// Llamar a la función para renderizar las películas
-renderAllMovies();
-
-module.exports = renderAllMovies;
+module.exports = createMovieCard;
