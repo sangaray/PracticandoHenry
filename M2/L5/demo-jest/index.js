@@ -13,14 +13,19 @@
 // Si quiero exporta varias cosas las tengo que poner detro de un objeto
 // Al requerir tengo que destructurar ese objeto
 // Error, espero que ocurra algo pero por alguna razón no puedo obtener el resultado esperado
+// Siempre arrojar errores si no se cumple alguna condición, decirle al usuario que está mal
+// Supongamos que tenemos una base de datos que se conecta a una función. Ahora vamos a tener una función callback que obtiene los items, que va a recibir los datos desde una base de datos.
+// No movemos los arrays de datos de un lugar a otro, los que movemos son funciones que llaman a esos datos
 
-const sumar = (a, b) => {
+const { getItems } = require("./dataBase");
+
+/* const sumar = (a, b) => {
   if (typeof a !== "number" || typeof b !== "number") return null;
   const suma = a + b;
   return suma;
-};
+}; */
 
-const calcularTotal = (items) => {
+/* const calcularTotal = (items) => {
   let total = 0;
 
   if (!items.length) {
@@ -32,8 +37,21 @@ const calcularTotal = (items) => {
   }
   return total;
 };
+*/
+
+const calcularTotal = (getItems) => {
+  const items = getItems();
+
+  let total = 0;
+  for (let item of items) {
+    total += item.quantity * item.price;
+  }
+  return total;
+};
+
+console.log(calcularTotal(getItems));
 
 module.exports = {
-  sumar,
+  //sumar,
   calcularTotal,
 };

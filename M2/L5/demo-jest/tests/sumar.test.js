@@ -8,7 +8,7 @@ const mockSumar = jest.fn(sumar);
   });
 }); */
 
-describe("La función 'sumar'", () => {
+xdescribe("La función 'sumar'", () => {
   it("Debe retornar null si es ejecutada con algún valor no numérico como argumento", () => {
     expect(mockSumar(1, true)).toBe(null);
     expect(mockSumar(false, 10)).toBe(null);
