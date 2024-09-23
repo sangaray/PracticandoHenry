@@ -1,3 +1,5 @@
+// Para crear los tests hay que crear las instancias necesarias para que los métodos funciones en base a sus constructores
+
 const CarritoCompra = require("../index");
 
 describe("CarritoCompra", () => {
@@ -7,25 +9,21 @@ describe("CarritoCompra", () => {
     carrito = new CarritoCompra();
   });
 
+  const producto = new CarritoCompra();
+
   it("Debe ser una clase", () => {
     expect(typeof CarritoCompra.prototype.constructor).toBe("function");
   });
 
   it("Debe tener inplementado el método agregarProducto", () => {
-    const producto = new CarritoCompra();
-
     expect(producto.agregarProducto).toBeDefined();
   });
 
   it("Debe tener inplementado el método calcularTotal", () => {
-    const producto = new CarritoCompra();
-
     expect(producto.calcularTotal).toBeDefined();
   });
 
   it("Debe tener inplementado el método aplicarDescuento", () => {
-    const producto = new CarritoCompra();
-
     expect(producto.aplicarDescuento).toBeDefined();
   });
 
