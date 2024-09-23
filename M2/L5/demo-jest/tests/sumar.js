@@ -1,4 +1,4 @@
-const sumar = require("../index");
+const { sumar } = require("../index");
 
 const mockSumar = jest.fn(sumar);
 
@@ -24,7 +24,7 @@ describe("La función 'sumar'", () => {
     // console.log(mockSumar.mock);
   });
 
-  it("Debe haber registrao correctamente los argumentos 10 y 15", () => {
+  it("Debe haber registrar correctamente los argumentos 10 y 15", () => {
     expect(mockSumar).toHaveBeenCalledWith(10, 15);
   });
 });

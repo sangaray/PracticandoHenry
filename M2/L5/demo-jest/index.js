@@ -10,6 +10,9 @@
 // const mockSumar = jest.fn(sumar);
 // Para que jest muestre los console log debo correr primero en la consola
 // npm test -- --silent=false
+// Si quiero exporta varias cosas las tengo que poner detro de un objeto
+// Al requerir tengo que destructurar ese objeto
+// Error, espero que ocurra algo pero por alguna razón no puedo obtener el resultado esperado
 
 const sumar = (a, b) => {
   if (typeof a !== "number" || typeof b !== "number") return null;
@@ -17,4 +20,20 @@ const sumar = (a, b) => {
   return suma;
 };
 
-module.exports = sumar;
+const calcularTotal = (items) => {
+  let total = 0;
+
+  if (!items.length) {
+    throw Error("Factura Inválida");
+  }
+
+  for (let item of items) {
+    total += item.quantity * item.price;
+  }
+  return total;
+};
+
+module.exports = {
+  sumar,
+  calcularTotal,
+};
