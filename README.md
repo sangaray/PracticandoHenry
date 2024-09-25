@@ -14,3 +14,7 @@ En este repositorio tengo guardadas todas mis prácticas del nuevo Henry Bootcam
 - Node.js
 - Jasmine
 - Jest
+- Asincronismo
+  - Promesas
+  - Async / Await
+  - Axios
