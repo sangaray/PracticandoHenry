@@ -3,6 +3,7 @@
 // Es una clase de la cual tenemos que crear una instancias. Tie ne una callback que reciben dos funciones resolve y reject, la primera resulve la promesa, es decir es exitosa, y la segunda es el rechazo de la primesa o si hay un error por alguna razón que no dejó completar el proceso que se estaba ejecutando.
 // El resolve se maneja con .then y el reject con .catch
 // err.message, resume el mensaje de error a la causa específica del mismo
+// Se ejecuta la función y se retorna la promesa, pero no espera, defino el plan de acción de la promesa, sigo con lo que sigue y luego cuando haya una respuesta de la promesa recién se va a ejecturar, no se queda esperando a que la promesa se resuelva
 
 // Probando como funcionan las promesas
 
@@ -30,7 +31,9 @@ promise
   })
   .catch((err) => {
     // error handler
+    console.log("Tuvimos un error");
     console.log(err.message);
   });
 
+console.log("Se terminó todo");
 // console.log(promise);
