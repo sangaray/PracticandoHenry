@@ -3,3 +3,10 @@
 // Para esa ruta GET /users, vamos a ir a la base de datos a pedir la información de los usuarios
 // Responder al cliente con la información obtenida.
 // El controlador también maneja errores
+
+const testController = (req, res) => {
+  // console.log("Estamos recibiendo una solicitud");
+  res.status(200).send("Estamos recibiendo una solicitud");
+};
+
+module.exports = { testController };

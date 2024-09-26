@@ -10,6 +10,7 @@
 // Solicitud => RUTA => CONTROLADOR => SERVICIOS => Resultado
 // El método listen deja al servidor en espera, escuchando lo que sucede, esperando por las peticiones.
 // La callback se ejecuta después que el método listen ha realizado su trabajo
+// Nunca en express nos podemos quedar sin una respuesta
 
 const app = require("./src/server");
 
