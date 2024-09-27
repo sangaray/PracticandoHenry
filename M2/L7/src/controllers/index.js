@@ -3,6 +3,7 @@
 // Para esa ruta GET /users, vamos a ir a la base de datos a pedir la información de los usuarios
 // Responder al cliente con la información obtenida.
 // El controlador también maneja errores
+// También es conveniente modularizar o separar los controllers, para que cada uno responde a la ruta que le corresponde
 
 const userController = (req, res) => {
   // console.log("Estamos recibiendo una solicitud");
