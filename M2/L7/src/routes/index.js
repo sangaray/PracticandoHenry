@@ -4,10 +4,12 @@
 // Primero tenemos que crear un enrutador, que es un objeto que tiene las rutas que yo defina
 
 const { Router } = require("express");
-const { testController } = require("../controllers");
+const userRouter = require("./userRouter");
+const postRouter = require("./postRouter");
 
 const router = Router();
 
-router.get("/", testController);
+router.use("/users", userRouter);
+router.use("/posts", postRouter);
 
 module.exports = router;

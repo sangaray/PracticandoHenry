@@ -4,9 +4,19 @@
 // Responder al cliente con la información obtenida.
 // El controlador también maneja errores
 
-const testController = (req, res) => {
+const userController = (req, res) => {
   // console.log("Estamos recibiendo una solicitud");
-  res.status(200).send("Estamos recibiendo una solicitud");
+  res
+    .status(200)
+    .send("Estamos recibiendo una solicitud para obtener datos de usuarios");
 };
 
-module.exports = { testController };
+const postController = (req, res) => {
+  // console.log("Estamos recibiendo una solicitud");
+  res.status(200).send("Estamos enviando información sobre posts");
+};
+
+module.exports = {
+  userController,
+  postController,
+};
