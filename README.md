@@ -19,3 +19,7 @@ En este repositorio tengo guardadas todas mis prácticas del nuevo Henry Bootcam
   - Async / Await
   - Axios
 - Express
+- Middlewares
+  - Morgan
+  - Cors
+  - express.json
