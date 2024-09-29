@@ -2,43 +2,34 @@
 // Consultar a una base de datos o solicitar los datos de un servicio externo, en casos extraordinarios leeran la información de un archivo.
 // Estas son operaciones asíncronas, todas estas funciones retornan una promesa
 
+const users = [
+  {
+    id: 1,
+    name: "Jorge",
+  },
+  {
+    id: 2,
+    name: "Belu",
+  },
+  {
+    id: 3,
+    name: "Alejo",
+  },
+];
+
+let id = 4;
+
 module.exports = {
   getUsers: async () => {
-    const users = [
-      {
-        id: 1,
-        name: "Jorge",
-      },
-      {
-        id: 2,
-        name: "Belu",
-      },
-      {
-        id: 3,
-        name: "Alejo",
-      },
-    ];
-
     return users;
   },
+
+  createUser: async (name) => {
+    const newUser = {
+      id,
+      name,
+    };
+    id++;
+    users.push(newUser);
+  },
 };
-
-function getUsers() {
-  return "getUsers";
-}
-
-function getUserById() {
-  return "getUserById";
-}
-
-function createUser() {
-  return "createUser";
-}
-
-function updateUser() {
-  return "updateUser";
-}
-
-function deleteUser() {
-  return "deleteUser";
-}
