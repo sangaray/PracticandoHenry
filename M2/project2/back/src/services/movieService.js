@@ -41,12 +41,15 @@ module.exports = {
     return movies;
   },
 
-  createMovie: async (name) => {
+  createMovie: async (title, director, year, duration, genre, rate) => {
     const newMovie = {
       id,
       title,
       director,
       year,
+      duration,
+      genre,
+      rate,
     };
     id++;
     movies.push(newMovie);

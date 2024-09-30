@@ -1,4 +1,6 @@
 const validateMovie = (req, res, next) => {
+  console.log(req.body);
+
   const { title } = req.body;
   const { year } = req.body;
   const { director } = req.body;
