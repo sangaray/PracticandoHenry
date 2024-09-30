@@ -10,7 +10,8 @@
 const axios = require("axios");
 const renderAllMovies = require("./renderAllMovies");
 
-const apiUrl = "https://students-api.up.railway.app/movies";
+// const apiUrl = "https://students-api.up.railway.app/movies";
+const apiUrl = "http://localhost:3000/movies";
 
 const fetchData = async () => {
   try {
