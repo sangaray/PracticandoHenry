@@ -11,6 +11,8 @@ module.exports = {
   },
 
   createMovie: async (req, res) => {
+    console.log(req.body);
+
     const { title, director, year, duration, genre, rate, poster } = req.body;
 
     try {
