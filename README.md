@@ -23,3 +23,5 @@ En este repositorio tengo guardadas todas mis prácticas del nuevo Henry Bootcam
   - Morgan
   - Cors
   - express.json
+- MongoDB
+- Mongoose
