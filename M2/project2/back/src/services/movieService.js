@@ -1,5 +1,6 @@
 // Definir la clase Movie para asegurar la integridad de los datos
-class Movie {
+
+/* class Movie {
   constructor(id, title, director, year, duration, genre, rate, poster) {
     // Verificamos que las propiedades requeridas estén presentes
     if (!title || !poster || !director) {
@@ -50,11 +51,14 @@ let movies = [
   ),
 ];
 
-let id = 4;
+let id = 4; */
+
+const Movie = require("../models/Movie");
 
 module.exports = {
   // Obtener todas las películas como instancias de la clase Movie
   getMovies: async () => {
+    const movies = await Movie.find();
     return movies;
   },
 
