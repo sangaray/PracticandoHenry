@@ -1,3 +1,4 @@
+// dbCon.js realiza la conexión a la base de datos
 // Connecting Mongoose
 // 1. Install mongoose
 // 2. Require mongoose
