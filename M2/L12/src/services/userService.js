@@ -1,3 +1,4 @@
+// M2-L12 - Mongoose II
 // En el service createUser, en lugar de utilizar cada campo como parámetro, lo que hago es recibirlo en un parámetro único Users que recibe el objeto enviado por el controller.
 // Tengo dos formas de recibir los campos una es usar directamente user en el método create y otra es para el objeto con cada campo que se va a recibir, esta última forma la voy a usar si en algún momento voy a necesitar hacer cambios en las propiedades del objeto, pero en este caso nos conviene utilizar la primera forma.
 // El método create del modelo va a recibir un objeto con propiedad que es igual al nombre del esquema y el valor
