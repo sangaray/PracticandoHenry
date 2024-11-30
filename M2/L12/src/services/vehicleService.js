@@ -6,8 +6,8 @@ module.exports = {
     return vehicles;
   },
 
-  createVehicle: async (vehicle) => {
-    const newVehicle = await vehicle.create(vehicle);
+  createVehicle: async (vehicleData) => {
+    const newVehicle = await vehicle.create(vehicleData);
     return newVehicle;
   },
 };
