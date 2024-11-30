@@ -1,10 +1,10 @@
 const { Router } = require("express");
-const vehicleController = require("../controllers/vehicleController");
+const vehiclesController = require("../controllers/vehiclesController");
 
 const vehicleRouter = Router();
 
-vehicleRouter.get("/", vehicleController.getAllVehicles);
+vehicleRouter.get("/", vehiclesController.getAllVehicles);
 
-vehicleRouter.post("/", vehicleController.createVehicle);
+vehicleRouter.post("/", vehiclesController.createVehicle);
 
 module.exports = vehicleRouter;
