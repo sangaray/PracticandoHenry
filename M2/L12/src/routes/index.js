@@ -9,9 +9,12 @@
 
 const { Router } = require("express");
 const userRouter = require("./userRouter");
+const vehicleRouter = require("./vehicleRouter");
 
 const router = Router();
 
 router.use("/users", userRouter);
+
+router.use("/vehicles", vehicleRouter);
 
 module.exports = router;

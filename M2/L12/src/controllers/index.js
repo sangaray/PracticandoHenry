@@ -12,6 +12,13 @@ const userController = (req, res) => {
     .send("Estamos recibiendo una solicitud para obtener datos de usuarios");
 };
 
+const vehiclesController = (req, res) => {
+  res
+    .status(200)
+    .send("Estamos recibiendo una solicitud para obtener datos de vehiculos");
+};
+
 module.exports = {
   userController,
+  vehiclesController,
 };
