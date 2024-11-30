@@ -1,4 +1,4 @@
-const vehicleService = require("../services/vehiclesService");
+const vehicleService = require("../services/vehicleService");
 
 module.exports = {
   getAllVehicles: async (req, res) => {
@@ -8,7 +8,7 @@ module.exports = {
 
   createVehicle: async (req, res) => {
     const { patente, marca } = req.body;
-    const newVehicle = await vehicleService.createVehicle(patente, marca);
+    const newVehicle = await vehicleService.createVehicle({ patente, marca });
     res.status(201).json(newVehicle);
   },
 };
