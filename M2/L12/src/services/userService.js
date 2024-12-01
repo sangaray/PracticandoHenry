@@ -36,4 +36,12 @@ module.exports = {
     const newUser = await User.create(user);
     return newUser;
   },
+
+  /* En este método deberíamos hacer una serie de validaciones sobre la existencia del usuario y del vehículo */
+  addVehicle: async ({ userId, vehicleId }) => {
+    const user = await User.findById(userId);
+    user.vehicle = vehicleId;
+    await user.save();
+    return user;
+  },
 };

@@ -16,4 +16,6 @@ userRouter.get("/:id", userController.getUserById);
 
 userRouter.post("/", userController.createUser);
 
+userRouter.put("/addVehicle", userController.addVehicle);
+
 module.exports = userRouter;

@@ -44,4 +44,14 @@ module.exports = {
       res.status(500).json({ error: "Error al crear al usuario" });
     }
   },
+
+  addVehicle: async (req, res) => {
+    const { userId, vehicleId } = req.body;
+    try {
+      await userService.addVehicle({ userId, vehicleId });
+      res.status(200).json({ message: "Todo correcto" });
+    } catch (error) {
+      res.status(500).json({ error: "Error al agregar al vehículo" });
+    }
+  },
 };
