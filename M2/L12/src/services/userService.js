@@ -5,6 +5,8 @@
 // Para crear un nuevo registro se utiliza el método create y para buscar un registro por su id se utiliza el método findById
 // Para recuperar un registro por el nombre usamos el método findOne.
 
+/* M2-L12 - Mongoose II - Método populate, sirve para reemplazar el id por el objeto completo que se encuentra en la colección relacionada. Lo voy a agregar al método getUsers*/
+
 const User = require("../models/User");
 
 /* const users = [
@@ -16,7 +18,7 @@ const User = require("../models/User");
 
 module.exports = {
   getUsers: async () => {
-    const users = await User.find();
+    const users = await User.find().populate("vehicle");
     return users;
   },
 
