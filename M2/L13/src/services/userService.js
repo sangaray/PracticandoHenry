@@ -34,7 +34,7 @@ module.exports = {
 
   createUser: async (user) => {
     /* users.push({ name, email });
-    return { name, email }; */
+    return { name, email }; si necesitara hacer un cambio en alguna de las propiedades*/
     const newUser = await User.create(user);
     return newUser;
   },
