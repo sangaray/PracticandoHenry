@@ -21,4 +21,9 @@ Si el error es asíncrono, express no lo puede majerar por sí misma, por eso la
 
 app.use(router);
 
+/* Cuando Express ve un middleware que tiene cuatro parámetros dice a este es el nuevo manejador de errores */
+app.use((err, req, res, next) => {
+  res.status(500).json({ error: err.message });
+});
+
 module.exports = app;
