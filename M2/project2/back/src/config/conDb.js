@@ -1,3 +1,4 @@
+// En este módulo hacer la base de datos en una función
 // Exportar esta función.
 require("dotenv").config();
 const { MONGO_URI } = process.env;

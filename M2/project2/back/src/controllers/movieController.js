@@ -13,18 +13,11 @@ module.exports = {
   createMovie: async (req, res) => {
     console.log(req.body);
 
-    const { title, director, year, duration, genre, rate, poster } = req.body;
+    const movie = ({ title, director, year, duration, genre, rate, poster } =
+      req.body);
 
     try {
-      await movieService.createMovie(
-        title,
-        director,
-        year,
-        duration,
-        genre,
-        rate,
-        poster
-      );
+      await movieService.createMovie(movie);
       res.status(201).json({ message: "Película creada correctamente" });
     } catch (error) {
       res.status(400).json({ error: error.message });

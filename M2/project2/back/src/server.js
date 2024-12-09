@@ -4,6 +4,7 @@ const router = require("./routes/");
 // Importamos los middlewares
 const morgan = require("morgan");
 const cors = require("cors");
+const validateMovie = require("./middlewares/validateMovie");
 
 const app = express();
 

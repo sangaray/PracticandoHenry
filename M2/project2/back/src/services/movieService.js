@@ -65,18 +65,8 @@ module.exports = {
   },
 
   // Crear una nueva película asegurando que sea una instancia de la clase Movie
-  /* createMovie: async (title, director, year, duration, genre, rate, poster) => {
-    const newMovie = new Movie(
-      id,
-      title,
-      director,
-      year,
-      duration,
-      genre,
-      rate,
-      poster
-    );
-    id++;
-    movies.push(newMovie);
-  }, */
+  createMovie: async (movie) => {
+    const newMovie = await Movie.create(movie);
+    return newMovie;
+  },
 };
