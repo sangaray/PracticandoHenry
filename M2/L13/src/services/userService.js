@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const formatAge = require("../helpers/formatAge");
 
 /* const users = [
   {
@@ -26,7 +27,7 @@ module.exports = {
   createUser: async (user) => {
     /* users.push({ name, email });
     return { name, email }; si necesitara hacer un cambio en alguna de las propiedades*/
-    const newUser = await User.create(user);
+    const newUser = await User.create({ ...user, age: formatAge(user.age) });
     return newUser;
   },
 
