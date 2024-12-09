@@ -23,7 +23,7 @@ app.use(router);
 
 /* Cuando Express ve un middleware que tiene cuatro parámetros dice a este es el nuevo manejador de errores */
 app.use((err, req, res, next) => {
-  res.status(500).json({ error: err.message });
+  res.status(err.statusCode || 500).json({ error: err.message });
 });
 
 module.exports = app;

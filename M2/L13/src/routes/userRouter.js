@@ -5,6 +5,7 @@
 
 const { Router } = require("express");
 const userController = require("../controllers/userController");
+const validateId = require("../middleware/validateId");
 
 const userRouter = Router();
 
@@ -12,7 +13,7 @@ userRouter.get("/", userController.getUsers);
 
 userRouter.get("/byName", userController.getUserByName);
 
-userRouter.get("/:id", userController.getUserById);
+userRouter.get("/:id", validateId, userController.getUserById);
 
 userRouter.post("/", userController.createUser);
 
