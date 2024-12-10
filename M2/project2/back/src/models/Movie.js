@@ -31,7 +31,7 @@ const movieSchema = new Schema({
   director: String,
   duration: String,
   genre: [String],
-  rating: Number,
+  rate: Number,
   poster: String,
 });
 
