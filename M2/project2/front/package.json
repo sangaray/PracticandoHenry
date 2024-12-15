@@ -5,7 +5,7 @@
   "scripts": {
     "start1": "node server.js",
     "test": "jasmine",
-    "start": "live-server",
+    "start": "webpack && live-server",
     "build": "webpack"
   },
   "author": "",

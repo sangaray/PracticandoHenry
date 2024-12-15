@@ -9,7 +9,7 @@ function renderAllMovies(data) {
   // Usar el array `template` directamente
   data.forEach((movie) => {
     const card = createMovieCard(movie);
-    cardsContainer.appendChild(card); // Agregar la card al contenedor
+    cardsContainer?.appendChild(card); // Agregar la card al contenedor
   });
 
   console.log("Todas las tarjetas renderizadas correctamente");

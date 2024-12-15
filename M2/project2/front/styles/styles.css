@@ -35,11 +35,15 @@ body {
 }
 
 .header__navbar-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   padding: 2px 10px;
   color: #f0ffff;
   font-size: 1.5em;
   font-weight: 600;
+  text-align: center;
 }
 
 .header__navbar-item {
@@ -162,8 +166,8 @@ h2 {
 /* Proyecto */
 .listaTecnologias,
 .listaCaracteristicas {
-  list-style-position: inside; /*permite trabajar la posición de la viñeta, inside o outside*/
-  list-style-type: disc; /*define la forma de la viñeta, upper or lower roman, upper or lower latin, alfa*/
+  /*list-style-position: inside; permite trabajar la posición de la viñeta, inside o outside*/
+  /*list-style-type: disc; define la forma de la viñeta, upper or lower roman, upper or lower latin, alfa*/
   /*list-style-image: ; permite usar una imagen como bullet */
   font-size: 1.5em;
   padding: 5px 0;

@@ -1,0 +1,3 @@
+1. Convertir la lista de géneros en un array de strings
+2. Escribir lo siguiente en el comando start del package.json: "start": "webpack && live-server" - DONE
+3. Debería tener bundle.js en index.html y en addMovie.html. Cuando mi script intenta encontrar algo que esta en el index pero no en la pagina donde estoy trabajando ese script se va a romper todo.
