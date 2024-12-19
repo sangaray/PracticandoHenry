@@ -1,0 +1,28 @@
+Sistema de Gestion de Turnos
+Estructura
+1. Home page
+2. Mis turnos
+3. Contacto
+4. About
+5. Modal de login aparece al intentar ir a Mis turnos
+Flujo básico del proyecto
+3. Formulario de Login
+  - Si hay errores no logew
+  - Botón enviar desactivado hasta que se carguen los dos campos
+  - Alert de logeado correctamente
+4. Página que muestra los turnos
+  - Fecha
+  - Hora
+  - Status - muestra en distintos colores activo o cancelado
+  - Asunto
+  - Botón Cancelar - Muestra modal verificando la cancelación, que la acción no se podrá revertir
+  - Arriba botón agregar turno - Muestra otar página con un formulario para agregar los turnos
+  - Mensaje recordatorio horario de atención
+  - Asunto
+  - Fecha - muestra calendario. Si es incorrecta, muestra modal indicando lo que se necesita modificar. El turno debe ser posterior al día actual.
+  - Hora - muestra un desplegable doble con hora y minuto. Validar hora con un modal, el horario de atención
+  - Botón enviar, desactivado, muestra modal con mensaje turno agendado
+  - Se agrega a la lista de mis turnos
+  - Dada las consignas no trabajamos por el momento de reprogramar el turno, si se cometió un error se debe cancelar el turno y crear uno nuevo
+  - No tomar en cuenta si hay disponibilidad o no del día y horario elegido, siempre va a haber ddisponibilidad
+
