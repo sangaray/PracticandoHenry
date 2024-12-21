@@ -1,0 +1,38 @@
+Veterinaria Mis Amigos
+1. Usuario crear una cuenta
+2. Turnos dentro del horario  y díasde atención
+3. Turnos con una duración 30min
+4. Hay infinitos recursos para atender los usuarios, no manejamos limite de reservas para cada día y hora
+5. Se puedan cancelar Turnos
+6. No más de dos Turnos por día
+Extra Créditos - Requiere investigación adicional
+7. Recibir email, pedido y cancelación del Turno
+8. Pueda agregar una forto de perfil
+
+Tarea L1
+Crear user stories, describir la historia del usuario dentro de nuestra aplicación
+1. como usuario invitado quiero poder registrarme y crear una cuenta nueva llenando un formulario de registro
+2. como usuario registrado quiero poder iniciar sesión con mis credenciales
+3. como usuario registrado quiero poder reservar un turno
+4. como usuario registrado quiero cerrar sesión cuando ya no use la plataforma
+5. como usuario registrado quiero poder cambiar mi correo electrónico
+6. como usuario registrado quiero ver todos los turnos solicitados y cancelados
+7. como usuario registrado, quiero poder ver mi perfil y actualizar mis datos personales. (Prioridad: Media)
+8. como usuario registrado, quiero poder recuperar mi contraseña si la olvido. (Prioridad: Alta)
+9. como usuario registrado, quiero poder cancelar un turno reservado. (Prioridad: Media)
+10. como usuarioregistrado quiero poder ver el detalle de un turno reservado. (Prioridad: Alta)
+11. como usuario registrado quiero poder agregar una nueva mascota. (Prioridad: Media)
+12. como usuario registrado quiero poder agregar información relevante sobre mi mascota, por ejemplo: Alergias, enfermedades, etc. (Prioridad: Media)
+13. como administrador quiero poder ver todos los turnos. (Prioridad: Alta)
+14. como administrador, quiero poder crear y editar los servicios ofrecidos. (Prioridad: Media)
+15. como administrador, quiero poder definir los horarios de atención de la veterinaria. (Prioridad: Alta)
+16. como administrador, quiero poder gestionar los usuarios registrados. (Prioridad: Media)
+17. como administrador, quiero poder gestionar los veterinarios. (Prioridad: Media)
+
+Diagrama de la Base de Datos
+1. primer borrador de lo que voy a necesitar para la base de Datos
+a. Trabajar con excel 
+b. Plataforma draw.io, diagram.net
+2. Determinar que entidades vamos atender
+3. Turno 
+4. Tipos de datos de los atributos de cada entidad.
