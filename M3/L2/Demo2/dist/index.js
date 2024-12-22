@@ -1,3 +1,4 @@
+"use strict";
 // M3-L2 - INTERFACES
 //Las interfaces nos sirven para trabajar con objetos más complejos, hasta trabajamos con variables, que tenían un tipo de datos, o arreglos donde todos sus elementos tenían el mismo tipo de dato.
 // Como moldear el objeto con todas las propiedades que queremos que tenga.
@@ -7,12 +8,6 @@
 // Tampoco puedo agregar propiedades al objeto directamente
 // La diferencia principal entre crear la interfaz IUser con una propiedad address anidada y crear una interfaz separada para address es la modularidad y reutilización del código.
 // Nos da seguridad y coherencia en el código.
-
-interface IAddress {
-  street: string;
-  city: string;
-}
-
 /* interface IUser {
   name: string;
   age: number;
@@ -31,7 +26,6 @@ const usuario: IUser = {
     city: "Posadas",
   },
 }; */
-
 /* const user = {
   name: "Jorge Vega",
   age: 32,
@@ -42,37 +36,24 @@ const usuario: IUser = {
     city: "Posadas",
   },
 }; */
-
 // TIPOS PERSONALIZADOS
 // Permite crear mi propio tipo, para esto se usa TNombretipo
 // Enum, admin, user, guest. Esto hace apareceer una lista con los elementos del enum
-// En términos de sintáxis no hay diferencia entre interface y type, slavo la palabra clave
-
-enum userRole {
-  admin = "admin",
-  user = "user",
-  guest = "guest",
-}
-
-type TUser = {
-  name: string;
-  age: number;
-  email: string;
-  active: boolean;
-  address: IAddress;
-  role: userRole;
+var userRole;
+(function (userRole) {
+    userRole["admin"] = "admin";
+    userRole["user"] = "user";
+    userRole["guest"] = "guest";
+})(userRole || (userRole = {}));
+const user1 = {
+    name: "Jorge Vega",
+    age: 32,
+    email: "jvega@gmail.com",
+    active: true,
+    address: {
+        street: "Calle Falsa 123",
+        city: "Posadas",
+    },
+    role: userRole.user,
 };
-
-const user1: TUser = {
-  name: "Jorge Vega",
-  age: 32,
-  email: "jvega@gmail.com",
-  active: true,
-  address: {
-    street: "Calle Falsa 123",
-    city: "Posadas",
-  },
-  role: userRole.user,
-};
-
 console.log(user1);
