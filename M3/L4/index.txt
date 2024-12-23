@@ -1,0 +1,7 @@
+// Express & TypeScript
+// Para evitar tener que definr el tipo de dato que corresponde al req o al res usamos las dependencias @types/express @types/node nodemon
+// ts-node, es para facilitar el desarrollo con typescript
+
+const router = require("express").Router();
+
+router.get("/", (req, res) => {});
