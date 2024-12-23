@@ -37,3 +37,16 @@ const pet5 = {
 const petsArray = [pet1, pet2, pet3, pet4, pet5];
 // Imprimiendo el array completo
 console.log(petsArray);
+const vet1 = {
+    name: "Dr. House",
+    since: 2005,
+    pets: [pet1, pet2],
+    shift: "Morning",
+};
+const vet2 = {
+    name: "Dr. Dolittle",
+    since: 2008,
+    pets: [pet3, pet4],
+    shift: "Afternoon",
+};
+console.log(vet1, vet2);

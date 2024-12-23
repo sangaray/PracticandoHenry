@@ -52,3 +52,26 @@ const petsArray: IPets[] = [pet1, pet2, pet3, pet4, pet5];
 
 // Imprimiendo el array completo
 console.log(petsArray);
+
+type TVeterinarios = {
+  name: string;
+  since: number;
+  pets: IPets[];
+  shift: string;
+};
+
+const vet1: TVeterinarios = {
+  name: "Dr. House",
+  since: 2005,
+  pets: [pet1, pet2],
+  shift: "Morning",
+};
+
+const vet2: TVeterinarios = {
+  name: "Dr. Dolittle",
+  since: 2008,
+  pets: [pet3, pet4],
+  shift: "Afternoon",
+};
+
+console.log(vet1, vet2);
