@@ -25,6 +25,11 @@
 */
 // 10. Crear el archivo .env y configurarlo con el puerto que vamos a estar trabajando.
 // 11. Crear una carpeta config en src y agregar un archivo envs.ts donde van a estar todas la variables de entorno importadas de .env
+// Crear el flujo: enrutador, end point, servicio, controlador.
+
+// 12. Creamos las carpetas routes, controllers y services
+// 13. Comenzamos a trabajar por routes agregando un archivo index.ts
+// 14. Creamos el archivo usersController.ts
 
 // Nodemon, no suele tener problema para trabajar. Pero en casos especiales puede llegar a marearse en su seguimeinto
 // ts-node, ejecuta typescript sin necesidad de buildear cada vez la aplicación
