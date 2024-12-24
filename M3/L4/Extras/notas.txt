@@ -1,0 +1,49 @@
+Express & TypeScript
+Para evitar tener que definr el tipo de dato que corresponde al req o al res usamos las dependencias @types/express @types/node nodemon
+ts-node, es para facilitar el desarrollo con typescript
+
+const router = require("express").Router();
+
+router.get("/", (req, res) => {});
+
+Pasos de Preparación del proyecto
+1. inicializar el proyecto (npm init -y)
+2. Crear carpeta del proyecto
+3. Crear carpeta src
+4. instalar las dependencias (npm install --save-dev typescript @types/express @types/node nodemon ts-node express)
+5.Inicializar tsconfig.json (npx tsc --init)
+6. Configurar tsconfig.json
+Las siguientes configuraciones deben estar siempre en tsconfig.json
+"target": "es6"
+"module": "commonjs"
+"outDir": "./dist"
+"rootDir": "./src"
+"strict": true
+"include": ["src/**/*.ts"], archivos a compilar
+"exclude": ["node_modules"] // que no se va a compilar
+7. Crear el archivo index.ts
+8. Crear el archivo .gitignore
+9. Crear el archivo nodemon.json
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "exec": "ts-node src/index.ts"
+}
+10. Crear el archivo .env y configurarlo con el puerto que vamos a estar trabajando.
+11. Crear una carpeta config en src y agregar un archivo envs.ts donde van a estar todas la variables de entorno importadas de .env
+
+Nodemon, no suele tener problema para trabajar. Pero en casos especiales puede llegar a marearse en su seguimeinto
+ts-node, ejecuta typescript sin necesidad de buildear cada vez la aplicación
+Vamos a tener muchas dependencias y configuraciones para trabajar, las cuales son muchas. No traten de memorizarse todo esto. Guardar todo en un block de notas.
+
+El método que conociamos de exportar y requerir no funciona en TS.
+Debemos replantear nuestra forma de importar y exportar
+Al exportar nos vamos a encontrar con dos cosas
+Nos interesa exportar sólo server, lo hacemos usando export default server
+export default lo usamos solamente cuando queremos exportar una sola cosas.
+
+De este módulo, envs.ts, ahora vamos a esportar PORT. Se hace declarando la constante con export delante de la palabra const, esto lo haremos cuando necesitamos exportar varias cosas, en cuyo caso vamos a realizar esta acción para cada una de ellas.
+
+En el archivo server.ts, vamos a importar el puerto que acabamos de exportar. Para ello, usamos import { PORT } from './envs.ts'
+En el archivo server.ts, vamos a importar el puerto que acabamos de exportar. Para ello, usamos import { PORT } from './envs.ts'
+
