@@ -5,7 +5,7 @@ import IUser from "../interfaces/IUser";
 
 const users: IUser[] = [];
 
-const id: number = 1;
+let id: number = 1;
 
 export const createUserService = async (userData: UserDto): Promise<IUser> => {
   const newUser: IUser = {
@@ -15,6 +15,7 @@ export const createUserService = async (userData: UserDto): Promise<IUser> => {
     active: userData.active,
   };
   users.push(newUser);
+  id++;
   return newUser;
 };
 
