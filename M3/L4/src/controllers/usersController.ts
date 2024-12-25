@@ -15,6 +15,13 @@ export const createUser = async (req: Request, res: Response) => {
   res.status(201).json(newUser);
 };
 
-export const getUsers = async () => {};
+export const getUsers = async (req: Request, res: Response) => {
+  const users = await getUsersService();
+  res.status(200).json(users);
+};
 
-export const deleteUser = () => {};
+export const deleteUser = async (req: Request, res: Response) => {
+  const { id } = req.body;
+  await deleteUserService(id);
+  res.status(200).json({ message: "Eliminado correctamente" });
+};

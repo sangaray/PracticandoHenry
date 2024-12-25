@@ -1,9 +1,10 @@
 // Una función async siempre devuelve una promesa que se resuelve a un determinado valor en este caso IUser
+// Una función que no retorna nada se dice que s void
 
 import UserDto from "../dto/userDto";
 import IUser from "../interfaces/IUser";
 
-const users: IUser[] = [];
+let users: IUser[] = [];
 
 let id: number = 1;
 
@@ -19,6 +20,12 @@ export const createUserService = async (userData: UserDto): Promise<IUser> => {
   return newUser;
 };
 
-export const getUsersService = async () => {};
+export const getUsersService = async () => {
+  return users;
+};
 
-export const deleteUserService = () => {};
+export const deleteUserService = async (id: number): Promise<void> => {
+  users = users.filter((user: IUser) => {
+    return user.id !== id;
+  });
+};
