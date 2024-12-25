@@ -30,6 +30,9 @@
 // 12. Creamos las carpetas routes, controllers y services
 // 13. Comenzamos a trabajar por routes agregando un archivo index.ts
 // 14. Creamos el archivo usersController.ts
+// 15. Crear el archivo userService
+// 16. Crear carpeta interfaces, para crear la interface del user.
+// 17. Crear la carpeta y archivo dto
 
 // Nodemon, no suele tener problema para trabajar. Pero en casos especiales puede llegar a marearse en su seguimeinto
 // ts-node, ejecuta typescript sin necesidad de buildear cada vez la aplicación
