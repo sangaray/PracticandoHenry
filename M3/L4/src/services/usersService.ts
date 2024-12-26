@@ -4,9 +4,16 @@
 import UserDto from "../dto/userDto";
 import IUser from "../interfaces/IUser";
 
-let users: IUser[] = [];
+let users: IUser[] = [
+  {
+    id: 1,
+    name: "Jorge",
+    email: "jvega@mail.com",
+    active: true,
+  },
+];
 
-let id: number = 1;
+let id: number = 2;
 
 export const createUserService = async (userData: UserDto): Promise<IUser> => {
   const newUser: IUser = {
