@@ -24,5 +24,5 @@ Flujo básico del proyecto
   - Botón enviar, desactivado, muestra modal con mensaje turno agendado
   - Se agrega a la lista de mis turnos
   - Dada las consignas no trabajamos por el momento de reprogramar el turno, si se cometió un error se debe cancelar el turno y crear uno nuevo
-  - No tomar en cuenta si hay disponibilidad o no del día y horario elegido, siempre va a haber ddisponibilidad
+  - No tomar en cuenta si hay disponibilidad o no del día y horario elegido, siempre va a haber disponibilidad
 

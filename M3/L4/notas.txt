@@ -1,0 +1,256 @@
+// POSTGRESQL
+// 1. Instalar postgresql
+// Tenemos un programa pgadmin, aplicación, interfaz de usuario super cómoda para trabajar, pero esta aplicación es muy demandante para nuestra computadora por lo cual puede tener errores y la experiencia no va a ser buen
+// Nosotros vamosa estar trabajando con sql Shell, es otro programa que viene instalado.
+// Configuración:
+//   1. server: localhost
+//   2. database: postgres
+//   3. server port: 5432
+//   4. username: postgres
+//   5. password: Eli09Ate89
+// Comandos
+//   \l lista las bases de datos que tenemos
+// Para eliminar una base de datos usamos
+//   DROP DATABASE nombre_de_la_base_de_datos;
+
+// 2. Crear base de datos: usamos el comando
+//   CREATE DATABASE nombre_de_la_base_de_datos;
+
+// 3. Conectarnos a la base de datos
+//   \c nombre_de_la_base_de_datos;
+
+// 4. Usar ChatGPT para crear las consultas y trabajar SQL
+// Darle contexto, estoy desarrollando una demo para una clase de Bases de Datos SQL. Para esta clase trabajaremos con sql shell de postgresql. Me sigues?
+// Voy a ir pidiéndote que me ayudes a redactar queries para esta demos
+
+// 5. Crear tablas
+// TABLA PELÍCULAS
+//   Prompt para chatGPt
+// quiero crear en mi base de datos una tabla de películas
+// Quiero que los campos de esa tabla sean los siguientes:
+// id: un valor numérico autoincreamtal
+// title: el nombre de la película en string
+// year: el año de lanzamiento de la película
+// duration: la duración en minutos de la película
+// Respuesta de chatGPT
+// CREATE TABLE peliculas (
+//   id SERIAL PRIMARY KEY,
+//   title VARCHAR(255),
+//   year INTEGER,
+//   duration INTEGER
+// )
+// Constarains: restricción además del tipo de dato
+// SERIAL es un tipo de dato que va a ser autoincremental
+// varChar es un tipo de dato que va a ser un string hasta 255 caracteres
+// \dt para ver las tablas en nuestra base de datos
+// TABLA DIRECTORES
+// Prompt para chatGPt
+// Ahora quiero crear una tabla de directores, quiero que tenga los siguientes campos:
+// id: numérico autoincremental
+// name: el nombre del director
+// since: fecha desde la cual está en actividad
+// nationality: nacionalidad del director
+// Respuesta de chatGPT
+// CREATE TABLE directors (
+//   id SERIAL PRIMARY KEY,
+//   name VARCHAR(255),
+//   since DATE
+//   nationality VARCHAR(255)
+
+// 6. Insertar, consultar y ordenar datos
+// Prompt para chatGPT
+// "Ahora quiero que me generes una query para insertar una película dentro de mi tabla de películas.
+// Arma la quety para la película titanic"
+// Respuesta de chatGPT
+// INSERT INTO peliculas (title, year, duration) VALUES ('Titanic', 1997, 194);
+// Ver los datos de la tabla
+// SELECT * FROM peliculas;
+// Ver sólo un campo, title
+// SELECT title FROM peliculas;
+// Traer id y title
+// SELECT id, title FROM peliculas;
+// Prompt para chatGPT
+// "Ahora generame 10 registros más de películas en los que puedas repetir en algunos casos el año de estreno"
+// Resputa de chatGPT
+// INSERT INTO peliculas (title, year, duration)
+// VALUES
+// ('Inception', 2010, 148),
+// ('The Dark Knight', 2008, 152),
+// ('The Shawshank Redemption', 1994, 142),
+// ('Forrest Gump', 1994, 142),
+// ('The Matrix', 1999, 136),
+// ('Interstellar', 2014, 169),
+// ('Pulp Fiction', 1994, 154),
+// ('The Godfather', 1972, 175),
+// ('The Lord of the Rings: The Fellowship of the Ring', 2001, 178),
+// ('The Lord of the Rings: The Return of the King', 2003, 201);
+// Prompt para chatGPT
+// "Quiero que me generes una quey para pedir los datos de las películas pero únicamente aquellas películas que sean del año 1994"
+// Respuesta de chatGPT
+// SELECT * FROM peliculas WHERE year = 1994;
+// Generame una query para obtener todas las películas pero que las mismas estén ordenadas por su duración
+// SELECT * FROM peliculas ORDER BY duration;
+// Ahora generame una query de todas la peliculas de 1994 y ordenadas por su duración
+// SELECT * FROM peliculas WHERE year = 1994 ORDER BY duration;
+// Generame una query para modificar el año de la película de id 6. Quiero que el nuevo año sea 1994
+// UPDATE peliculas SET year = 1994 WHERE id = 6;
+// El update no es sobre un registro sino sobre la tabla. Si no indico where id 6 va a cambiar todos los registros por ese campo, siempre tengo que indicar el id del registro que quiero cambiar
+// Prompt para chatGPT
+// Generame una query pare eliminar la película de id 3.
+// DELETE FROM peliculas WHERE id = 3;
+// También es sobre la tabla no sobre el registro, por eso siempre tengo que indicar el id del registro que quiero eliminar
+
+// 6. Crear relaciones
+// Prompt para chatGPT
+// "Ahora quiero que me generes una query para insertar registros de los directores que correspondan a las películas que creamos anteriormente. Todavía no vamos a hacer relaciones entre las tablas."
+// Respuesta de chatGPT
+// INSERT INTO directores (name, since, nationality)
+// VALUES
+// ('Christopher Nolan', '2000-01-01', 'British'),
+// ('Christopher Nolan', '2000-01-01', 'British'),
+// ('Frank Darabont', '1990-01-01', 'American'),
+// ('Robert Zemeckis', '1980-01-01', 'American'),
+// ('Lana Wachowski', '1990-01-01', 'American'),
+// ('Christopher Nolan', '2000-01-01', 'British'),
+// ('Quentin Tarantino', '1990-01-01', 'American'),
+// ('Francis Ford Coppola', '1960-01-01', 'American'),
+// ('Peter Jackson', '1980-01-01', 'New Zealand');
+// ('Peter Jackson', '1980-01-01', 'New Zealand');
+// Nuevo prompt para corregir los directores repetidos
+// En la query que me pasaste hay directores repetidos. No deberían repetirse.
+// Respuesta de chatGPT
+//  INSERT INTO directores (name, since, nationality)
+// VALUES
+// ('Christopher Nolan', '2000-01-01', 'British'),
+// ('Frank Darabont', '1990-01-01', 'American'),
+// ('Robert Zemeckis', '1980-01-01', 'American'),
+// ('Lana Wachowski', '1990-01-01', 'American'),
+// ('Christopher Nolan', '2000-01-01', 'British'),
+// ('Quentin Tarantino', '1990-01-01', 'American'),
+// ('Francis Ford Coppola', '1960-01-01', 'American'),
+// ('Peter Jackson', '1980-01-01', 'New Zealand');
+
+// 7. Agregar una claver foránea a la tabla películas.
+// Prompt para chatGPT
+// "Quiero que me des una query para modificar la tabla de películas, agregando un campo director_id que sera una clave foranea a la tabla de directores"
+// Respuesta de chatGPT
+/* 
+-- Paso 1: Agregar la columna director_id a la tabla peliculas
+ALTER TABLE peliculas
+ADD COLUMN director_id INTEGER;
+
+-- Paso 2: Establecer la restricción de clave foránea
+ALTER TABLE peliculas
+ADD CONSTRAINT fk_director
+FOREIGN KEY (director_id)
+REFERENCES directores(id);
+*/
+// Prompt para chatGPT para agregar el director correspoindiente a cada película
+/* 
+"Dame una query para que las peliculas se relacionen en su campo director_id con los directores correspondientes.
+
+Pelicula de ID 20 con director 8
+Pelicula de ID 21 con director 8"
+*/
+// Respuesta de chatGPT
+/* 
+-- Película de ID 20 con director 8
+UPDATE peliculas
+SET director_id = 8
+WHERE id = 10;
+
+-- Película de ID 21 con director 8
+UPDATE peliculas
+SET director_id = 8
+WHERE id = 11;
+
+-- Película de ID 21 con director 8
+UPDATE peliculas
+SET director_id = 7
+WHERE id = 9;
+*/
+// Prompt para chatGPT
+// "Quiero que me generes una query para obtener el listado de peliculas y además el nombre del director de cada pelicula"
+// Respuesta de chatGPT
+/* 
+SELECT p.title AS pelicula, d.name AS director
+FROM peliculas p
+JOIN directores d ON p.director_id = d.id;
+*/
+// from asignó a películas una especie de alias (p(p)) y en join le asignó a directores también una especie de alias (d), estos nombres son los que usa en el select y en el from
+// Tipos de Joins
+// 1. Uno a varios - director a películas.
+// 2. Varios a Varios - pelicula a género, para estos casos se crear una tabla intermedia
+
+// 8.  Crear la tabla Géneros
+// Prompt para chatGPT
+// Ahora dame una query para crear la tabla géneros de películas. Agrega por lo menos 10 géneros a la tabla
+// Respuesta de chatGPT
+/* 
+-- Paso 1: Crear la tabla de géneros de películas
+CREATE TABLE generos (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+-- Paso 2: Insertar los géneros en la tabla
+INSERT INTO generos (nombre) VALUES
+('Acción'),
+('Comedia'),
+('Drama'),
+('Ciencia ficción'),
+('Fantasía'),
+('Thriller'),
+('Romance'),
+('Animación'),
+('Aventura'),
+('Documental');
+*/
+// Prompt para chatGPT
+// "Dame auna query para crear la talbar intermedia de la relacion de varios a varios entre peliculas y generos"
+// Respuesta de chatGPT
+/* 
+CREATE TABLE pelicula_genero (
+    pelicula_id INTEGER REFERENCES peliculas(id),
+    genero_id INTEGER REFERENCES generos(id),
+    PRIMARY KEY (pelicula_id, genero_id)
+);
+*/
+// Prompt para chatGPT
+/* "Ahora dame una query para establecer las relaciones entre peliculas y generos.
+Te dare las relaciones en este formato : id_pelicula / id_generos
+
+7 / 3,4,9
+10 / 1,5,9
+11 / 1,5,9"
+*/
+// Respuesta de chatGPT
+/* 
+INSERT INTO pelicula_genero (pelicula_id, genero_id) VALUES
+(7, 3),
+(7, 4),
+(7, 9);
+
+-- Relación para la película con ID 20 y los géneros 1, 5 y 9
+INSERT INTO pelicula_genero (pelicula_id, genero_id) VALUES
+(10, 1),
+(10, 5),
+(10, 9);
+
+-- Relación para la película con ID 21 y los géneros 1, 5 y 9
+INSERT INTO pelicula_genero (pelicula_id, genero_id) VALUES
+(11, 1),
+(11, 5),
+(11, 9);
+*/
+// Prompt para chatGPT
+// "Generame una query para poder obtener TODOS los datos de las peliculas, con el nombre de su director, y los nombres de sus generos. Incluye todas las peliculas aunque no posean director o genero"
+// Respuesta de chatGPT
+/*
+SELECT p.title AS pelicula, d.name AS director, COALESCE(STRING_AGG(g.nombre, ', '), '')
+FROM peliculas p
+LEFT JOIN directores d ON p.director_id = d.id
+LEFT JOIN pelicula_genero pg ON p.id = pg.pelicula_id
+LEFT JOIN generos g ON pg.genero_id = g.id
+GROUP BY p.id, p.title, d.name;
+*/
