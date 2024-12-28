@@ -26,3 +26,4 @@ Flujo básico del proyecto
   - Dada las consignas no trabajamos por el momento de reprogramar el turno, si se cometió un error se debe cancelar el turno y crear uno nuevo
   - No tomar en cuenta si hay disponibilidad o no del día y horario elegido, siempre va a haber disponibilidad
 
+
