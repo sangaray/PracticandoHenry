@@ -26,4 +26,15 @@ Flujo básico del proyecto
   - Dada las consignas no trabajamos por el momento de reprogramar el turno, si se cometió un error se debe cancelar el turno y crear uno nuevo
   - No tomar en cuenta si hay disponibilidad o no del día y horario elegido, siempre va a haber disponibilidad
 
+RESPONSABILIDADES DE LOS CONTROLADORES
+1. Desestructurar los datos que me lleguen
+2. Responder al clienta
+3. Manejar los errores
+4. Llamar a los servicios
 
+RESPONSABILIDADES DE LOS SERVICIOS
+1. Llamar a la base de datos
+2. Manejar lógica
+3. Responder al controlador
+
+Lanzar el error me asegura que corte la ejecución de lo que sigue. Al retornar una promesa no puedo retornar sub respuestas, es error o credencial, si el controlador recibe la credencia sabe que todo salió bien, si recibe un error es porque algo salió mal, y el controlador va a dar la respuesta
