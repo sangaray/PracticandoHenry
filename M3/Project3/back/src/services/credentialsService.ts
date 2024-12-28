@@ -47,7 +47,7 @@ export const createCredentialService = async (
 };
 export const validateCredentialService = async (
   validateDataCredential: CredentialDto
-): Promise<ICredential> => {
+): Promise<number> => {
   const { username, password } = validateDataCredential;
   // Buscar la credencial
   const foundCredential: ICredential | undefined = credentials.find(
@@ -61,5 +61,5 @@ export const validateCredentialService = async (
   if (foundCredential.password !== password) {
     throw new Error("Credenciales incorrectas");
   }
-  return foundCredential;
+  return foundCredential.id;
 };
