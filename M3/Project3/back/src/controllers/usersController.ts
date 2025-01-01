@@ -16,7 +16,7 @@ export const getUserById = async (req: Request, res: Response) => {
   res.status(200).json({ message: "Obtener un usuario por ID" });
 };
 
-// POST /users/register => Crear un nuevo usuario
+// POST /users/register => Crear un nuevo usuario.
 export const createUser = async (req: Request, res: Response) => {
   try {
     const { name, email, birthdate, nDni, username, password } = req.body;
