@@ -1,10 +1,18 @@
 // Los controladores devuelven un mensaje para cada método http
 import { Request, Response } from "express";
+import {
+  getAppointmentsService,
+  getAppointmentByIdService,
+  createAppointmentService,
+  cancelAppointmentService,
+} from "../services/appointmentsService";
 
 // GET /appointements - Obtiene todos los turnos
 export const getAppointments = async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Obtiene todos los turnos" });
+  const appointments = await getAppointmentsService();
+  res.status(200).json(appointments);
 };
+
 // GET /appointements/:id - Obtiene un turno por ID
 export const getAppointmentById = async (req: Request, res: Response) => {
   res.status(200).json({ message: "Obtener un turno por ID" });
