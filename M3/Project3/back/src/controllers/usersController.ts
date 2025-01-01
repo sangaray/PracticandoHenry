@@ -3,6 +3,8 @@
 import { Request, Response } from "express";
 import { getUsersService, createUserService } from "../services/usersService";
 import IUser from "../interfaces/IUser";
+import ICreateUserDto from "../dtos/IUserDto";
+import createCredentialDto from "../dtos/ICreateCredentialDto";
 
 // GET /users => Obtener todos los usuarios
 export const getUsers = async (req: Request, res: Response) => {
@@ -16,8 +18,14 @@ export const getUserById = async (req: Request, res: Response) => {
 
 // POST /users/register => Crear un nuevo usuario
 export const createUser = async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Crear un nuevo usuario" });
-  // Vamos a tomar los datos del usuario del body de la request
-  // Vamos a llamar a la función correspondiente del servicio de usuarios para la creación del nuevo  usuario
-  // No olvidarnos del id en la intefaz, sí o sí tiene que estar
+  try {
+    const { name, email, birthdate, nDni, username, password } = req.body;
+    const userDto: ICreateUserDto = { name, email, birthdate, nDni };
+    const credentialDto: createCredentialDto = { username, password };
+
+    const newUser: IUser = await createUserService(userDto, credentialDto);
+    res.status(201).json(newUser);
+  } catch (error) {
+    res.status(500).json({ message: "Error al crear el usuario" });
+  }
 };
