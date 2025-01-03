@@ -15,15 +15,24 @@ export const getAppointments = async (req: Request, res: Response) => {
 
 // GET /appointements/:id - Obtiene un turno por ID
 export const getAppointmentById = async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Obtener un turno por ID" });
+  const { id } = req.body;
+  const appointment = await getAppointmentByIdService(id);
+  res.status(200).json(appointment);
 };
 
 // POST /appointements/schedule - Crea un nuevo turno
 export const createAppointment = async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Crear un nuevo turno" });
+  const { date, time, status, description } = req.body;
+  const appointment = await createAppointmentService(
+    { date, time, status, description },
+    1 // userId
+  );
+  res.status(200).json(appointment);
 };
 
 // PUT /appointements/cancel - Cancela el turno
 export const cancelAppointment = async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Cancela el turno" });
+  const { id } = req.body;
+  const result = await cancelAppointmentService(id);
+  res.status(200).json(result);
 };
