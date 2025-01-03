@@ -58,9 +58,10 @@ Appointments
 
 - PK id: number
 - date: Date
-- hour: string
+- time: string
 - status: string
 - description: string
 - FK userId: number
 
-<img src="">
+1:1 Usuario - Credentials
+1:N Usuario - Appointments
