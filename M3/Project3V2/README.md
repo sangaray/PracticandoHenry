@@ -65,3 +65,5 @@ Appointments
 
 1:1 Usuario - Credentials
 1:N Usuario - Appointments
+
+<img src="./Extras/Diagrama · E-R.jpg" width=600>
