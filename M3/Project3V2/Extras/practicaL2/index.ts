@@ -1,5 +1,3 @@
-console.log("Hola Mundo!!!!!");
-
 // EJERCICIO 1
 // Tipar la siguiente función
 const calcualaArea = (lado1: number, lado2: number): number => lado1 * lado2;
