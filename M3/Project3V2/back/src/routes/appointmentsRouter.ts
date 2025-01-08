@@ -1,16 +1,16 @@
 import { Router } from "express";
 import {
-  cancel,
+  cancelAppointment,
   getAllAppointments,
   getAppointmentById,
-  schedule,
+  createAppointment,
 } from "../controllers/appointmentsController";
 
 const appointmentsRouter = Router();
 
 appointmentsRouter.get("/", getAllAppointments);
 appointmentsRouter.get("/:id", getAppointmentById);
-appointmentsRouter.post("/schedule", schedule);
-appointmentsRouter.put("/cancel/:turnId", cancel);
+appointmentsRouter.post("/schedule", createAppointment);
+appointmentsRouter.put("/cancel/:turnId", cancelAppointment);
 
 export default appointmentsRouter;

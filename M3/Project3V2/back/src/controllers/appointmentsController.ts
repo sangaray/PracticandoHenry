@@ -1,28 +1,37 @@
 import { Request, Response } from "express";
+import {
+  getAllAppointmentsService,
+  getAppointmentByIdService,
+  createAppointmentService,
+  cancelAppointmentService,
+} from "../services/appointmentsService";
 
-// GET /appointments => Obtener el listdo de todos los turnos de todos los usuarios
+// GET /appointements - Obtiene todos los turnos
 export const getAllAppointments = async (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({
-      message: "Obtener el listdo de todos los turnos de todos los usuarios",
-    });
+  const appointments = await getAllAppointmentsService();
+  res.status(200).json(appointments);
 };
-// GET /appointments/:id => Obtener el detalle de un turno específico
+
+// GET /appointements/:id - Obtiene un turno por ID
 export const getAppointmentById = async (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({ message: "Obtener el detalle de un turno específico" });
+  const { id } = req.body;
+  const appointment = await getAppointmentByIdService(id);
+  res.status(200).json(appointment);
 };
 
-// POST /appointments/schedule => Agendar un nuevo turno
-export const schedule = async (req: Request, res: Response) => {
-  res.status(200).json({ message: "Agendar un nuevo turno" });
+// POST /appointements/schedule - Crea un nuevo turno
+export const createAppointment = async (req: Request, res: Response) => {
+  const { date, time, status, description } = req.body;
+  const appointment = await createAppointmentService(
+    { date, time, status, description },
+    1 // userId
+  );
+  res.status(200).json(appointment);
 };
 
-// PUT /appointments/cancel => Cambiar el estatus de un turno a "canceled"
-export const cancel = async (req: Request, res: Response) => {
-  res
-    .status(200)
-    .json({ message: "Cambiar el estatus de un turno a canceled" });
+// PUT /appointements/cancel - Cancela el turno
+export const cancelAppointment = async (req: Request, res: Response) => {
+  const { id } = req.body;
+  const result = await cancelAppointmentService(id);
+  res.status(200).json(result);
 };
