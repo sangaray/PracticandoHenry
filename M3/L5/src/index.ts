@@ -37,10 +37,16 @@
 // Nodemon, no suele tener problema para trabajar. Pero en casos especiales puede llegar a marearse en su seguimeinto
 // ts-node, ejecuta typescript sin necesidad de buildear cada vez la aplicación
 // Vamos a tener muchas dpendencias y configuraciones para trabajar, las cuales son muchas. No traten de memorizarse todo esto. Guardar todo en un block de notas.
+// La base de datos debe estar creada desde antes de establecer la conexión
 
 import server from "./server";
 import { PORT } from "./config/envs";
+import "reflect-metadata";
+import { AppDataSource } from "./config/data-source";
 
-server.listen(PORT, () => {
-  console.log(`Server listening en port ${PORT}`);
+AppDataSource.initialize().then(() => {
+  console.log("Conexión a la base de datos realizada con éxito");
+  server.listen(PORT, () => {
+    console.log(`Server listening en port ${PORT}`);
+  });
 });

@@ -1,2 +1,35 @@
 notas.ts
 TypeORM
+Página de la documentación
+https://typeorm.io/
+Instalación y Configuración
+ORM va a pisar configuraciones ya etablecidas y el proyecto va a dejar d funcionar correctamente
+1. npm install typeorm --save
+2. npm install reflect-metadata --save
+3. Hacer el siguiente import en algún lugar global del proyecto: 
+   import "reflect-metadata"
+4. Instalar los types de node: 
+   @types/node
+5. Controladores de postgres: 
+   npm install pg --save
+6. Habilitar en tsconfig.json:
+   "emitDecoratorMetadata": true,
+   "experimentalDecorators": true,
+   "lib": ["ES6"], 
+7. Crear archivo data-source.ts con la siguiente Configuración
+   import { DataSource } from "typeorm";
+   export const AppDataSource = new DataSource({
+     type: "postgres",
+     host: "localhost",
+     port: 5432,
+     username: "postgres",
+     password: "Eli09Ate89",
+     database: "test",
+     synchronize: true,
+     logging: true,
+     entities: [],
+     subscribers: [],
+     migrations: [],
+});
+8. Abrir SQL Shell para crear la base de datos, ya que debe estar desde antes de realizar la conexión inicializando AppDataSource Escribir
+9. 
