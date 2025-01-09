@@ -9,6 +9,7 @@ let users: IUser[] = [
     id: 1,
     name: "Jorge",
     email: "jvega@mail.com",
+    age: 32,
     active: true,
   },
 ];
@@ -20,6 +21,7 @@ export const createUserService = async (userData: UserDto): Promise<IUser> => {
     id,
     name: userData.name,
     email: userData.email,
+    age: userData.age,
     active: userData.active,
   };
   users.push(newUser);

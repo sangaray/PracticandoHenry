@@ -32,4 +32,5 @@ ORM va a pisar configuraciones ya etablecidas y el proyecto va a dejar d funcion
      migrations: [],
 });
 8. Abrir SQL Shell para crear la base de datos, ya que debe estar desde antes de realizar la conexión inicializando AppDataSource Escribir
-9. 
+9. Activar y poner en false la siguiente propiedad de tsconfig.json   "strictPropertyInitialization": false, 
+10. Crear la entidad User, usando los decoradores @entity() y @column()   
