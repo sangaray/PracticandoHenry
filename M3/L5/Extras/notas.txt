@@ -33,4 +33,21 @@ ORM va a pisar configuraciones ya etablecidas y el proyecto va a dejar d funcion
 });
 8. Abrir SQL Shell para crear la base de datos, ya que debe estar desde antes de realizar la conexión inicializando AppDataSource Escribir
 9. Activar y poner en false la siguiente propiedad de tsconfig.json   "strictPropertyInitialization": false, 
-10. Crear la entidad User, usando los decoradores @entity() y @column()   
+10. Crear la entidad User, usando los decoradores @entity() y @column()
+11. Configuraciones de los servicios, aquí es donde voy a establecer la conexión con la base de datos.
+   export const getUsersService = async () => {
+   const users = await AppDataSource.getRepository(User).find();
+   return users;
+};
+
+export const createUserService = async (userData: UserDto) => {
+  const user = await userModel.create(userData); // crea el registro
+  const result = userModel.save(user); // guarda el registro
+  return user;
+};
+
+export const getUserByIdService = async (id: number) => {
+  const user = await userModel.findOneBy({ id });
+  return user;
+};
+
