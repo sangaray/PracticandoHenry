@@ -26,7 +26,11 @@ export const createUserService = async (userData: UserDto) => {
 };
 
 export const getUsersService = async (): Promise<User[]> => {
-  const users = await userModel.find();
+  const users = await userModel.find({
+    relations: {
+      vehicle: true,
+    },
+  });
   return users;
 };
 

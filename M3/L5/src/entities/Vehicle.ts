@@ -18,4 +18,7 @@ export class Vehicle {
 
   @Column()
   year: number;
+
+  @Column()
+  userId: number;
 }

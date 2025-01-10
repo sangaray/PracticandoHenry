@@ -5,7 +5,14 @@
 // @PrimaryGeneratedColumn(): es un decorador que genera un id autoincremental para la entidad
 // @PrimaryColumn(): es un decorador que convierte una propiedad en una columna primaria
 
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Vehicle } from "./Vehicle";
 
 @Entity({
   name: "users", // pone un alias a la tabla o entidad en la base de datos
@@ -27,4 +34,8 @@ export class User {
 
   @Column()
   active: boolean;
+
+  @OneToOne(() => Vehicle)
+  @JoinColumn()
+  vehicle: Vehicle;
 }

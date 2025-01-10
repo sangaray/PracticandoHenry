@@ -50,4 +50,10 @@ export const getUserByIdService = async (id: number) => {
   const user = await userModel.findOneBy({ id });
   return user;
 };
-
+11. Crear todos los archivo necesarios para vehicles
+12. Configurar dropschema en true para vaciar las tablas de la base de datos. Es importante al comenzar un proyecto para eliminar datos si necesitamos hacerlo para cambiar los datos
+13. Crear la relación entre las tablas users y vehicles agregando a la entity User
+    @OneToOne(() => Vehicle)
+    @JoinColumn()
+    vehicle: Vehicle;
+14. Ajustar el Servicio para establecer la relación y hacer la petición de envío a la base de datos y agregar el find relations para que se muestren los datos relacionados a los users

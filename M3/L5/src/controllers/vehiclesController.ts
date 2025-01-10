@@ -19,7 +19,7 @@ export const createVehicle = async (req: Request, res: Response) => {
       year,
       userId,
     });
-
+    console.log(newVehicle);
     res.status(201).json(newVehicle);
   } catch (error) {
     res.status(400).json(error);
