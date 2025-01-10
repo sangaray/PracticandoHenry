@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import { User } from "../entities/User";
+import { Vehicle } from "../entities/Vehicle";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -10,9 +11,11 @@ export const AppDataSource = new DataSource({
   database: "demo_typeorm",
   synchronize: true,
   logging: false,
-  entities: [User],
+  entities: [User, Vehicle],
   subscribers: [],
   migrations: [],
 });
 
 export const userModel = AppDataSource.getRepository(User);
+
+export const vehicleModel = AppDataSource.getRepository(Vehicle);
