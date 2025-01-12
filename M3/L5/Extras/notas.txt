@@ -57,3 +57,4 @@ export const getUserByIdService = async (id: number) => {
     @JoinColumn()
     vehicle: Vehicle;
 14. Ajustar el Servicio para establecer la relación y hacer la petición de envío a la base de datos y agregar el find relations para que se muestren los datos relacionados a los users
+15. Vamos a trabajar relaciones de uno a varios, para hacerlo más realizar
