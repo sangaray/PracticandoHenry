@@ -1,6 +1,7 @@
 import { AppDataSource } from "./config/data-source";
 import { PORT } from "./config/envs";
 import server from "./server";
+import "reflect-metadata";
 
 AppDataSource.initialize().then(() => {
   console.log("Conexión a la base de datos realizada con éxito");
