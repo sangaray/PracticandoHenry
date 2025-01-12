@@ -6,7 +6,7 @@ Instalación y Configuración
 ORM va a pisar configuraciones ya etablecidas y el proyecto va a dejar d funcionar correctamente
 1. npm install typeorm --save
 2. npm install reflect-metadata --save
-3. Hacer el siguiente import en algún lugar global del proyecto: 
+3. Hacer el siguiente import en algún lugar global del proyecto (en el index.ts principal del backend): 
    import "reflect-metadata"
 4. Instalar los types de node: 
    @types/node
@@ -57,4 +57,4 @@ export const getUserByIdService = async (id: number) => {
     @JoinColumn()
     vehicle: Vehicle;
 14. Ajustar el Servicio para establecer la relación y hacer la petición de envío a la base de datos y agregar el find relations para que se muestren los datos relacionados a los users
-15. Vamos a trabajar relaciones de uno a varios, para hacerlo más realizar
+15. Vamos a trabajar relaciones de uno a varios, para hacerlo más real
