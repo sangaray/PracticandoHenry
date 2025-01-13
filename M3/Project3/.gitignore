@@ -1,8 +1,8 @@
 # ignorar todas las carpetas node_modules sin importar donde estén
 node_modules/
 
-# ignorar todos los archivos que terminen en .env, sin importar su nombre
-*.env
+# ignorar todos los archivos que terminen en .env, sin importar su nombre si uso *.env
+.env
 
 # ignorar todas las carpetas dist sin importar donde estén
 dist/
