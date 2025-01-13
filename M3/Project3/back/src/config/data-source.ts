@@ -1,15 +1,16 @@
 import { DataSource } from "typeorm";
+import { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } from "./envs";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "postgres",
-  password: "Eli09Ate89",
-  database: "demo_typeorm",
+  host: DB_HOST,
+  port: Number(DB_PORT),
+  username: DB_USER,
+  password: DB_PASSWORD,
+  database: DB_NAME,
   // dropSchema: true,
   synchronize: true,
-  logging: false,
+  logging: true,
   entities: [],
   subscribers: [],
   migrations: [],

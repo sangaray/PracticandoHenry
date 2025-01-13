@@ -4,7 +4,7 @@ import server from "./server";
 import "reflect-metadata";
 
 AppDataSource.initialize().then(() => {
-  console.log("Conexión a la base de datos realizada con éxito");
+  console.log("Conexión a la base de datos realizada con éxito.");
   server.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
   });
