@@ -1,60 +1,8 @@
-notas.ts
-TypeORM
+notas.txt
+TypeORM II
 Página de la documentación
 https://typeorm.io/
-Instalación y Configuración
-ORM va a pisar configuraciones ya etablecidas y el proyecto va a dejar d funcionar correctamente
-1. npm install typeorm --save
-2. npm install reflect-metadata --save
-3. Hacer el siguiente import en algún lugar global del proyecto (en el index.ts principal del backend): 
-   import "reflect-metadata"
-4. Instalar los types de node: 
-   @types/node
-5. Controladores de postgres: 
-   npm install pg --save
-6. Habilitar en tsconfig.json:
-   "emitDecoratorMetadata": true,
-   "experimentalDecorators": true,
-   "lib": ["ES6"], 
-7. Crear archivo data-source.ts con la siguiente Configuración
-   import { DataSource } from "typeorm";
-   export const AppDataSource = new DataSource({
-     type: "postgres",
-     host: "localhost",
-     port: 5432,
-     username: "postgres",
-     password: "Eli09Ate89",
-     database: "test",
-     synchronize: true,
-     logging: true,
-     entities: [],
-     subscribers: [],
-     migrations: [],
-});
-8. Abrir SQL Shell para crear la base de datos, ya que debe estar desde antes de realizar la conexión inicializando AppDataSource Escribir
-9. Activar y poner en false la siguiente propiedad de tsconfig.json   "strictPropertyInitialization": false, 
-10. Crear la entidad User, usando los decoradores @entity() y @column()
-11. Configuraciones de los servicios, aquí es donde voy a establecer la conexión con la base de datos.
-   export const getUsersService = async () => {
-   const users = await AppDataSource.getRepository(User).find();
-   return users;
-};
 
-export const createUserService = async (userData: UserDto) => {
-  const user = await userModel.create(userData); // crea el registro
-  const result = userModel.save(user); // guarda el registro
-  return user;
-};
-
-export const getUserByIdService = async (id: number) => {
-  const user = await userModel.findOneBy({ id });
-  return user;
-};
-11. Crear todos los archivo necesarios para vehicles
-12. Configurar dropschema en true para vaciar las tablas de la base de datos. Es importante al comenzar un proyecto para eliminar datos si necesitamos hacerlo para cambiar los datos
-13. Crear la relación entre las tablas users y vehicles agregando a la entity User
-    @OneToOne(() => Vehicle)
-    @JoinColumn()
-    vehicle: Vehicle;
-14. Ajustar el Servicio para establecer la relación y hacer la petición de envío a la base de datos y agregar el find relations para que se muestren los datos relacionados a los users
-15. Vamos a trabajar relaciones de uno a varios, para hacerlo más real
+TRANSACCIONES
+Son como poder atomizar o englobar una serie de operaciones que van a ir contra una base de datos y todas ellas se tienen que completar con éxito para que se termine o hace rollback
+Encontrar una forma de hacer una precarga que se carguen automáticamente una vez que se levantó la aplicación
