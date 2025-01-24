@@ -6,3 +6,8 @@ https://typeorm.io/
 TRANSACCIONES
 Son como poder atomizar o englobar una serie de operaciones que van a ir contra una base de datos y todas ellas se tienen que completar con éxito para que se termine o hace rollback
 Encontrar una forma de hacer una precarga que se carguen automáticamente una vez que se levantó la aplicación
+
+TRABAJANDO CON VARIAS TABLAS
+Se debe crear una transacción para cada una de las tablas para que no se presenten errores en la carga de los datos
+
+ROLLBACK Y MANEJO DE errores
