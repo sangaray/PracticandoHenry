@@ -1,5 +1,5 @@
 import { Vehicle } from "../entities/Vehicle";
-import { userModel, vehicleModel } from "../config/data-source";
+import { AppDataSource, userModel, vehicleModel } from "../config/data-source";
 import VehicleDto from "../dto/vehicleDto";
 
 export const getVehiclesService = async (): Promise<Vehicle[]> => {
@@ -13,28 +13,32 @@ export const getVehiclesService = async (): Promise<Vehicle[]> => {
 
 export const createVehicleService = async (
   vehicle: VehicleDto
-): Promise<Vehicle> => {
-  const newVehicle = await vehicleModel.create(vehicle);
-  await vehicleModel.save(newVehicle);
+): Promise<Vehicle | void> => {
+  // Debido a que es una transacción de la que tenemos completo control vamos a crear un queryRunner.
+  const queryRunner = AppDataSource.createQueryRunner();
+  await queryRunner.connect();
 
-  // El vehículo está creado pero falte quién es el dueño
-  const user = await userModel.findOneBy({ id: vehicle.userId });
+  try {
+    queryRunner.startTransaction();
 
-  // Para crear una relación de uno a uno
-  // if (user) {
-  //   user.vehicle = newVehicle;
-  //   await userModel.save(user);
-  // } else {
-  //   throw new Error("Usuario inexistente");
-  // }
+    const newVehicle = await vehicleModel.create(vehicle);
+    await queryRunner.manager.save(newVehicle);
 
-  // Para crear una relación de uno a muchos
-  if (user) {
+    const user = await userModel.findOneBy({ id: vehicle.userId });
+
+    if (!user)
+      throw Error("Usuario inexistente. No se ha podido crear el vehiculo.");
+
     newVehicle.user = user;
-    vehicleModel.save(newVehicle);
-  } else {
-    throw new Error("Usuario inexistente");
-  }
+    await queryRunner.manager.save(newVehicle);
 
-  return newVehicle;
+    await queryRunner.commitTransaction();
+
+    return newVehicle;
+  } catch (error) {
+    await queryRunner.rollbackTransaction();
+    throw Error("usuario inexistente. No se ha podido crear el vehiculo.");
+  } finally {
+    await queryRunner.release();
+  }
 };

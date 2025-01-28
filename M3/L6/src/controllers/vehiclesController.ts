@@ -22,6 +22,6 @@ export const createVehicle = async (req: Request, res: Response) => {
     console.log(newVehicle);
     res.status(201).json(newVehicle);
   } catch (error) {
-    res.status(400).json(error);
+    res.status(400).json({ error: "Error al crear el vehículo" });
   }
 };
