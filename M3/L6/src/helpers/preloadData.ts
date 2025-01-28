@@ -29,7 +29,7 @@ const preloadUsers = [
     active: true,
   },
 ];
-const PreloadVehicles = [
+const preloadVehicles = [
   {
     brand: "Ford",
     model: "Fiesta",
@@ -80,7 +80,7 @@ export const preloadUserData = async () => {
 };
 
 export const preloadVehiclesData = async () => {
-  AppDataSource.manager.transaction(async (transactionalEntityManager) => {
+  /* AppDataSource.manager.transaction(async (transactionalEntityManager) => {
     const vehicles = await vehicleModel.find();
 
     if (vehicles.length)
@@ -88,7 +88,7 @@ export const preloadVehiclesData = async () => {
         "No se hizo la precarga de datos porque ya hay vehiculos en la tabla"
       );
 
-    for await (const vehicle of PreloadVehicles) {
+    for await (const vehicle of preloadVehicles) {
       const newVehicle = await vehicleModel.create(vehicle);
       await transactionalEntityManager.save(newVehicle);
       const user = await userModel.findOneBy({ id: vehicle.userId });
@@ -98,5 +98,31 @@ export const preloadVehiclesData = async () => {
       }
     }
     console.log("Precarga de datos de vehículos realizada con éxito");
+  }); */
+
+  // Vamos a trabajar con QUERYRUNNER
+  const queryRunner = AppDataSource.createQueryRunner();
+  await queryRunner.connect();
+
+  const promises = preloadVehicles.map(async (vehicle) => {
+    const newVehicle = await vehicleModel.create(vehicle);
+    await queryRunner.manager.save(newVehicle);
+    const user = await userModel.findOneBy({ id: vehicle.userId });
+    if (!user) throw Error("Usuario inexistente");
+    newVehicle.user = user;
+    queryRunner.manager.save(newVehicle);
   });
+
+  try {
+    await queryRunner.startTransaction();
+    await Promise.all(promises);
+    console.log("Precarga de vehículos realizada con éxito");
+    await queryRunner.commitTransaction();
+  } catch {
+    console.log("Error al interntar crear los vehículos");
+    await queryRunner.rollbackTransaction();
+  } finally {
+    console.log("El intento de precarga ha finalizado");
+    await queryRunner.release();
+  }
 };

@@ -10,4 +10,21 @@ Encontrar una forma de hacer una precarga que se carguen automáticamente una ve
 TRABAJANDO CON VARIAS TABLAS
 Se debe crear una transacción para cada una de las tablas para que no se presenten errores en la carga de los datos
 
-ROLLBACK Y MANEJO DE errores
+ROLLBACK Y MANEJO DE ERRORES
+Tenemos que poder indicar que puede haber un error y qué va a pasar cuando ese error ocurra. Si usamos throw.error la aplicación crashea y si no lo ponemos y la transacción falla, typescrit no lo toma como error y no informa nada, ni detiene la ejecución de la aplicación.
+
+QUERY RUNNER
+Permite crear y controlar la conexión a la base de datos
+Tenemos que transformar el array de vehículos en nuestro ejemplo, en un array de promesas
+Para convertir un arreglo en otro arreglo con sus transformaciones usamos el método map()
+Como ahora nosotros tenemos todo el control de la transacción, debemos indicarle que haga el commit de la misma
+Toda transacción iniciada debe termimar en un commit o en un rollback
+El rollback lo voy a aplicar a la tabla relacionada, en la tabla principal uso el query runner manager
+
+NOTA APARTE
+Si la conexión a la base de datos es rechazada hacer lo siguiente
+En Servicios: administrador de tareas --> Servicios --> Abrir Servicios
+Buscar postgress y ver que este en ejecución
+En el cmd: busqueda cmd
+netstat -ano | findstr :5432
+Con estos pasos verificamos que el servicio de Postgres esté corriendo y escuchando el puerto por defecto
