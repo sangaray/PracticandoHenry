@@ -2,10 +2,10 @@
 // Una función que no retorna nada se dice que s void
 // Aquí es donde vamos a cambiar cosas para utilizar typeORM
 
-import { userModel } from "../config/data-source";
 import UserDto from "../dto/userDto";
 import { User } from "../entities/User";
 import IUser from "../interfaces/IUser";
+import UserRepository from "../Repositories/UserRepository";
 
 let users: IUser[] = [
   {
@@ -20,13 +20,13 @@ let users: IUser[] = [
 let id: number = 2;
 
 export const createUserService = async (userData: UserDto) => {
-  const user = await userModel.create(userData); // crea el registro
-  const result = userModel.save(user); // guarda el registro
+  const user = await UserRepository.create(userData); // crea el registro
+  const result = UserRepository.save(user); // guarda el registro
   return user;
 };
 
 export const getUsersService = async (): Promise<User[]> => {
-  const users = await userModel.find({
+  const users = await UserRepository.find({
     relations: {
       vehicles: true,
     },
@@ -35,7 +35,7 @@ export const getUsersService = async (): Promise<User[]> => {
 };
 
 export const getUserByIdService = async (id: number): Promise<User | null> => {
-  const user = await userModel.findOneBy({ id });
+  const user = await UserRepository.findOneBy({ id });
   return user;
 };
 

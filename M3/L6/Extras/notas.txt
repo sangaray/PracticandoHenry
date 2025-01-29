@@ -28,3 +28,8 @@ Buscar postgress y ver que este en ejecución
 En el cmd: busqueda cmd
 netstat -ano | findstr :5432
 Con estos pasos verificamos que el servicio de Postgres esté corriendo y escuchando el puerto por defecto
+
+REPOSITORIOS
+No son modelos como tal, representan a la entidad con la que estamos trabajando
+
+Quitamos los models = Repositorioas de data-source.ts y creamos los repositorios como archivos separados, modularizandolos y reemplazando en todos los lugares donde utilizamos los models antes para poder utilizar los métodos de los repositorios y puedo crear métodos personalizados propios que hagan tareas específicas.

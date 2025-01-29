@@ -1,6 +1,8 @@
 // IMPORTANTE: siempre usar el transactionalEntityManager porque solo vive detro de esta transacción si no no se guardan los cambios. si una de las transacciones falla no se carga ningún usuario
 
-import { AppDataSource, userModel, vehicleModel } from "../config/data-source";
+import { AppDataSource } from "../config/data-source";
+import UserRepository from "../Repositories/UserRepository";
+import VehicleRepository from "../Repositories/VehicleRepository";
 
 // Lo correcto sería crear una interfaz para cada uno
 const preloadUsers = [
@@ -63,7 +65,7 @@ const preloadVehicles = [
 export const preloadUserData = async () => {
   await AppDataSource.manager.transaction(
     async (transactionalEntityManager) => {
-      const users = await userModel.find();
+      const users = await UserRepository.find();
 
       if (users.length)
         return console.log(
@@ -71,7 +73,7 @@ export const preloadUserData = async () => {
         );
 
       for await (const user of preloadUsers) {
-        const newUser = await userModel.create(user);
+        const newUser = await UserRepository.create(user);
         await transactionalEntityManager.save(newUser);
       }
       console.log("Precarga de datos de usuarios realizada con éxito");
@@ -105,9 +107,9 @@ export const preloadVehiclesData = async () => {
   await queryRunner.connect();
 
   const promises = preloadVehicles.map(async (vehicle) => {
-    const newVehicle = await vehicleModel.create(vehicle);
+    const newVehicle = await VehicleRepository.create(vehicle);
     await queryRunner.manager.save(newVehicle);
-    const user = await userModel.findOneBy({ id: vehicle.userId });
+    const user = await UserRepository.findOneBy({ id: vehicle.userId });
     if (!user) throw Error("Usuario inexistente");
     newVehicle.user = user;
     queryRunner.manager.save(newVehicle);
