@@ -11,25 +11,29 @@
 */
 
 import ICreateCredentialDto from "../dtos/ICreateCredentialDto";
-import ICredential from "../Interfaces/ICredential";
-
-// Base de Datos
-const credentials: ICredential[] = [
-  {
-    id: 1,
-    username: "Ariel",
-    password: "1234",
-  },
-];
-let credentialId = 10;
-
+import { Credential } from "../entities/CredentialEntity";
+import { credentialRepository } from "../Repositories/indexRepository";
 export const credentialsService = async (
   CreateCredentialDto: ICreateCredentialDto
-): Promise<ICredential> => {
+): Promise<Credential> => {
   // createCredentialDto = { username: "Ariel", password: "1234" }
   const { username, password } = CreateCredentialDto;
-  const newCredential: ICredential = { id: credentialId++, username, password };
-  credentials.push(newCredential);
+
+  // 1. Validar queno existe la credencial
+  const foundCredential: Credential | null =
+    await credentialRepository.findOneBy({ username });
+  if (foundCredential) {
+    throw new Error("Ya existe la credencial para el username");
+  }
+
+  // 2. Crear la credencial
+  const newCredential: Credential = credentialRepository.create({
+    username,
+    password,
+  });
+
+  // 3. Guardar la credencial en la Base de Datos
+  await credentialRepository.save(newCredential);
   return newCredential;
 };
 
@@ -37,17 +41,17 @@ export const validateCredentialService = async (
   validateCredentialDto: ICreateCredentialDto
 ): Promise<number> => {
   const { username, password } = validateCredentialDto;
-  // Buscar la credencial
-  const foundCredential: ICredential | undefined = credentials.find(
-    (credential) => credential.username === username
-  );
-  // Verificar que existe el username
+
+  // 1. Validar queno existe la credencial
+  const foundCredential: Credential | null =
+    await credentialRepository.findOneBy({ username });
   if (!foundCredential) {
-    throw new Error("Credenciales incorrectas");
+    throw new Error("Credenciales incorrectas"); // No existe el username
   }
-  // Verificar la contraseña
+
+  // 2. Verificar la contraseña
   if (foundCredential.password !== password) {
-    throw new Error("Credenciales incorrectas");
+    throw new Error("Credenciales incorrectas"); // Pasword incorrecto
   }
   return foundCredential.id;
 };

@@ -12,11 +12,12 @@ import {
 import ICreateUserDto from "../dtos/ICreateUserDto";
 import ICreateCredentialDto from "../dtos/ICreateCredentialDto";
 import { validateCredentialService } from "../services/CredentialsService";
+import { User } from "../entities/UserEntity";
 
 // GET /users => Obtener el listdo de todos los usuarios
 export const getAllUsers = async (req: Request, res: Response) => {
   try {
-    const allUsers = await getAllUsersService();
+    const allUsers: User[] = await getAllUsersService();
     res.status(200).json(allUsers);
   } catch (error: any) {
     res.status(404).json({ message: error.message });
@@ -30,7 +31,7 @@ export const getUserById = async (
 ) => {
   try {
     const id = Number(req.params.id);
-    const user = await getUserByIdService(id);
+    const user: User = await getUserByIdService(id);
     res.status(200).json(user);
   } catch (error: any) {
     res.status(404).json({ message: error.message });
@@ -44,7 +45,7 @@ export const register = async (
 ) => {
   try {
     const { name, email, birthdate, nDni, username, password } = req.body;
-    const newUser = await createUserService({
+    const newUser: User = await createUserService({
       name,
       email,
       birthdate,
@@ -72,7 +73,7 @@ export const login = async (
       password,
     });
     // 2. Buscar datos del usaurio
-    const user = await findUserByCredentialIdService(credentialId);
+    const user: User = await findUserByCredentialIdService(credentialId);
     res.status(200).json({ login: true, user });
   } catch (error: any) {
     res.status(404).json({ message: error.message });
