@@ -26,10 +26,12 @@ export const createVehicleService = async (
     const newVehicle = await VehicleRepository.create(vehicle);
     await queryRunner.manager.save(newVehicle);
 
-    const user = await UserRepository.findOneBy({ id: vehicle.userId });
-
-    if (!user)
+    // const user = await UserRepository.findById(vehicle.userId);
+    if (!(await UserRepository.findById(vehicle.userId)))
+      // if (!user)
       throw Error("Usuario inexistente. No se ha podido crear el vehiculo.");
+
+    const user = await UserRepository.findById(vehicle.userId);
 
     newVehicle.user = user;
     await queryRunner.manager.save(newVehicle);
