@@ -8,6 +8,7 @@
 - **Parámetros:** id: id del usuario.
 
 - **Respuesta:**
+
   - 200: Si el usuario fue encontrado.
   - 404: Si el usuario no fue encontrado.
 
@@ -41,6 +42,7 @@
 
 - **Descripción:** Crea un nuevo usuario.
 - **Parámetros:**
+
   - name: nombre del usuario.
   - email: email del usuario.
   - birthdate: fecha de nacimiento del usuario.
@@ -56,10 +58,12 @@
 
 - **Descripción:** Inicia sesión de un usuario.
 - **Parámetros:**
+
   - username: nombre de usuario.
   - password: contraseña del usuario.
 
 - **Respuesta:**
+
   - 200: Si el usuario fue logueado.
   - 400: Si los datos son incorrectos.
 
@@ -74,9 +78,9 @@
       "email": "cgomez@mail.com",
       "birthdate": "1990-01-01",
       "nDni": 12345678
-      }
-   }
-   ```
+    }
+  }
+  ```
 
 ### GET /turns/:id
 
@@ -92,13 +96,14 @@
 
 - **Descripción:** Crea un nuevo turno.
 - **Parámetros:**
+
   - date: fecha del turno.
   - time: hora del turno.
   - userId: id del usuario.
 
 - **Respuesta:**
-    - 201: Si el turno fue creado.
-    - 400: Si los datos son incorrectos.
+  - 201: Si el turno fue creado.
+  - 400: Si los datos son incorrectos.
 
 ### PUT /turns/cancel/:id
 
@@ -116,4 +121,3 @@
 - **Respuesta:**
   - 200: Si los turnos fueron encontrados.
   - 404: Si no se encontraron turnos.
-

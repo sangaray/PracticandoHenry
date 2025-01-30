@@ -1,6 +1,12 @@
 # M3 - PROJECT 3
 
-## Homework 1
+## Tecnologías Utilizadas
+
+- TypeScript
+- Express
+- NodeJS
+- PostgreSQL
+- TypeORM
 
 ## User Stories
 
