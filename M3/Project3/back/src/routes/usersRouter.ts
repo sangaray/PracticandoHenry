@@ -5,12 +5,13 @@ import {
   login,
   register,
 } from "../controllers/usersController";
+import validateUser from "../middlewares/validateUserMiddleware";
 
 const userRouter = Router();
 
 userRouter.get("/", getAllUsers);
 userRouter.get("/:id", getUserById);
-userRouter.post("/register", register);
+userRouter.post("/register", validateUser, register);
 userRouter.post("/login", login);
 
 export default userRouter;
