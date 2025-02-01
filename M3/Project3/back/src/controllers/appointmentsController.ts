@@ -49,7 +49,7 @@ export const createAppointment = async (
     });
     res.status(201).json(newAppointment);
   } catch (error: any) {
-    res.status(404).json({ error: error.message });
+    res.status(400).json({ error: error.message });
   }
 };
 
