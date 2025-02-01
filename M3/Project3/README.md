@@ -2,11 +2,17 @@
 
 ## Tecnologías Utilizadas
 
+Backend
+
 - TypeScript
 - Express
 - NodeJS
 - PostgreSQL
 - TypeORM
+
+Frontend
+
+- React
 
 ## User Stories
 
@@ -16,14 +22,14 @@
   - Extra Credit: Recibir email de confirmación (NodeMailer)
 - Como usuario registrado quiero poder:
   1. Iniciar sesión con mis credenciales
-  2. Modificar mis datos
+  2. Modificar mis datos (Extra Credit)
   - Posibilidad de que le usuario "suba" una foto de perfil a su cuenta a través de un archvio de imagen (.jpg, .png, etc). cloudinary
   3. Cerrar sesión
   4. Reservar Turno
   - A partir del día siguiente y hasta 14 días después
   - No más de un turno el mismo día y hora (...?)
   - Días laborables: Lunes a Viernes de 9 a 18 hs. Turnos de 30 minutos
-  - Extra Credit: Recibir un email de confirmación
+  - Recibir un email de confirmación (Extra Credit)
   5. Ver mi historial de turnos
   6. Cancelar un turno
   - Pedir confirmación antes de cancelar
