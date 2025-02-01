@@ -1,77 +1,71 @@
-// appointmentsService.ts
-
-import IAppointment from "../Interfaces/IAppointment";
 import appointmentStatus from "../enums/appointmentStatus";
 import IAppointmentDto from "../dtos/IAppointmentDto";
-import { getUserByIdService } from "./usersService";
-
-// Simulamos una base de datos en memoria
-let id: number = 3;
-const appointments: IAppointment[] = [
-  {
-    id: 1,
-    date: "2024-08-15",
-    time: "10:00",
-    userId: 1,
-    status: appointmentStatus.ACTIVE,
-    description: "Consulta general",
-  },
-  {
-    id: 2,
-    date: "2024-09-20",
-    time: "14:30",
-    userId: 2,
-    status: appointmentStatus.ACTIVE,
-    description: "Seguimiento",
-  },
-];
+import {
+  AppointmentRespository,
+  userRepository,
+} from "../Repositories/indexRepository";
+import { Appointment } from "../entities/AppointmentEntity";
 
 // Servicio para obtener todos los appointments
-export const getAllAppointmentsService = async (): Promise<IAppointment[]> => {
-  return appointments;
+export const getAllAppointmentsService = async (): Promise<Appointment[]> => {
+  const allAppointments: Appointment[] = await AppointmentRespository.find();
+  return allAppointments;
 };
 
 // Servicio para obtener un appointment por su ID
 export const getAppointmentByIdService = async (
-  id: number
-): Promise<IAppointment | null> => {
-  const appointment = appointments.find((appointment) => appointment.id === id);
-  return appointment || null;
+  turnId: number
+): Promise<Appointment> => {
+  const appointment: Appointment | null =
+    await AppointmentRespository.findOneBy({ id: turnId });
+  if (!appointment) {
+    throw new Error("Turno no encontrado");
+  }
+  return appointment;
 };
 
 // Servicio para crear un nuevo appointment
 export const createAppointmentService = async (
-  appointmentData: IAppointmentDto,
-  userId: number // Recibe el userId como parámetro
-): Promise<IAppointment> => {
-  // Obtenemos el usuario para validar que el usuario si exista, aunque solo sea un objeto
-  await getUserByIdService(userId);
+  IAppointmentDto: IAppointmentDto
+): Promise<Appointment> => {
+  const { date, time, description, userId } = IAppointmentDto;
+  console.log(`Creating appointment for userId: ${userId}`); // Log para depuración
 
-  const newAppointment: IAppointment = {
-    id,
-    date: appointmentData.date,
-    time: appointmentData.time,
-    userId: userId, // Usamos el userId recibido como parámetro
-    status: appointmentStatus.ACTIVE,
-    description: appointmentData.description,
-  };
-  appointments.push(newAppointment);
+  // Validaciones básicas
+  // 1. Traer al usuario y validar que el usuario exista
+  const user = await userRepository.findOneBy({ id: userId });
+  if (!user) {
+    throw new Error(`No se encontró el usuario con id ${userId}`);
+  }
+  console.log(`User found: ${user.id}`); // Log para depuración
+
+  // 2. Crear un nuevo turno
+  const newAppointment: Appointment = AppointmentRespository.create({
+    date,
+    time,
+    description,
+  });
+
+  // 3. Asociar el turno con el usuario
+  newAppointment.user = user;
+
+  // 4. Guardar el turno en la base de datos
+  await AppointmentRespository.save(newAppointment);
+  console.log(`Appointment created with id: ${newAppointment.id}`); // Log para depuración
+
   return newAppointment;
 };
 
 // Servicio para cancelar un appointment
 export const cancelAppointmentService = async (
-  id: number
-): Promise<IAppointment | null> => {
-  const appointmentIndex = appointments.findIndex(
-    (appointment) => appointment.id === id
-  );
-  if (appointmentIndex === -1) {
-    return null;
+  turnId: number
+): Promise<void> => {
+  const appointment: Appointment | null =
+    await AppointmentRespository.findOneBy({ id: turnId });
+  if (!appointment) {
+    throw new Error("Turno no encontrado");
   }
-  appointments[appointmentIndex] = {
-    ...appointments[appointmentIndex],
-    status: appointmentStatus.CANCELED,
-  };
-  return appointments[appointmentIndex];
+  appointment.status = appointmentStatus.CANCELED;
+  await AppointmentRespository.save(appointment);
+  return;
 };

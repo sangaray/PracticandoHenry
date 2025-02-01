@@ -15,7 +15,7 @@ export const getAllUsersService = async (): Promise<User[]> => {
 export const getUserByIdService = async (id: number): Promise<User> => {
   const user: User | null = await userRepository.findOne({
     where: { id },
-    relations: ["apointments"], // Una forma de hacer la relación
+    relations: ["appointments"], // Una forma de hacer la relación
   });
 
   if (!user) {
