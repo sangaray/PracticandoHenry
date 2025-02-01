@@ -1,14 +1,16 @@
 import ICreateUserDto from "../dtos/ICreateUserDto";
 import { credentialsService } from "./CredentialsService";
-import ICredential from "../Interfaces/ICredential";
 import { User } from "../entities/UserEntity";
 import { userRepository } from "../Repositories/indexRepository";
 import { Credential } from "../entities/CredentialEntity";
+
 export const getAllUsersService = async (): Promise<User[]> => {
-  const allUsers: User[] = await userRepository.find();
-  relations: {
-    apointments: true;
-  } // otra forma de hacer la relación
+  const allUsers: User[] = await userRepository.find({
+    relations: {
+      appointments: true,
+    },
+  });
+  // otra forma de hacer la relación
   return allUsers;
 };
 
