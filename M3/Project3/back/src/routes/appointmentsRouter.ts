@@ -5,7 +5,7 @@ import {
   getAppointmentById,
   createAppointment,
 } from "../controllers/appointmentsController";
-import validateAppointment from "../middlewares/validateAppointment";
+import validateAppointment from "../middlewares/validateAppointmentMiddleware";
 
 const appointmentsRouter = Router();
 
