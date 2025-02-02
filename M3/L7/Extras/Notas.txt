@@ -1,0 +1,30 @@
+M3-L7 - React & Intro
+React es una librería de JavaScript para crear interfaces de usuario. Es una de las tecnologías más populares para construir aplicaciones web modernas y escalables.
+Los componentes son la clave de React. Los componentes son funciones que retornan HTML, CSS y JavaScript.
+
+React a través de npm ya no se usa, nuchas de las cosas que trae están medio deprecadas, lo que la hace pesada y es lenta la carga de la aplicación creada con ella
+
+Vite
+Entorno de desarrollo que nos permite trabajar con React, permite crear un proyecto mucho más rápido y con toda la configuración que se necesita para trabajar con React.
+Comando de instalación
+npm create vite@latest
+
+Pasos que sigue la instalación
+$ npm create vite@latest
+Need to install the following packages:
+create-vite@6.1.1
+Ok to proceed? (y)
+> npx
+> create-vite
+√ Project name: ... vite-react
+√ Select a framework: » React
+√ Select a variant: » JavaScript
+√ Select a f
+Scaffolding project in F:\Practicas\PracticandoHenry\M3\L7\Demo1-ViteProject\vite-react...
+Done. Now run:
+  cd vite-react
+  npm install
+  npm run dev
+
+Desde la consola de windows se puede abrir el proyecto en vscod directamente usando:
+code .
