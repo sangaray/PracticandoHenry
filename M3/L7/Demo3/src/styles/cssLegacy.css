@@ -1,4 +1,6 @@
-/* CSS LEGACY */
+/* CSS MODULES 
+  Sirve para definir estilos de componentes en específico, sin que se pisen los demás estilos que pueda tener.
+*/
 
 body {
   margin: 0;

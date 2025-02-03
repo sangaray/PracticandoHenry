@@ -5,14 +5,15 @@
 
 import "./App.css";
 import CardList from "./components/CardList";
+import styles from "./app.module.css";
 
 function App() {
   let counter = 0;
   return (
     <>
-      <h1>Mi Primera App</h1>
+      <h1 className={styles.title}>Mi Primera App</h1>
 
-      <p>Clicks: {counter}</p>
+      <h2 className={styles.subtitle}>Contador: {counter}</h2>
       <button onClick={() => counter++}>Contador de Clicks</button>
       <CardList />
     </>

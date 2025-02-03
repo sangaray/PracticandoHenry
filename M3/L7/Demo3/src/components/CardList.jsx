@@ -4,10 +4,11 @@
 }
 
 import Card from "./Card.jsx";
+import styles from "./CardList.module.css";
 
 const CardList = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <Card />
       <Card />
       <Card />

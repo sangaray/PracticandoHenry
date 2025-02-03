@@ -1,7 +1,9 @@
 /* Cuando trabajamos con componentes en lugar de usar class, usamos classname como atributo de la etiqueta */
-const Card = ({ title, description }) => {
+
+import styles from "./../components/Card.module.css";
+const Card = () => {
   return (
-    <div>
+    <div className={styles.container}>
       {/* se usa <div></div> o un <></> fragment */}
       <h1 className="title">Card</h1>
       <h3>Nombre: Dai</h3>
