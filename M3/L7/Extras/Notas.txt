@@ -42,3 +42,5 @@ Los archivos jsx retornan html y puede o no tener lógica de js
 main.jsx es el archivo principal de la app, es el que se encarga de renderizar el componente App.jsx
 
 Renderizar: mostrar algo en pantalla, mostrar un componente en pantalla, mostrar un archivo html en pantalla, mostrar una imagen en pantalla
+
+REDERIZADO CONDICIONAL

@@ -1,6 +1,6 @@
 {
   /* Para agregar código js debo ponerlo entre llaves */
-  /* El valor no cambia haciendolo de esta manera, para que cambie el contado necesitamos los estados
+  /* El valor no cambia haciendolo de esta manera, para que cambie el contado necesitamos los estados */
 }
 
 import "./App.css";
