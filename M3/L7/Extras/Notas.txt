@@ -28,3 +28,17 @@ Done. Now run:
 
 Desde la consola de windows se puede abrir el proyecto en vscod directamente usando:
 code .
+desde la carpeta del proyecto que queremos abrir
+
+JSX - JAVASCRIPT XML
+Permiite crear archivos de js como hasta ahora, pero también podemos agregar etiquetas html dentro de nuestro archivo js, esto nos permite crear componentes de manera más fácil y rápida. 
+Los componentes en js son archivos JSX
+En typescript usto tsx
+
+Al importar archivos, si están dentro de la carpeta public no necesito especificar donde está esa carpeta, sólo escribo el nombre del archivo
+
+Los archivos jsx retornan html y puede o no tener lógica de js
+
+main.jsx es el archivo principal de la app, es el que se encarga de renderizar el componente App.jsx
+
+Renderizar: mostrar algo en pantalla, mostrar un componente en pantalla, mostrar un archivo html en pantalla, mostrar una imagen en pantalla
