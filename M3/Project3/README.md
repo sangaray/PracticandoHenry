@@ -13,6 +13,7 @@ Backend
 Frontend
 
 - React
+- Vite
 
 ## User Stories
 

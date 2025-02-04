@@ -1,7 +1,11 @@
+import Appointments from "./views/Appointments";
+import Home from "./views/Home";
+
 function App() {
   return (
     <>
-      <h1>Vite + React</h1>
+      <Home />
+      <Appointments />
     </>
   );
 }
