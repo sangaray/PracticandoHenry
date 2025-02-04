@@ -44,3 +44,28 @@ main.jsx es el archivo principal de la app, es el que se encarga de renderizar e
 Renderizar: mostrar algo en pantalla, mostrar un componente en pantalla, mostrar un archivo html en pantalla, mostrar una imagen en pantalla
 
 REDERIZADO CONDICIONAL
+Se usan condicionales para poder deterrminar si se muestra o no un componente en pantalla, se puede usar el operador ternario o el if.
+
+ESTILOS
+1. CSS Legacy: es cuando se trabaja CSS puro
+Se crear un archivo styles o el nombre de los que vamos a estilar con terminación css
+Ejemplo: styles.css
+2. CSS Modules: es cuando se trabaja con CSS Modules
+Se crea un archivo con el mismo nombre que el componentes y se agrega .module.CSS
+Ejemplo: App.module.css
+3. CSS Styled Components: es cuando se trabaja con CSS Styled Components
+Se debe instalar la librería styled-components.
+npm install styled-components
+Lo que hacemos con esta librería es crear componentes estilizados
+Vamos a crear un archivo js que va a funcionar como un componente y además va a tener estilos, todo en un mismo archivo.
+
+padding: 0.25rem 1rem; // cuatro valores: top right bottom left, dos valores: top/bottom y left/right, shorthand: los cuatro lados el mismo valor. Se puede obviar el 0 de la izquierda del punto decimal. Aplica a margins y borders
+Puntos Negativos
+- No puedo autocompletar
+- No tiene el indicadore de colores
+
+
+REFERENCIAS
+Pasar de px a rem: 
+https://nekocalc.com/px-to-rem-converter
+

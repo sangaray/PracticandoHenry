@@ -1,0 +1,15 @@
+/* CSS MODULES 
+  Sirve para definir estilos de componentes en específico, sin que se pisen los demás estilos que pueda tener.
+*/
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(45deg, #464546 20%, #333 80%);
+  color: #f0ffff;
+}
+
+.title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: crimson;
+}
