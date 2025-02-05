@@ -1,2 +1,53 @@
-// M3-L7 - React & Intro
-// El navegador sólo entiende html, css y js
+M3-L7 - React & Intro
+PARADIGMA DE REACT BASADO EN COMPONENTES
+Es un paradigma de programación basado en componentes que usamos al trabajar con React
+El navegador sólo entiende html, css y js
+COMPONENTES: son funciones constructoras que devuelven una estructura HTML.
+
+VISTAS: ocupan todo el viewport del usuario, el home, el landing, acerca de, etc. 
+COMPONENTES: los que son cosas pequeñas que se pueden repetir en varias vistas.
+
+
+FRAGMENT: <></> no sirve como contenedor para esto necesito usar <div></div>
+
+RENDERIZADO CONDICIONAL
+Antes del return puedo escribir código js, hasta que comeinezo el renderizado
+Formas del Condicional
+1. Con &&
+{isRegistered && <h3>Por favor, iniciar seción...</h3>}
+{!isRegistered && <h3>Por favor, regístrate...</h3>}
+2. Con ?
+{isRegistered ? <Login /> : <Register />}
+
+COMENTARIOS: los comentarios van en código js
+
+FORMAS DE DAR ESTILOS
+1. css Legacy: CSS puro, sólo. Se usa cuando quiero aplicar estilos de forma global o cuando quiero hacer un reset de estilos
+2. styles in line; estilos en línea para cambios chiquitos y puntuales.
+style={{
+        backgroundColor: "rgba(0, 0, 0, 0.4)",
+        padding: "20px",
+        borderRadius: "10px",
+      }}>
+3. CSS Modules: son archivos aparte, el archivo tiene que terminar en navegadormbre.module.css
+En el archivo donde lo quiero usar tengo que importar styles from './Nombre.module.css' y 
+Agregar className={styles.title} a la etiqueta a la que queremos aplicar el estilo
+ <h2 className={styles.title}>Componente Login</h2>
+Pros:
+- Respeta el patrón de componentes en React
+- Se puede usar hover y otras pseudoclases
+- Hashea el nombre, para que si en otro componente uso el mismo nombre de className no se pisen.
+- Con una sola clase container se puede dar estilo a todas las etiquetas dentro de ese contenedor. 
+Contras:
+- No se puede compartir estilos entre componentes
+4. CSS Styled Components: es una biblioteca para REact
+Instalación:
+npm install styled-components
+extensión:
+vscode-styled-components para que nos ayude a completar el estilo.
+Se crean componentes personalizados, con todo lo necesario.
+Contra:
+- Hay que instalar la libreria
+- Es un paradigma bastante distinto a lo que conocmeos
+
+index.css aplica a todo el proyecto sin necesidad de importarlo en ningún lado

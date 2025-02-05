@@ -28,6 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url("https://img.freepik.com/vector-gratis/fondo-violeta-abstracto-malla-llama-estilo-tecnologia-futurista_1217-1138.jpg");
+  background-size: cover;
 }
 
 h1 {
@@ -66,3 +68,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
