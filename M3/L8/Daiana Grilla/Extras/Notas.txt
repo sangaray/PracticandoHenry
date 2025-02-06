@@ -1,1 +1,13 @@
 M3-L8 - REACT DATA FLOW
+ESTADOS
+Para crear o utilizar estados debemos hacer un destructuring, en nuestro ejemplo de un array
+- Con arrays puedo poner el nombre que quiera a la variable que voy a usar en el estados
+Ejemplo:
+const [State, setState] = useState(0)
+state es el valor que va a tener mi estados, va a ir cambiando, es una variable
+setState es una funciíon dedicada únicamente a modificar el estado . Esta función sirve para modificar el estado, ya que la única forma que tengo de modificarlo es a través de ella
+Con arrays, si quiero usar el valor de state, debo usar la notación de corchetes
+0 automáticamente pasa a ser el valor de state
+- Con Objetos, nos es lo mismo que con arrays, pero si quiero usar una propiedad en particular, debo usar la notación de punto o corchetes
+
+Cuando quiero algo que sea interactivo en mi página voy a usar estados, no variables
