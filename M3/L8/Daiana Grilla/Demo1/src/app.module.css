@@ -1,0 +1,11 @@
+/* El nombre del archivo de stylos debe ser siempre el mismo que el del componente al que se aplica */
+
+.title {
+  font-family: "Lobster";
+  color: crimson;
+  font-size: 40px;
+}
+
+.subtitle {
+  color: goldenrod;
+}
