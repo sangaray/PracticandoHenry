@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(197, 196, 197);
+  border-radius: 15px;
+  background: linear-gradient(60deg, #2a2829, #70706f);
+  margin: 10px 0;
+}

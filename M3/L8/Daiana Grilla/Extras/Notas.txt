@@ -13,3 +13,11 @@ Con arrays, si quiero usar el valor de state, debo usar la notación de corchete
 Cuando quiero algo que sea interactivo en mi página voy a usar estados, no variables. Cuando quiero dinamismo en la página tengo que utilizar estados
 
 React reacciona sólo a los cambios de estados, no le inteesa si cambia una variable. Cuando esto sucede react carga todo de nuevo, esto se llama rerenderizar
+
+Un estado puede ser cualquier tipo de datos.
+Cada elemento de una lista tiene que tener una key única para que se pueda renderizar correctamente. Por ser el elemento único de nuestro objeto vamos a utilizar como key al id, para indicar que cada objeto es una cosa distinta más alla de que la estructura html sea igual
+
+spread operator: es un operador que nos permite copiar los valores de un objeto o array en otro. Se utiliza con los tres puntos (...)
+
+PROPS
+Las props son objetos y todo lo que paso en el componentes se agrega como un objeto, hay que tener cuidado de no repetir los nombres de las props que vamos a usar
