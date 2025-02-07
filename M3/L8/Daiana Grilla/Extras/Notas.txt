@@ -21,3 +21,13 @@ spread operator: es un operador que nos permite copiar los valores de un objeto 
 
 PROPS
 Las props son objetos y todo lo que paso en el componentes se agrega como un objeto, hay que tener cuidado de no repetir los nombres de las props que vamos a usar
+
+EVENTOS
+Los eventos se ejecutan en sentido contrario a la props. Van de hijos que activa el evento a padres que lo reciben
+
+Es una prop si la recibo en un componente. La prop debe tener el mismo nombre que la función que quiero enviar
+ES un parámetro si lo recibo en una función
+
+MISMO ESTADO EN MÁS DE UN COMPONENTE
+No puedo cruzar información entre componentes hermanos
+Para poder hacerlo debo poner la información en un componente que comparten, el padre el cual tiene los estados.
