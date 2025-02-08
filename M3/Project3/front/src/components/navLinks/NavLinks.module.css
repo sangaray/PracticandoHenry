@@ -17,7 +17,7 @@
   }
 
   span:hover a:hover {
-    color: black;
-    background-color: white;
+    color: rgb(34, 1, 144);
+    background-color: rgb(196, 182, 242);
   }
 }

@@ -14,13 +14,6 @@ const SubjectCard = () => {
           matemáticas se transforman en un apasionante viaje de descubrimiento y
           creación.
         </p>
-        <p>
-          Como profesor de matemáticas, he tenido el privilegio de presenciar
-          cómo el asombro se enciende en los ojos de mis alumnos cuando
-          comprenden un concepto complejo o resuelven un problema desafiante.
-          Ese momento de "¡Eureka!" es la recompensa más gratificante de mi
-          trabajo.
-        </p>
       </div>
     </div>
   );
