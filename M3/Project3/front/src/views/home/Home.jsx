@@ -4,7 +4,6 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <h2>Componente Home</h2>
     </div>
   );
 };

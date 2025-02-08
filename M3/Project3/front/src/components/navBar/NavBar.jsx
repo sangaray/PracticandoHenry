@@ -1,10 +1,10 @@
 import LogoEmpresa from "../logoEmpesa/LogoEmpresa";
 import NavLinks from "../navLinks/NavLinks";
+import styles from "./NavBar.module.css";
 
 const NavBar = () => {
   return (
-    <div>
-      <h2>Componente NavBar</h2>
+    <div className={styles.nav__container}>
       <LogoEmpresa />
       <NavLinks />
     </div>

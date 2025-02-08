@@ -6,4 +6,5 @@ dentro de index.html createRoot(document.getElementById("root")).render(
 <StrictMode>
   <App />
 </StrictMode>
-); Esto es lo que muestra nuestra aplicación en el navegador
+); Esto es lo que muestra nuestra aplicación en el navegador ARCHIVO NORMALIZE
+PARA CSS https://necolas.github.io/normalize.css/8.0.1/normalize.css

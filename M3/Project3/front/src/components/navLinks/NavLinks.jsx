@@ -1,7 +1,8 @@
+import styles from "./NavLinks.module.css";
+
 const NavLinks = () => {
   return (
-    <div>
-      <h3>Este es el componente NavLinks</h3>
+    <div className={styles.container}>
       <span>
         <a href="#">Inicio</a>
       </span>
