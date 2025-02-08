@@ -4,8 +4,9 @@
   display: flex;
   align-items: start;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
   align-items: center;
+  border: 2px solid #ffffff;
 
   img {
     width: 50vw;
