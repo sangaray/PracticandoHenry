@@ -18,6 +18,9 @@
 
   span:hover a:hover {
     color: rgb(34, 1, 144);
-    background-color: rgb(196, 182, 242);
+    background-color: rgba(196, 182, 242, 0.8);
+    box-shadow: 0 0 15px 5px rgba(225, 225, 243, 0.5);
+    transition: 2s;
+    cursor: pointer;
   }
 }
