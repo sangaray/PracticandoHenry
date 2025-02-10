@@ -35,12 +35,20 @@ const validateAppointmentMiddleware = async (
     // 1. Valida que la fecha de la cita sea a partir del día siguiente y hasta 14 días después
     const minDate = new Date(now);
     minDate.setDate(now.getDate() + 1);
+    minDate.setHours(0, 0, 0, 0); // Asegurarse de que minDate sea a medianoche
     const maxDate = new Date(now);
     maxDate.setDate(now.getDate() + 14);
+    maxDate.setHours(23, 59, 59, 999); // Asegurarse de que maxDate sea al final del día
+
+    console.log("soy minDate", minDate);
+    console.log("soy maxDate", maxDate);
+    console.log("soy now", now);
 
     // Valida que la fecha sea de lunes a viernes
     const dayOfWeek = appointmentDate.getDay();
     console.log("soy dayOfWeek", dayOfWeek);
+    console.log("soy appointmentDate", appointmentDate);
+    console.log(appointmentDate < minDate);
 
     if (dayOfWeek === 0 || dayOfWeek === 6) {
       throw new Error("La cita debe ser en un día laboral (Lunes a Viernes)");
@@ -50,6 +58,7 @@ const validateAppointmentMiddleware = async (
         "La fecha de la cita debe ser posterior a la fecha actual"
       );
     }
+
     if (appointmentDate > maxDate) {
       throw new Error(
         "La fecha de la cita no puede ser posterior a 14 días desde hoy"
