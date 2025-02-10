@@ -30,7 +30,7 @@ const validateAppointmentMiddleware = async (
     const appointmentDate = new Date(year, month - 1, day, hours, minutes);
     const now = new Date();
 
-    console.log(day, month, year, hours, minutes);
+    console.log(day, month, year);
 
     // 1. Valida que la fecha de la cita sea a partir del día siguiente y hasta 14 días después
     const minDate = new Date(now);

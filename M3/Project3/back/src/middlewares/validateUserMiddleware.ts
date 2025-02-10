@@ -29,6 +29,19 @@ const validateUser = (
       );
     }
 
+    // Verificar formato de la fecha
+    const dateRegex = /^\d{2}-\d{2}-\d{4}$/;
+    if (!dateRegex.test(birthdate)) {
+      throw new Error("El formato de la fecha debe ser DD-MM-YYYY");
+    }
+
+    // Convertir la fecha a objetos Date
+    const [day, month, year] = birthdate.split("-").map(Number);
+    const userBirthday = new Date(year, month - 1, day);
+    const now = new Date();
+    console.log(day, month, year);
+    console.log(userBirthday);
+
     // Validación del email
 
     if (typeof email !== "string") {
@@ -52,8 +65,8 @@ const validateUser = (
       throw new Error("La contraseña debe ser una cadena");
     }
 
-    if (password.length < 6 || password.length > 20) {
-      throw new Error("La contraseña debe tener entre 6 y 20 caracteres");
+    if (password.length < 5 || password.length > 20) {
+      throw new Error("La contraseña debe tener entre  y 20 caracteres");
     }
   } catch (error) {
     if (error instanceof Error) {
