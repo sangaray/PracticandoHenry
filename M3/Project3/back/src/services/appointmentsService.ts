@@ -8,7 +8,9 @@ import { Appointment } from "../entities/AppointmentEntity";
 
 // Servicio para obtener todos los appointments
 export const getAllAppointmentsService = async (): Promise<Appointment[]> => {
-  const allAppointments: Appointment[] = await AppointmentRespository.find();
+  const allAppointments: Appointment[] = await AppointmentRespository.find({
+    relations: ["user"], // <-- Cargar la relación 'user'
+  });
   return allAppointments;
 };
 
@@ -16,8 +18,11 @@ export const getAllAppointmentsService = async (): Promise<Appointment[]> => {
 export const getAppointmentByIdService = async (
   turnId: number
 ): Promise<Appointment> => {
-  const appointment: Appointment | null =
-    await AppointmentRespository.findOneBy({ id: turnId });
+  const appointment: Appointment | null = await AppointmentRespository.findOne({
+    where: { id: turnId },
+    relations: ["user"], // <-- Cargar la relación 'user'
+  });
+
   if (!appointment) {
     throw new Error("Turno no encontrado");
   }
