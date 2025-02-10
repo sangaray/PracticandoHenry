@@ -1,0 +1,18 @@
+REACT DATA FLOW
+DIRECCIONALIDAD
+Unidireccionalidad: significa que React los datos sólo pueden pasarse en una sola dirección, de padres a hijos, de arriba hacia abajo
+Componente Padre: es un componente que contiene a otro, es decir que lo retorna
+Componente Hijo: es el que está contenido y es retornado por otro componente
+
+ESTADOS
+- Estado Interno de un Componente: es un objeto que permite almacenar y gestionar información en el componente. 
+- Cambia su apariencia y comportamiento con la interacción del usuario. 
+- Determina cuando renderizar los componetes de nuestra página
+- siempre que actualicemos el estado de un componente, este actualizará de forma inmediate su información
+
+HOOKS
+- Son funciones especiales que permiten que un componente utilice las características de React. 
+- Recibe algo y devuelve otra cosa
+Originalmente había utilidades que se usaban solamente con clases, pero los desarrolladores pidieron que se extendieran a las funciones y para eso se crearon los HOOKS
+
+useState: genera un estado dentro de un comoponente. Crea automáticamente un objeto en el que podremos almacenar información para luego acceder a ella.
