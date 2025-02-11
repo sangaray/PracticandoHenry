@@ -1,0 +1,16 @@
+.container {
+  border: 2px solid #fff;
+  border-radius: 10px;
+
+  ul {
+    list-style: none;
+    padding: 20px 200px;
+    margin: 0;
+  }
+
+  li {
+    margin: 10px 0;
+
+    text-align: left;
+  }
+}

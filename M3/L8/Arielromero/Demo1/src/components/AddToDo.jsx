@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./../index.css";
+// import "./../index.css";
+import styles from "./AddToDo.module.css";
 const AddToDo = ({ setAllTodos, setContadorEstado }) => {
   const [newTodo, setNewTodo] = useState("");
 
@@ -16,7 +17,7 @@ const AddToDo = ({ setAllTodos, setContadorEstado }) => {
     setNewTodo("");
   };
   return (
-    <div>
+    <div className={styles.container}>
       <label>Ingresar nueva tarea</label>
       <input type="text" onChange={handleInputChange} />
       <button onClick={handleSubmit}>Agregar Tarea</button>
