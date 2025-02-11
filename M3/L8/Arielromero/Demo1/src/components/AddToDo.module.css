@@ -8,11 +8,11 @@
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
-  border: 2px solid rgba(246, 120, 196, 0.5);
+  border: 2px solid #fff;
 
   input {
     width: 80%;
-    padding: 10px 0;
+    padding: 10px 10px;
     margin: 15px 0;
     border: 2px solid #fff;
     border-radius: 10px;
