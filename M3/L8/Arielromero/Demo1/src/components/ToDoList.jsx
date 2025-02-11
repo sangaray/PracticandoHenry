@@ -1,15 +1,18 @@
 import "./../index.css";
 import { useState } from "react";
 
-const ToDoList = () => {
-  const [todos, setTodos] = useState(["Tarea 1", "Tarea 2", "Tarea 3"]);
+const ToDoList = ({ allTodos }) => {
+  const [todos, setTodos] = useState();
 
   return (
-    <ul>
-      {todos.map((tarea) => {
-        return <li key={tarea}>{tarea}</li>;
-      })}
-    </ul>
+    <div>
+      <h2>Lista de tareas:</h2>
+      <ul>
+        {allTodos.map((todo, index) => (
+          <li key={index}>{todo}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

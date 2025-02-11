@@ -8,7 +8,6 @@ const ToDoCounter = ({ contadorEstado, titulo }) => {
         borderRadius: "10px",
         padding: "5px",
       }}>
-      <h2>ToDo Counter: Componente Hijo</h2>
       <h3>
         {titulo}: {contadorEstado}
       </h3>

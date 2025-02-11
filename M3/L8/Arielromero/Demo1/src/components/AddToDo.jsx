@@ -13,8 +13,7 @@ const AddToDo = ({ setAllTodos, setContadorEstado }) => {
     setContadorEstado(
       (contadorEstado) => (contadorEstado = contadorEstado + 1)
     );
-
-    console.log(event.target.elements.todo.value);
+    setNewTodo("");
   };
   return (
     <div>

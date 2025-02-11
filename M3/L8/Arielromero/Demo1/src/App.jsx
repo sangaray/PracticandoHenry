@@ -2,6 +2,7 @@ import "./App.css";
 import AddToDo from "./components/AddToDo";
 import ToDoCounter from "./components/ToDoCounter";
 import { useState } from "react";
+import ToDoList from "./components/ToDoList";
 
 function App() {
   const [contadorEstado, setContadorEstado] = useState(0);
@@ -20,6 +21,8 @@ function App() {
         contadorEstado={contadorEstado}
         titulo={"Tareas Pendientes"}
       />
+
+      <ToDoList allTodos={allTodos} />
     </>
   );
 }
