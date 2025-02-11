@@ -16,3 +16,38 @@ HOOKS
 Originalmente había utilidades que se usaban solamente con clases, pero los desarrolladores pidieron que se extendieran a las funciones y para eso se crearon los HOOKS
 
 useState: genera un estado dentro de un comoponente. Crea automáticamente un objeto en el que podremos almacenar información para luego acceder a ella.
+
+useState: devuelve un Estado interno, y una función que modifica ese estado interno. React no se entera si se modivica una variable, para que se entero tengo que utilizar un estado. Se le da un valor inicial y la función que lo va a modificar
+
+HANDLERS  
+Son funciones que se pasan como eventos a los componentes.
+
+PROPS
+Es la form ade transferir información entre componentes mediante el uso de propiedades (props). Estas propiedades son datos que guardaremos dentro de un objeto, y que lo pasaremos como un argumento. Permite acceder a dicha información como un argumento del componente funcional a través de la propiedad personaje del objeto props
+En el padre pongo las props que voy a pasar.
+En el hijo se reciben esas props como parámetros de la función constructora
+Padre:
+<tarjeta key={personaje.id} personaje={personaje} />
+Hijo:
+function Tarjeta(props) {
+  return (
+    <div>
+      <h2>Nombre: {props.personaje.name}</h2>
+      <h3>Casa: {props.personaje.casa}</h3>
+    </div>   
+  );
+}
+props es un objeto que tiene una propiedad
+contadorEstado: 0
+título: "Tareas pendients"
+
+LIFTING STATE UP
+Es el flujo de información de React
+- la data viaja de los componetes padre a los hijos
+- los eventos viajan de los componetes hijos a los componetes padres
+
+Los estados los voy a declarar dentro de un componente porque estoy usando un hook y los hook sólo los puedo llamar desde un componente.
+
+Los estados se declaran en el componente padre y se pasan al componente hijo
+
+2:52 del video de la clase

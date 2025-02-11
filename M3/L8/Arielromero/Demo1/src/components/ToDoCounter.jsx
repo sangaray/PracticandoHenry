@@ -1,6 +1,6 @@
 import "./../index.css";
 
-const ToDoCounter = () => {
+const ToDoCounter = ({ contadorEstado, titulo }) => {
   return (
     <div
       style={{
@@ -9,6 +9,9 @@ const ToDoCounter = () => {
         padding: "5px",
       }}>
       <h2>ToDo Counter: Componente Hijo</h2>
+      <h3>
+        {titulo}: {contadorEstado}
+      </h3>
     </div>
   );
 };
