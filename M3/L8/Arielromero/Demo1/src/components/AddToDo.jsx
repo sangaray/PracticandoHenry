@@ -19,7 +19,7 @@ const AddToDo = ({ setAllTodos, setContadorEstado }) => {
   return (
     <div className={styles.container}>
       <label>Ingresar nueva tarea</label>
-      <input type="text" onChange={handleInputChange} />
+      <input type="text" value={newTodo} onChange={handleInputChange} />
       <button onClick={handleSubmit}>Agregar Tarea</button>
     </div>
   );
