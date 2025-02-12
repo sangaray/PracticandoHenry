@@ -11,7 +11,7 @@ const Appointments = () => {
       <h2>Tus Turnos</h2>
       <div className={styles.container}>
         {appointments.map((appointment) => (
-          <div key={appointment.id} className={styles.itemsContainer}>
+          <div className={styles.itemsContainer} key={appointment.id}>
             <AppointmentCard
               id={appointment.id}
               date={appointment.date}

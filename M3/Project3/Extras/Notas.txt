@@ -15,3 +15,5 @@ Archivos .jsx: Sólo cuando vamos a crear componentes
 Los estados se escriben dentro de la función pero antes del return, en la sección de javascript
 
 props: siempre es un objeto que contiene todas las propiedades que le pasé desde el padre
+
+1:06:00 del video de la clase 9

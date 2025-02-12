@@ -6,4 +6,26 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
+
+  span {
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+.active {
+  color: lawngreen;
+  background-color: rgb(3, 69, 3);
+  border: 2px solid lawngreen;
+  &:hover {
+    color: white;
+    background-color: crimson;
+    cursor: pointer;
+  }
+}
+
+.canceled {
+  color: rgb(243, 197, 206);
+  background-color: rgb(77, 3, 18);
+  border: 2px solid rgb(243, 197, 206);
 }
