@@ -32,3 +32,14 @@ En nuestro ejemplo el render se ejecuta dos veces porque componentDidMount actua
 componentDidUpdate(): se ejecuta cada vez que se actualiza el componente
 
 componentWillUnmount(): se ejecuta cuando el componente se desmonta o se destruye, cuando se sale o deja de estar en la pantalla
+
+Nunca debo olvidarme la key en el componente cuando quiero hacer un map y renderizar el resultado, siempre debe tener una key, generalmente el id del array que estamos mapeando
+
+USEEFFECT
+Es una función que tiene dos parámetros, un callback y un array de dependencias.
+
+
+
+RECURSOS
+Harry Potter API
+https://hp-api.onrender.com/
