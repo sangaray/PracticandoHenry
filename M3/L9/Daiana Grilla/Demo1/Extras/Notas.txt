@@ -1,0 +1,34 @@
+CICLO DE VIDA DE LOS COMPONETES DE REACT
+Se entiende y trabaja mejor usando clases
+
+Super: no es necesario usarlo si no vamos a estar trabajando con props pero es recomendable usarlo para no olvidarlo cuando se necesite
+
+En las clases los estados se declaran sólamente como 
+this.state
+y no hay otra forma de hacerlo y siempre va a ser un objeto
+Ya no se usan porque son muy restrictivos y nos limita el trabajo
+
+No puedo usar return en las clases, para renderizar un componente necesito usar el método
+render()
+
+Para renderizar el state usamos
+{this.state.info}
+
+Método componentDidMount()
+este método permite que se ejecuten ciertas cosas sólo cuando el compontnte se monta o carga por primera vez. Se ejecuta sólo una vez, la primera vez que se carga el componente
+
+Para modificar un estado se usa sólamente
+this.setState({})
+y no se puede usar otra cosa
+
+ORDEN DE EJECUCIÓN
+
+1. Constructor: en el constructor se inicializa el estado y se puede usar super(props) para poder usar props en el constructor
+2. Render: en el render se renderiza el componente
+3. componentDidMount: en el componentDidMount se ejecutan las cosas que se deben ejecutar una sola vez, cuando el componente se monta por primera vez
+
+En nuestro ejemplo el render se ejecuta dos veces porque componentDidMount actualiza modifica el estado, por lo que se debe renderizar el componente nuevamente
+
+componentDidUpdate(): se ejecuta cada vez que se actualiza el componente
+
+componentWillUnmount(): se ejecuta cuando el componente se desmonta o se destruye, cuando se sale o deja de estar en la pantalla
