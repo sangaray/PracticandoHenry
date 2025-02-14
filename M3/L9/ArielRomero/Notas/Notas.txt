@@ -1,1 +1,42 @@
 M3-L9 - CICLOS DE VIDA DE COMPONENTES FUNCIONALES DE REACT
+Tenemos una función contructora, que nos retorna una estructura HTML, cuando esta función se ejecuta se hace un render, el componente se monta al DOM, y esto se ve en el navegador.
+El componente puede tener estados internos, que al actualizarse se volvía a renderizar y se muestra con el nuevo contenido
+El componente en algún momento de la ejecución ya no tiene que mostrarse más este se desmonta del DOM y ya no se muestra más
+El ciclo de vida es este:
+1. Se ejecuta y Crea.
+2. Se modifica.
+3. Se destruye o deja de visualizar
+
+COMPONENTES DE clases
+Si bien ya se deprecaron y no se usan, hay proyectos creados de esta forma que no van a cambiar. Por lo que es bueno conocerlos por si necesitan trabajar con uno de estos proyectos.
+
+DIFERENCIAS CON LOS COMPONENTES DE función
+1. Es necesario importar REACT
+2. Es necesario ejecutar el método Render
+
+Para declarar estados tengo que crearlos dentro de un constructo, y necesito llamar a super
+
+Super: trae todos los métodos de donde se extiende la clase. Dentro del constructor vamos a llamar al estado
+this.state: state es una palabra reservada de las clases. Esto se crea una sola vez como un objeto que contiene todos mis estados
+this.setState: es un método que me permite actualizar el estado. Es un método que recibe un objeto con las propiedades que quiero actualizar
+
+Puedo combinar funciones con componentes de clases.
+
+Originalmente en los componentes funcionales no se podría trabajar con estados, pero desde que se crearon los hooks todo lo que hacíamos con clases se puede hacer con las funciones, y esta es la razón por la que se deprecaron los componentes de clases
+
+CICLO DE VIDA
+1. MONTAJE (componentDidMount): el componente se crea, se sube al DOM, se monta sólo una vez
+  - Se ejecuta el contructora
+  - Se ejecutan los estados
+  - Se trae las props
+  - Se renderiza, se monta al DOM virtual y luego al real
+  - Se actualizan las referencias al DOM
+  - Pregunta hay algo que querés que haga?
+
+ORDEN DE LOS MÉTODOS QUE SE VAN EJECUTANDO
+constructor(): Inicializa el estado del componente.
+getDerivedStateFromProps(): Se llama antes de cada renderizado cuando las props cambian.
+Render(): Crea la representación de la estructura del componente.
+ComponentDidMount(): Se ejecuta después de la inicialización del componente.
+
+2. ACTUALIZACIÓN (componentDidUpdate): cada vez que el estado se actualiza también lo hace el componente.
