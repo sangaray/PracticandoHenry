@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ClassDisplay from "../classDisplay/ClassDispay";
 
 export default class ClassCounter extends Component {
   constructor(props) {
@@ -14,12 +15,19 @@ export default class ClassCounter extends Component {
     });
   };
 
+  componentDidUpdate() {
+    console.log("El componente se actualizó");
+  }
+
   render() {
     return (
       <div>
         <h2>Contador de Clase</h2>
         <h3>{this.state.contador}</h3>
         <button onClick={this.sumarUno}>Sumar 1</button>
+        {this.state.contador > 2 && this.state.contador < 5 ? (
+          <ClassDisplay />
+        ) : null}
       </div>
     );
   }

@@ -25,7 +25,7 @@ Puedo combinar funciones con componentes de clases.
 Originalmente en los componentes funcionales no se podría trabajar con estados, pero desde que se crearon los hooks todo lo que hacíamos con clases se puede hacer con las funciones, y esta es la razón por la que se deprecaron los componentes de clases
 
 CICLO DE VIDA
-1. MONTAJE (componentDidMount): el componente se crea, se sube al DOM, se monta sólo una vez
+1. MONTAJE (componentDidMount): el componente se crea, se sube al DOM, se monta sólo una vez. Permite ejecutar algo una vez que el componente se terminó de montar
   - Se ejecuta el contructora
   - Se ejecutan los estados
   - Se trae las props
@@ -34,9 +34,37 @@ CICLO DE VIDA
   - Pregunta hay algo que querés que haga?
 
 ORDEN DE LOS MÉTODOS QUE SE VAN EJECUTANDO
-constructor(): Inicializa el estado del componente.
+- constructor(): Inicializa el estado del componente.
 getDerivedStateFromProps(): Se llama antes de cada renderizado cuando las props cambian.
-Render(): Crea la representación de la estructura del componente.
-ComponentDidMount(): Se ejecuta después de la inicialización del componente.
+- Render(): Crea la representación de la estructura del componente.
+- ComponentDidMount(): Se ejecuta después de la inicialización del componente.
 
-2. ACTUALIZACIÓN (componentDidUpdate): cada vez que el estado se actualiza también lo hace el componente.
+2. ACTUALIZACIÓN (componentDidUpdate): esta fase ocurre cuando un componente ya renderizado se actualiza debido a cambios en su estado interno o en las props que recibe. Esta fase consta de varios métodos: cada vez que el estado se actualiza también lo hace el componente.
+- Se actualiza cuando cambian las props
+- Cuando se actualiza el estado, en  setState
+forceUpdate(): Actualiza el componente sin importar si las props o el estado han cambiado. No se recomienda en absoluto usar este método a menos que sea necesario.
+- Se puede hacer que aunque haya un cambio de estado o prop no se actualice el componente shouldComponentUpdate, esto también está completamente desaconsejado, en lugar utilizar variables
+- Se vuelven a actualizar todas las props getDerivedStateFromProps
+- Luego hace un rerenderizado. Guardando el estado viejo con getSpanshotBeforeUpdate para tenerlo de refencia, actualizo las referencias al DOM 
+- Y después ejecuto algo antes de terminar con componentDidUpdate
+
+ORDEN DE LOS MÉTODOS QUE SE VAN EJECUTANDO
+- getDerivedStateFromProps()
+- shouldComponentUpdate() // no se recomienda
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+
+El método render se ejecuta dos veces una de verificación y otra cuando haga el renderizado
+
+3. DESMONTAJE (componentWillUnmount):Última fase del ciclo de vida. Hace referencia al momento en que un componente es eliminado del DOM y no se visualiza más. Se llevan a cabo métodos que permiten la limpieza y liberación de recursos.
+- componentWillUnmount() se ejecuta antes de que el componente se desmonte y detiene tareas que consumen recursos aún al desaparecer el componente. se ejecuta cuando el componente se desmonta o se destruye, cuando se sale o deja de estar en la pantalla Se ejecuta antes de irse, antes de cerrarse
+
+FORMA DECLARATIVO Y NO IMPERATIVA
+En el renderizado condicional sólo puedo usar operador ternario o el && para establecer la condición ya que un bloque if es una forma imperativa y react usa la forma declarativa solamente
+
+No se puede traer toda la información junta por si el usuario va a querer ver algo
+
+Cuando el componente se cierra, se cierra esa instancia del componente, si se vuelve a abrir se crea una nueva instancia
+
+strict mode: react quiere saber si se va a seguir usando el contador después de que se cierra, para esta verificación se monta de prueba y después lo monta de nuevo
