@@ -38,7 +38,17 @@ Nunca debo olvidarme la key en el componente cuando quiero hacer un map y render
 USEEFFECT
 Es una función que tiene dos parámetros, un callback y un array de dependencias.
 
+PASOS DEL CICLO DE VIDA DE UN COMPONENTE FUNCIONAL
+1. estados y funciones
+2. va al return con la estructura HTML
+3. las funciones del ciclo de vida
 
+Para evitar errores debido al orden de ejecución se usa el optional chaining (?) en los datos a rederizar, para asegurarnos que exista la información en el estado antes de renderizarlo
+<div className="modalDetail">
+      <h2>{character?.name}</h2>
+      <img src={character.image} alt={character.name} />
+      <button onClick={handleOnClose}>Cerrar</button>
+    </div>
 
 RECURSOS
 Harry Potter API

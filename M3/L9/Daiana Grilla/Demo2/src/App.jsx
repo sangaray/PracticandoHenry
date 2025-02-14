@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Card from "./components/card/Card";
+import Detail from "./components/Detail/Detail";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -12,6 +13,10 @@ function App() {
   const handlerOnClick = (id) => {
     setId(id);
     setDetail(true);
+  };
+
+  const handleOnClose = () => {
+    setDetail(false);
   };
 
   useEffect(() => {
@@ -31,6 +36,7 @@ function App() {
           />
         );
       })}
+      {detail && <Detail handleOnClose={handleOnClose} id={id} />}
     </>
   );
 }
