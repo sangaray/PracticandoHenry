@@ -11,7 +11,7 @@ class ClassDisplay extends Component {
   render() {
     return (
       <div style={{ backgroundColor: "goldenrod" }}>
-        <h3>Display</h3>
+        <h3>Class Display</h3>
       </div>
     );
   }

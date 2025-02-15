@@ -68,3 +68,75 @@ No se puede traer toda la información junta por si el usuario va a querer ver a
 Cuando el componente se cierra, se cierra esa instancia del componente, si se vuelve a abrir se crea una nueva instancia
 
 strict mode: react quiere saber si se va a seguir usando el contador después de que se cierra, para esta verificación se monta de prueba y después lo monta de nuevo
+
+CASOS DE USO
+Montaje
+- Solicitud de datos desde una API o base de datos.
+- Realizar suscripciones a eventos del navegador.
+- Inicializar recursos externos.
+
+Actualización
+- Realizar acciones cada vez que una prop específica cambie.
+- Actualizar el título de la página cada vez que el estado del componente se modifique.
+- Gestionar acciones cada vez que una sección específica del estado cambia.
+
+Desmontaje
+- Limpiar suscripciones a eventos del navegador.
+- Limpiar el almacenamiento local del navegador.
+- Cancelar peticiones de red o APIs.
+
+DEMO FUNCTION VS CLASS
+const [counter, setCounter] = useState(0);
+Reemplaza en la clase a:
+ constructor(props) {
+    super(props); // trae los métodos de la calse "Component"
+    this.state = {
+      contador: 0,
+    };
+  }
+
+const sumaUno = () => {
+    setContador(contador + 1);
+}
+Reemplaza en la clase a:
+  sumarUno = () => {
+    this.setState({
+      contador: this.state.contador + 1,
+    });
+  };
+
+HOOK USEEFFECT
+useEffect(){callback}, [array de dependencias]); // el array vacío es el equivalente a componentDidMount. Se coloca en el padre, en nuestro ejemplo en FunctionDisplay, dentro del componente
+
+
+useEffect(() => {
+      console.log("FunctionCounter se actualizó");
+    }, [contador]); // se actualiza cuando cambia el contador, el contenido dentro del array de dependencias es el equivalente a componentDidUpdate
+  Sólo se actualiza cuando se actualiza el estado indicado, puedo indicar especificamente cuales estados tiene que mirar, cosa que no sucede con las clases, ya que la actualización se hace cuando cambia cualquiera de los estados o prop. Se coloca en el padre, en nuestro ejemplo en FunctionCounter, dentro del componente
+
+useEffect(
+  () => () => {
+    console.log("Display se desmontará del DOM");
+  },
+  []
+); // se ejecuta cuando se desmonta el componente, es el equivalente a componentWillUnmount. Se coloca en el hijo, en nuestro ejemplo en Display, dentro del componente
+
+RESUMEN
+/* componentDidMount:
+/* useEffect(() => {}, []);
+
+/* componentDidUpdate:
+/* useEffect(() => {}, [estado/s_o_prop/s_a_seguir]);
+
+/* componentWillUnmount:
+/* useEffect(() => () => {}, []);
+
+EJPRACTICO
+1. Inicializa el estado inicial como un array vacío dentro de useState()
+2. Elimina las funciones y agregar y modificar así como los botones que las ejecutan
+3. En el componente Tarjeta agrega un botón con la leyenda "Ver detalle" y mostrar el nombre y casa del personaje
+- Utiliza la API seleccionada: 
+https://hp-api.onrender.com/
+Agrega la solicitud fetch o axios
+- Utiliza la información recibida para modificar el estado con la función seteadora
+- Usa el método slice para trabajar con sólo los primeros cinco perdsonajes

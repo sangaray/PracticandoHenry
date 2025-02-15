@@ -1,5 +1,6 @@
 import "./App.css";
 import ClassCounter from "./components/classCounter/ClassCounter";
+import FunctionCounter from "./components/functionCounter/FunctionCounter";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1>REACT LifeCycle</h1>
       <hr />
       <ClassCounter />
+      <FunctionCounter />
     </>
   );
 }
