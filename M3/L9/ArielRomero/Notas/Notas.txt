@@ -106,8 +106,7 @@ Reemplaza en la clase a:
   };
 
 HOOK USEEFFECT
-useEffect(){callback}, [array de dependencias]); // el array vacío es el equivalente a componentDidMount. Se coloca en el padre, en nuestro ejemplo en FunctionDisplay, dentro del componente
-
+useEffect(){callback}, [array de dependencias]); // el array vacío es el equivalente a componentDidMount. Se coloca en el padre, en nuestro ejemplo en FunctionDisplay, dentro del componente. Si nose pone el array de dependencias se repiten las peticiones indefinidamente
 
 useEffect(() => {
       console.log("FunctionCounter se actualizó");
@@ -135,8 +134,15 @@ EJPRACTICO
 1. Inicializa el estado inicial como un array vacío dentro de useState()
 2. Elimina las funciones y agregar y modificar así como los botones que las ejecutan
 3. En el componente Tarjeta agrega un botón con la leyenda "Ver detalle" y mostrar el nombre y casa del personaje
-- Utiliza la API seleccionada: 
+4. Utiliza la API seleccionada: 
 https://hp-api.onrender.com/
 Agrega la solicitud fetch o axios
-- Utiliza la información recibida para modificar el estado con la función seteadora
-- Usa el método slice para trabajar con sólo los primeros cinco perdsonajes
+5. Utiliza la información recibida para modificar el estado con la función seteadora
+6. Usa el método slice para trabajar con sólo los primeros cinco perdsonajes
+
+API es un servidor que nos devuelve un JSON
+
+Si quiero pasar un argumento a una función en un botón, debo enviarla como arrow function
+onClick={() => clickHandler(id)}
+en lugar de pasarla sóla
+clickHandler(id)
