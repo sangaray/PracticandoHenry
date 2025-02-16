@@ -2,7 +2,7 @@ const Detalle = ({ personaje, closeHandler }) => {
   return (
     <div>
       <h3>Casa: {personaje?.house || "Desconocida"}</h3>
-      <h3>Fecha de Nacimiento: {personaje?.dateOfBirth}</h3>
+      <h3>Fecha de Nacimiento: {personaje?.dateOfBirth || "Desconocida"}</h3>
       <h3>
         {personaje?.hogwartsStaff
           ? "Staff"
