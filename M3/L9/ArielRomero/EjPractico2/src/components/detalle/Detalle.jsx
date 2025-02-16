@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
-
-const Detalle = ({ id, closeHandler }) => {
-  const [detallePersonaje, setDetallePersonaje] = useState({});
-
-  useEffect(() => {
-    fetch(`https://hp-api.onrender.com/api/character/${id}`)
-      .then((respuesta) => respuesta.json())
-      .then((datos) => datos[0])
-      .then((personaje) => setDetallePersonaje(personaje));
-  }, [id]);
-
+const Detalle = ({ personaje, closeHandler }) => {
   return (
     <div>
-      <h3>Casa: {detallePersonaje?.house}</h3>
-      <h3>Fecha de Nacimiento: {detallePersonaje?.dateOfBirth}</h3>
+      <h3>Casa: {personaje?.house || "Desconocida"}</h3>
+      <h3>Fecha de Nacimiento: {personaje?.dateOfBirth}</h3>
       <h3>
-        {detallePersonaje?.hogwartsStaff
+        {personaje?.hogwartsStaff
           ? "Staff"
-          : detallePersonaje.hogwartsStudent
+          : personaje.hogwartsStudent
           ? "Student"
           : "Other"}
       </h3>

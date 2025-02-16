@@ -1,6 +1,17 @@
+import { useState } from "react";
 import styles from "./Tarjeta.module.css";
-const Tarjeta = ({ personaje, clickHandler }) => {
-  const { name, image, id } = personaje;
+import Detalle from "../detalle/Detalle";
+const Tarjeta = ({ personaje }) => {
+  const { name, image } = personaje;
+  const [mostrarDetalle, setMostrarDetalle] = useState(false);
+
+  const clickHandler = () => {
+    setMostrarDetalle(true);
+  };
+
+  const closeHandler = () => {
+    setMostrarDetalle(false);
+  };
 
   return (
     <div className={styles.container}>
@@ -10,7 +21,14 @@ const Tarjeta = ({ personaje, clickHandler }) => {
         src={image}
         alt={name}
       />
-      <button onClick={() => clickHandler(id)}>Ver Detalles</button>
+      {!mostrarDetalle && <button onClick={clickHandler}>Ver Detalles</button>}
+
+      {mostrarDetalle && (
+        <Detalle
+          personaje={personaje}
+          closeHandler={() => setMostrarDetalle(false)}
+        />
+      )}
     </div>
   );
 };
