@@ -33,4 +33,3 @@ Debemos setear estas tres propiedades en falst
   synchronize: false,
   logging: false, 
 
-48 min de la clase 10
