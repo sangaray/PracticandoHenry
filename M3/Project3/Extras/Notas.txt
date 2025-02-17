@@ -16,4 +16,21 @@ Los estados se escriben dentro de la función pero antes del return, en la secci
 
 props: siempre es un objeto que contiene todas las propiedades que le pasé desde el padre
 
-1:06:00 del video de la clase 9
+Siempre debemos asegurarnos de que los componentes fuencionan bien, que todo se ve como quiero que se vea y que no hay errores, luego involucro al backend
+
+Las peticiones deben hacerse donde las necesite y no en lugares que no las necesite
+
+TRES COSAS IMPORTANTES
+- Las peticiones se pueden hacer a multiples servidores
+- La respuesta del servidor se guarda en un estados
+- La petición se va a hacer cuando el componente se monte
+
+CORS
+Es como un guardaespaldas del back que dice a qué urls se pueden hacer las peticiones y desde que lugar.
+
+Debemos setear estas tres propiedades en falst
+  dropSchema: false,
+  synchronize: false,
+  logging: false, 
+
+48 min de la clase 10
