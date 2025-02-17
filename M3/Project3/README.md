@@ -9,11 +9,13 @@ Backend
 - NodeJS
 - PostgreSQL
 - TypeORM
+- Cors
 
 Frontend
 
 - React
 - Vite
+- Axios
 
 ## User Stories
 
