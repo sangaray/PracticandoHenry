@@ -1,5 +1,41 @@
 
+M3-L10 - REACT FORMS
+Daina Grilla
+FORMULARIOS CONTROLADOS
+Para poder crear formularios controlados tenemso que usar estados.
+Debemos enlazar (bindear) de alguna manera el estado de React con el estado del input, porque ambos tienen que ser exactamente iguales, si hay diferencias nos va a traer problemas.
+Las validaciones de formularios de HTML sólo sirven como mensajitos recordatorios, no son reales, no son validaciones reales. Para que realmente funciones tienen que tener validaciones con javascript, validaciones con estados
+Para el binding tenemos que igualar el estado de react con el value del formulario, además tengo que tener darle un name al input para luego poder identificar cual de los inputs esta llenando el usuario
 
+HANDLERS
+Se utilizan para manejar los estados.
+En los inputs si no hay asignado un handlerOnChange junto con el value={props} no se podrá escribir en el mismo. Debo usar onChange porque los inputs notienen un evento onClick.
+onChange: hace que cada caracter que se escribe sea almacenado en el estado de react
+Cuando enlazo las cosas de esta manera, recibo automáticamente un objecto, llamado event o evento y este objeto se dispara cada vez que haya un cambio en el input
+Usar onChange((event) => hanlerInputOnChange(event)); es igual a usar onChange={handleInputChange}
+En el primer caso se pasa de manera literal la prop, si no indico que paso un callback para automáticamente la funcion.
+targer, value y name son las dos propiedades importantes dentro de target
+Asignar el valor del input al estado
+- Forma 1
+      if (name === "username") {
+      setUserData({
+        ...userData,
+        username: value,
+      });
+    }
+    if (name === "password") {
+      setUserData({
+        ...userData,
+        password: value,
+      });
+    }
+- Forma 2
+  setUserData({
+      ...userData,
+      [name]: value,
+    });
 
+Cuando hago click en el botón submit, se recarga la página y se vacían los inputs. Para evitar esto, debo usar preventDefault()
+Este botón junta la información del estado y lo envía al backend.
 
 48 min de la clase 10
