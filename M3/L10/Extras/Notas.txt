@@ -38,4 +38,14 @@ Asignar el valor del input al estado
 Cuando hago click en el botón submit, se recarga la página y se vacían los inputs. Para evitar esto, debo usar preventDefault()
 Este botón junta la información del estado y lo envía al backend.
 
+VALIDACIÓN DE FORMULARIOS
+Capeta helper es la misma que utils
+
+Se puede aplicar la validación al hacer click al en el botón submit o cada vez que se modifica el estado
+La forma correcta de aplicar validaciones es hacerlo a medida que el usuario va escribiendo en el input, a medida que va cambiando el usuario
+errors: viene del errors en el handlerOnChange
+input: viene del input en el handlerOnChange, del estado que se modifica con el input del form
+
+Para manejar los errores de forma correcta vamos a crear un estado para ello
+
 48 min de la clase 10
