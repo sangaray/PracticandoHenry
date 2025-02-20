@@ -12,7 +12,6 @@ function App() {
     username: "Username is required",
     password: "Password is required",
   });
-  console.log(errors);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -22,9 +21,8 @@ function App() {
       [name]: value,
     });
 
-    // const errors = validate(userData);
-    // setErrors(errors);
-    setErrors(validate(userData));
+    const errors = validate(userData);
+    setErrors(errors);
   };
 
   const handleSubmit = (event) => {
@@ -45,7 +43,6 @@ function App() {
             placeholder="exemple@mail.com"
             onChange={handleInputChange}
           />
-          {errors.username && <p style={{ color: "red" }}>{errors.username}</p>}
         </div>
         <div className="form-inputs">
           <label>Password</label>
@@ -56,7 +53,6 @@ function App() {
             placeholder="******"
             onChange={handleInputChange}
           />
-          {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
         </div>
 
         <button type="submit">Submit</button>
