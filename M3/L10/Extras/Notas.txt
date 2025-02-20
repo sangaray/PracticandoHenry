@@ -48,4 +48,6 @@ input: viene del input en el handlerOnChange, del estado que se modifica con el 
 
 Para manejar los errores de forma correcta vamos a crear un estado para ello
 
-48 min de la clase 10
+
+
+
