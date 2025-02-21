@@ -30,3 +30,4 @@ En este repositorio tengo guardadas todas mis prácticas del nuevo Henry Bootcam
 - PostgreSQL
 - React
 - Vite
+- Formik
