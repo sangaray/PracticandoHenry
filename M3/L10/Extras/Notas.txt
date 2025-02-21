@@ -85,6 +85,6 @@ VALIDACIÓN DE DATOS
 - Evita que datos incorrectos o no validos lleguen a los sistemas backend ahorrando recursos y evitando procesamientos innecesarios
 
 
-1:05:00 clase 10
+1:49:00 clase 10
 
 
