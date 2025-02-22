@@ -104,6 +104,28 @@ Etiquetas: Formik, Form, Field, ErrorMessage
 
 Sugerencia aprender a trabajar con los formularios sin librerías para no tener que hacer doble trabajo a la hora de trabajar con ellas de aprender las dos cosas
 
+Atributos de la etiqueta
+<Formik>
+initialValues: indica el estado inicial de los inputs
+onSubmit: función que se ejecuta cuando se envía el formulario
+validate: función que se ejecuta antes de enviar el formulario y valida los datos
+Formik proporciona un contexto para los inputs, por lo que no es necesario pasar el valor y el onChange a cada uno de los inputs
+onSubmit se ejecuta cuando se hace click en el botón submit
+
+<Form>
+<>
+id: identificador del input
+name: identificador del input
+type: tipo de input
+placeholder: texto que aparece en el input
+/>
+<ErrorMessage>
+name: identificador del input
+</Form>
+</Formik>
+
+
+
 1:49:00 clase 10
 
 

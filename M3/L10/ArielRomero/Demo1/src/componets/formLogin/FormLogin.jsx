@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { validateUser } from "../../helpers/validateUser";
+import validateUser from "../../helpers/validateUser";
 
 export default function FormLogin() {
   const [input, setInput] = useState({

@@ -1,4 +1,4 @@
-export const validateUser = ({ username, password }) => {
+const validateUser = ({ username, password }) => {
   const regexEmail = /\S+@\S+\.\S+/; // texto@texto.texto
   const regexLetras = /(?=.*[A-Za-z])/; // Al menos una letra
   const regexNumeros = /(?=.*\d)/; // Al menos un número
@@ -36,9 +36,12 @@ export const validateUser = ({ username, password }) => {
 
   return errors;
 };
-console.log(
+
+/* console.log(
   validateUser({
     username: "e@c.c",
     password: "1%ae",
   })
-);
+); */
+
+export default validateUser;
