@@ -82,8 +82,27 @@ VALIDACIÓN DE DATOS
 - Garantiza que los datos almacenados sean precisos y consistentes
 - Evita errores en el funcionamiento del sistema
 - Son una capa adicional de seguridad
-- Evita que datos incorrectos o no validos lleguen a los sistemas backend ahorrando recursos y evitando procesamientos innecesarios
+- Evita que datos incorrectos o no validos lleguen a los sistemas backend ahorrando recursos y evitando procesamientos innecesario
+Las validaciones se hacen en el front, en el back y en la base de datos, a los tres niveles.
+La validación del front asegura que envía al back lo que espera.
 
+EXPRESIONES REGULARES (REGEX)
+Son patrones de búsqueda que permiten encontrar y manipular cadenas de texto. Se utilizan para validar, buscaar y manipular datos de manera eficiente en texto.
+
+Para validar los datos tengo que saber qué voy a validar y qué necesito 
+
+El back devuelve todo el error en un solo paso, pero en el front necdesitamos ir separando los errores para una mejor experiencia de usuario
+
+Mientras tengo el objeto de validación vacío el usuario ingresó lo que le pido, mientras tenga algo dentro de ese objeto algo está mal y yo se lo tengo que informar al usaurio
+
+FORMIK
+Es una librería de código abierto enfocada en la creación de formularios de React. Simplifica el control y la validación de los inputs
+instalación
+npm install formik --save
+funciones
+Etiquetas: Formik, Form, Field, ErrorMessage
+
+Sugerencia aprender a trabajar con los formularios sin librerías para no tener que hacer doble trabajo a la hora de trabajar con ellas de aprender las dos cosas
 
 1:49:00 clase 10
 
