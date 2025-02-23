@@ -1,0 +1,75 @@
+.form {
+  width: 400px;
+  padding: 20px;
+  border: 2px solid #000;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.337);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #ffffff4d;
+  box-shadow: 0 5px 7px #00000044;
+  z-index: 20;
+
+  label {
+    font-size: 16px;
+    margin: 5px;
+    color: #ffffff;
+  }
+
+  input {
+    border: 1px solid #000;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px;
+  }
+
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  input:focus {
+    background-color: transparent;
+  }
+
+  .buttonSubmit {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px auto 0;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid #ffffff;
+  }
+}
+
+.form__input-container {
+  margin-bottom: 15px;
+  border: 2px solid #ffffff4d;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.form__button-submit {
+  background-color: #f0ffff;
+  width: 100px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 20px auto 0;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff;
+}

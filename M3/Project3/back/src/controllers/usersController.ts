@@ -54,7 +54,7 @@ export const register = async (
       password,
     });
 
-    res.status(201).json(newUser);
+    res.status(201).json({ message: "Usuario registrado con éxito" });
   } catch (error: any) {
     res.status(400).json({ message: error.message });
   }

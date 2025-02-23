@@ -33,3 +33,4 @@ Debemos setear estas tres propiedades en falst
   synchronize: false,
   logging: false, 
 
+19:32 hs clase 10 Forms

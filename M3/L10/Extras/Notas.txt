@@ -124,7 +124,8 @@ name: identificador del input
 </Form>
 </Formik>
 
-
+recursos
+- https://github.com/r5n-labs/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md
 
 1:49:00 clase 10
 
