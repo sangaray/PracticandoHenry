@@ -79,6 +79,9 @@ const validateUser = ({
     ) {
       errors.birthdate = "Este mes no puede tener más de 31 días";
     }
+    if (today - date < 13 * 365 * 24 * 60 * 60 * 1000) {
+      errors.birthdate = "Debes tener al menos 13 años para registrarte";
+    }
   }
 
   // VALIDAR nDNI

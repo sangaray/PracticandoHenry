@@ -33,4 +33,65 @@ Debemos setear estas tres propiedades en falst
   synchronize: false,
   logging: false, 
 
+Distintas formas de hacer el handleChange 
+const handleChange = (event) => {
+    // console.log(event.target.value);
+    // console.log(event.target.name); así sé desde qué input estoy se invocó la función
+    // const {name, value} = event.target
+    setInput({
+      ...input,
+      // [name]: value,
+      [event.target.name]: event.target.value,
+    });
+    setErrors(
+      validateUser({
+        ...input,
+        // [name]: value,
+        [event.target.name]: event.target.value,
+      })
+    );
+  };
+
+  Otra forma del handleChange
+  const handleChange = (event) => {
+      const {name, value} = event.target
+  setInput({
+    ...input,
+    [name]: value,
+  });
+  setErrors(
+    validateUser({
+      ...input,
+      [name]: value,
+    })
+  );
+  }
+
+
+  Otra forma de crear los inputs
+  const formData = [
+  { label: "Contraseña:", name: "password", type: "password" },
+  { label: "Confirmar contraseña:", name: "confirmPassword", type: "password" },
+  { label: "Email:", name: "email", type: "text" },
+  { label: "Fecha de Nacimiento:", name: "birthdate", type: "date" },
+  { label: "Nº DNI:", name: "nDni", type: "text" },
+];
+
+formData.map(({ label, name, type }) => (
+  <div key={name}>
+    <label htmlFor={name}>{label}</label>
+    <input
+      id={name}
+      name={name}
+      type={type}
+      value={input[name]}
+      placeholder={`Ingresar ${label.toLocaleLowerCase()}`}
+      onChange={handleChange}
+    />
+  </div>
+));
+
+Otra forma de desabilitar el botón submit
+disabled={Object.keys(user).some((e) => !user[e])}
+
 19:32 hs clase 10 Forms

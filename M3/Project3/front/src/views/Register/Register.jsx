@@ -1,28 +1,26 @@
 import { useState } from "react";
 import validateUser from "../../helpers/validateUser";
 import styles from "./Register.module.css";
+import axios from "axios";
 
 const POSTUSER_URL = "http://localhost:3000/users/register";
 
-export default function () {
-  const [input, setInput] = useState({
-    name: "",
-    email: "",
-    birthdate: "",
-    nDni: "",
-    username: "",
-    password: "",
-  });
+const initialState = {
+  name: "",
+  email: "",
+  birthdate: "",
+  nDni: "",
+  username: "",
+  password: "",
+  confirmPassword: "",
+};
 
-  const [errors, setErrors] = useState({
-    name: "Nombre es requerido",
-    email: "E-mail es requerido",
-    birthdate: "Birthday es requerido",
-    nDni: "DNI es requerido",
-    username: "Username es requerido",
-    password: "Password es requerido",
-  });
+export default function Register() {
+  // ESTADOS
+  const [input, setInput] = useState(initialState);
+  const [errors, setErrors] = useState(initialState);
 
+  // HANDLERS
   const handleChange = (event) => {
     // console.log(event.target.value);
     // console.log(event.target.name); así sé desde qué input estoy se invocó la función
@@ -43,20 +41,36 @@ export default function () {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const userData = {
+      name: input.name,
+      email: input.email,
+      birthdate: input.birthdate,
+      nDni: input.nDni,
+      username: input.username,
+      password: input.password,
+    };
     // Acá se haría la petición al back... con axios/fetch
-    alert(
+    axios
+      .post(POSTUSER_URL, userData)
+      .then(({ data }) => {
+        console.log(data);
+        alert(data.message);
+        setInput(initialState);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(`. ${error.response.data.error}`);
+      });
+    /* alert(
       `name ${input.name}, email: ${input.email}, birthdate: ${input.birthdate}, nDni: ${input.nDni}, username: ${input.username}, password: ${input.password}`
-    );
-    setInput({
-      name: "",
-      email: "",
-      birthdate: "",
-      nDni: "",
-      username: "",
-      password: "",
-    });
+    ); */
   };
 
+  const handleClear = () => {
+    setInput(initialState);
+  };
+
+  // COMPONENTE
   return (
     <div>
       <h1>Formulario en Registro</h1>
@@ -147,7 +161,7 @@ export default function () {
         <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
         <input
           id="confirmPassword"
-          type="confirmPassword"
+          type="password"
           name="confirmPassword"
           value={input.confirmPassword} // vinculo el input con el estado interno
           placeholder="Ingresa tu password"
@@ -162,8 +176,11 @@ export default function () {
           className={styles.buttonSubmit}
           type="submit"
           value="Enviar"
-          disabled={errors.username || errors.password}
+          disabled={Object.keys(errors).length > 0} // si hay errores, deshabilito el boton
         />
+        <button onClick={handleClear} className={styles.buttonSubmit}>
+          Borrar Formulario
+        </button>
       </form>
     </div>
   );
