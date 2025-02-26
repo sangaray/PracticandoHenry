@@ -67,7 +67,6 @@ const handleChange = (event) => {
   );
   }
 
-
   Otra forma de crear los inputs
   const formData = [
   { label: "Contraseña:", name: "password", type: "password" },
@@ -93,5 +92,10 @@ formData.map(({ label, name, type }) => (
 
 Otra forma de desabilitar el botón submit
 disabled={Object.keys(user).some((e) => !user[e])}
+
+Recursos
+Cursores de CSS
+https://www.eniun.com/cursores-css/
+
 
 1:40:00 hs clase 10 Forms
