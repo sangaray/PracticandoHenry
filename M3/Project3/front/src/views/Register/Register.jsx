@@ -59,7 +59,9 @@ export default function Register() {
       })
       .catch((error) => {
         console.log(error);
-        alert(`. ${error.response.data.error}`);
+        alert(
+          `Se ha producido un error al regisrtrar al usuario. ${error.response.data.error}`
+        );
       });
     /* alert(
       `name ${input.name}, email: ${input.email}, birthdate: ${input.birthdate}, nDni: ${input.nDni}, username: ${input.username}, password: ${input.password}`
@@ -136,7 +138,7 @@ export default function Register() {
           type="text"
           name="username"
           value={input.username} // vinculo el input con el estado interno
-          placeholder="Ingresa tu email"
+          placeholder="Ingresa tu nombre de usuario"
           onChange={handleChange}
         />
         <br />

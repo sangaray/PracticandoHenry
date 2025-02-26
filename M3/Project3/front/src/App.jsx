@@ -11,7 +11,7 @@ function App() {
       {/* <Home /> */}
       <NavBar />
       {/* <Appointments /> */}
-      <Register />
+      {/* <Register /> */}
       <Login />
     </div>
   );

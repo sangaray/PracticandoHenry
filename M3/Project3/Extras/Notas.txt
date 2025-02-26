@@ -94,4 +94,4 @@ formData.map(({ label, name, type }) => (
 Otra forma de desabilitar el botón submit
 disabled={Object.keys(user).some((e) => !user[e])}
 
-19:32 hs clase 10 Forms
+1:40:00 hs clase 10 Forms
