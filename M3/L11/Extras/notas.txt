@@ -1,0 +1,78 @@
+REACT ROUTES
+Esta parte se trabaja en el archivo main.jsx
+React Router DOM: permite trabajar con rutas de manera facil
+ReactDom.createRoot(document.getElementById("root")).render()
+Envuelve a todo el contenido de app menos los imports
+BrowserRouter: permite trabajar con rutas de manera facil
+Envuelve a App
+
+Estructura del archivo main.jsx
+Aquí van los imports
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
+);
+
+Path = URL
+
+Routes es el contenedor de las rutas
+Route es cada una de las vistas de la app
+ROUTE
+requiere dos parámetros un path = URL y un element = componente
+Estructrura de APP con las rutas
+import { useState, useEffect } from "react";
+
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./views/HomePage";
+import Navbar from "./components/NavBar";
+import LoginPage from "./views/LoginPage";
+import AboutPage from "./views/AboutPage";
+import "./App.css";
+
+function App() {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => setContacts(data));
+  });
+
+  return (
+    <div className="App">
+      <Navbar />{" "}
+      {/* por estar afuera de routes se va a renderizar siempre, en todas las páginas o vistas */}
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage contacts={contacts} />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
+    </div>
+  );
+}
+
+React Dom nos brinda el componente Link que reemplaza a los a en la NavBar, la diferencia entre ambos es el atributo se llama to y no href
+
+Estructura de la NavBar
+import style from "./styles/NavBar.module.css";
+import { Link } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <div className={style.container}>
+      {/* <a href="/home">Home</a>
+      <a href="/about">About</a> */}
+      <Link to="/home">Home</Link>
+      <Link to="/about">About</Link>
+    </div>
+  );
+}
+
+RUTAS DINÁMICAS - PARÁMETROS
+Usamos el hook useParams para acceder a los parámetros de la ruta
+
+REDIRECCIÓN DE EVENTOS
+Para esto usaremos dos hooks nuevo
