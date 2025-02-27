@@ -97,5 +97,7 @@ Recursos
 Cursores de CSS
 https://www.eniun.com/cursores-css/
 
+https://developer.mozilla.org/es/docs/Web/CSS/cursor
+
 
 1:40:00 hs clase 10 Forms
