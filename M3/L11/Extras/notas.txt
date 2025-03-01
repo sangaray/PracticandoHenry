@@ -76,3 +76,28 @@ Usamos el hook useParams para acceder a los parámetros de la ruta
 
 REDIRECCIÓN DE EVENTOS
 Para esto usaremos dos hooks nuevo
+useNavigate para redireccionar, para usarlo sólo debo ejecutarlo, lo que hacer es retornar una función que pasa  una ruta que es donde queremos que nos redirija
+
+useLocation para obtener la información de la ruta actual, se usa igual que useNavigate, pero con un parámetro que es el objeto location, donde se encuentra la información de la ruta actual
+
+REACT ROUTING - Ariel
+ROUTING
+- Es la gestión de diferentes vistas de una página web
+- Permite al usurio moverse entre las distintas páginas de un sitio sin la necesidad de recargar la página por completo
+- Los elementos serán denderizados en cada ruta de la SPA
+SPA: Single Page Appliction. 
+Antes en el diseño web se usaba el modelo en el que se hacía una petición al back y se mostraba la página recargandola toda cada vez que se presionaba un link a una página distintas
+Hoy en día el navegador hace la petición y carga todos los archivos sólo la primera vez, trayendo todas las vistas, ahora con single page application, se fija lo que necesita actualizar y trae sólo eso, dejando el resto de la página como está sin tener que recargar todo de nuevo, sino únicamente lo que se necesita modificar, lo que es un modelo mucho más eficiente
+
+REACT-ROUTER-DOM
+- Es una librería de React-
+- Se enfoca en el manejo de rutas para aplicaciones del lado del cliente
+-Esta herramiena gestiona el proceso de denderizado de una SPA, a partir d elas rutas definidas para los difeenes componentes de nuestar aplicación
+
+INSTALACIÓN
+Comando de INSTALACIÓNnpm install react-router-dom
+Esto nos permite tener acceso alas funcionalidades de React Router Dom enla ultima versión estable
+
+CONFIGURACIÓN
+Componente de CONFIGURACIÓNBrouserRouter
+Este es el componente de react-router-dom que nos proveerá delas distintas funcionalidades para habilitar el enrutamiento en nuesta SPAEste debe ubicarse en el nivel más alto de nuestra aplicación
