@@ -47,6 +47,16 @@
     text-decoration: none;
     color: inherit;
   }
+
+  .espaciado {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.espaciado {
+  margin: 0;
+  padding: 0;
 }
 
 .aboutImages {
@@ -144,3 +154,4 @@
     transform: rotate(360deg);
   }
 }
+

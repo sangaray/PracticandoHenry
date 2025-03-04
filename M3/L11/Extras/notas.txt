@@ -99,5 +99,124 @@ Comando de INSTALACIÓNnpm install react-router-dom
 Esto nos permite tener acceso alas funcionalidades de React Router Dom enla ultima versión estable
 
 CONFIGURACIÓN
-Componente de CONFIGURACIÓNBrouserRouter
+Componente de CONFIGURACIÓNB
+BrowserRouter
 Este es el componente de react-router-dom que nos proveerá delas distintas funcionalidades para habilitar el enrutamiento en nuesta SPAEste debe ubicarse en el nivel más alto de nuestra aplicación
+
+INSTALACIÓN
+npm install react-router-dom
+
+ESTRUCTURA 
+En main.jsx colocamos <BrowserRouter><App /></BrowserRouter>
+
+- DEFINE LAS REGLAS DE ENRUTAMIENTO
+  En App colocamos
+  ROUTES: engloba el conjutno de todos los componentes que se renderizzan en alguna ruta en particular
+  ROUTE: representa la ruta específica para cada componente de manera individual.
+  - ATRIBUTOS DE ROUTE
+    PATH: contien el segmento de URL que dará acceso al compnente en caso de conicidir con la ruta
+    ELEMENT: indica el componente a renderizar dentro de la ruta
+    <Routes>
+      <Route path="/" element={<Landing />} />
+    </Routes>
+  LINK; permite navegar entre diferentes rutas, sin editar la URL por nuestra cuenta 
+  Se puede envolver cualquier tipo de elemento HTML y va a dirigir al usuario a donde queramos
+  <Link to="/home">
+    <span>Personajes</span>
+  </Link>
+  Si usamos una etiqueta a la página se recarga por completo porque funciona como una multiple page application
+  <NavLink></NavLink> es similar a Link pero tiene un atributo active que permite cambiar el estilo de la etiqueta cuando se encuentra en la ruta, es decir dar formato al botón que esté activo. Recibe un objeto con una propiedad llamada isActive
+  <NavLink
+    className={({ isActive }) => (isActive ? styles.active : null)}
+    to="/home">
+    <span>Personajes</span>
+  </NavLink>
+
+  RUTAS DINÁMICAS
+  Permiten configurar las direcciones web de manera que puedan incluir segmentos variables
+  Esot conlleva a que una misma ruta maneje diferentes valores en ciertas partes de la URL
+  Posibilita la creación de componentes reutilizables
+  Facilita la construcción de aplicaciones más dinámicas y adaptables
+  <Route path="/detail/:id" element={<Detail />} />
+
+  Pasos
+  1. En App.jsx creamos la ruta al id
+     <Route path="/detail/:id" element={<Detail />} />
+     Los dos puntos indican que es dinámico
+  2. En Card.jsx creamos el link
+     <Link to={`/detail/${character.id}`}>
+  
+Hook useParams
+Es parte del React-Router-Dom, lo traigo de una librería, se ejecuta dentro de uno de los componentes.
+- Permite obtener y acceder a los parámetroe de una ruta dinámica
+- Nos devuelve un objeto con los parámetros de la URL actual
+Se fija en la ruta como se llama el parámetro.
+params trae un objeto completo con todos los parámetros
+const params = useParams();
+Toma los valores de la URL y los trae al objeto de parámetros
+
+  3. En Detail.jsx creamos el hook
+  import { useParams } from "react-router-dom";
+  function Detail() {
+    const params = useParams();
+  }
+
+LIMPIANDO EL ESTADO AL SALIR DEL COMPONENTE 
+Esto permite que al solicitar otro personaje o elemento, no se vean por un milisegundo los datos del personaje anterior o del elemento anterior
+  useEffect(() => {
+    return () => {
+      setCharacter({});
+    };
+  }, []);
+
+Buena práctia es agregar el ternario al carga un dato
+
+REDIRECCIONAMIENTO DE EVENTOS
+Hook useNavigate
+Se utiliza para navegar entre diferentes vistas o componentes de una aplicación en respuesa aeventos que ocurren  
+Nos permite redirigir al usuario a una ruta como resutaado de una acción
+Ejemplo:
+const navigate = useNavigate();
+navigate("/home");
+Se puede agregar al final de un handledSubmit
+
+Hook useLocation
+Nos permite acceder aun objeto con información de la ubicación actual según la ruta, incluyendo la URL y sus parámetros
+Si quiero obtener la dirección completa de donde está el usuario
+pathname: me muestra el URL del lugar donde está el usuario dentro del sitio
+Permite mostrar componentes en lugares específicos usando un renderizado condicional
+Estos dos se aplican en App.jsx
+
+MANEJO DE ERRORES
+Componente de ERRORES- Define un nuevo componente dentro de views llamado ErrorPage
+- Este componete muestra una cuenta regresiva al montarse
+- Usa un estado local llamado countdown (inicializado en 5)
+- Se actualiza cada segundo mediante setInterval y se reinicia al montar el componente para sincronizar con setTimout, que llevará al usuario a "/home" después de 5 segundos
+- Al desmontarse el componente, reinicia el intervalo para mantener la precisión al volver a ingresar.
+En el componente ErrorPage agregar lo siguiente
+  const navigate = useNavigate();
+  const [countdown, setCountdown] = useState(5);
+
+  useEffect(() => {
+    const timeDown = setTimeout(() => {
+      if (countdown === 1) navigate("/home");
+      setCountdown((countdown) => countdown - 1);
+    }, 1000);
+
+    return () => clearTimeout(timeDown);
+  }, [countdown]);
+
+  Pasos a Seguir
+  1. Instalar la librería React-Router-Dom
+  2. Envolver App en <BrowserRouter> en main.jsx
+  3. En App envolver la rutas en una etiqueta <Routes>
+  4. Crear cada ruta con una etiqueta <Route> y definir el componente a renderizar a través de path
+  5. Agregar comodín por si no matchea ninguna ruta <Route path="*" element={<ErrorPage />} />
+  6. Traer el path del useLocation 
+  7. No ver la navBar en el Landing
+  8. En el componente Detail.jsx traer el parámetro id usando useParams
+  9. Vacia el componente antes de irnos de él
+  10. En navBar usamos el componente <Link> o <NavLink style = {{}}> 
+
+
+2:37:00 hs clase 11 Routing
