@@ -95,7 +95,8 @@ REACT-ROUTER-DOM
 -Esta herramiena gestiona el proceso de denderizado de una SPA, a partir d elas rutas definidas para los difeenes componentes de nuestar aplicación
 
 INSTALACIÓN
-Comando de INSTALACIÓNnpm install react-router-dom
+Comando de INSTALACIÓN
+npm install react-router-dom
 Esto nos permite tener acceso alas funcionalidades de React Router Dom enla ultima versión estable
 
 CONFIGURACIÓN

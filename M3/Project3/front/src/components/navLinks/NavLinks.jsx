@@ -1,4 +1,5 @@
 import styles from "./NavLinks.module.css";
+import { Link } from "react-router-dom";
 
 const NavLinks = () => {
   return (
@@ -6,15 +7,15 @@ const NavLinks = () => {
       <span>
         <a href="#">Inicio</a>
       </span>
-      <span>
-        <a href="#">Servicios</a>
-      </span>
+      <Link to="/servicios">
+        <span>Servicios</span>
+      </Link>
       <span>
         <a href="#">El Profe</a>
       </span>
-      <span>
-        <a href="#">Contacto</a>
-      </span>
+      <Link to="/contact">
+        <span>Contacto</span>
+      </Link>
     </div>
   );
 };

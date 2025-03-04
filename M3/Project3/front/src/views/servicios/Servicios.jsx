@@ -1,10 +1,8 @@
-import NavBar from "../../components/NavBar/NavBar";
 import SubjectCard from "../../components/subjectCard/SubjectCard";
 
-const Home = () => {
+const Servicios = () => {
   return (
     <div>
-      <NavBar />
       <SubjectCard />
       <SubjectCard />
       <SubjectCard />
@@ -12,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Servicios;

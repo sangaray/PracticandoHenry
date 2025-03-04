@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 function App() {
-  const { pathname } = useLocation();
+  const pathname = useLocation();
   // console.log(pathname);
 
   return (
