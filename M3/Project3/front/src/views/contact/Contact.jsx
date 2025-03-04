@@ -1,49 +1,38 @@
+import styles from "./Contact.module.css";
 const Contact = () => {
   return (
     <div>
-      <h2 className="main__subtitle texto__contacto">Contáctanos</h2>
+      <h2>Contáctanos</h2>
       <form
-        className="form"
+        className={styles.form}
         method="post"
         action="https://formsubmit.co/scgaraycochea@gmail.com">
-        <div className="form__input-container">
-          <label for="name" className="form__label">
-            Nombre
-            <input
-              type="text"
-              id="name"
-              className="form__input"
-              placeholder="Tu nombre"
-              required
-              name="name"
-            />
-          </label>
-        </div>
-        <div className="form__input-container">
-          <label for="email" className="form__label">
-            Correo Electrónico
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="form__input"
-            placeholder="nombre@empresa.com"
-            required
-            name="email"
-          />
-        </div>
-        <div className="form__textarea-container form__input-container">
-          <label for="message" className="form__label">
-            Mensaje
-          </label>
-          <textarea
-            id="message"
-            className="form__textarea"
-            placeholder="Escribe tu mensaje aquí..."
-            required
-            name="message"></textarea>
-        </div>
-        <button type="submit" className="form__button-submit">
+        <label htmlFor="name">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Tu nombre"
+          required
+          name="name"
+        />
+        <br />
+        <label htmlFor="email">Correo Electrónico</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="nombre@empresa.com"
+          required
+          name="email"
+        />
+        <br />
+        <label htmlFor="message">Mensaje</label>
+        <textarea
+          id="message"
+          placeholder="Escribe tu mensaje aquí..."
+          required
+          name="message"></textarea>
+        <br />
+        <button type="submit" className={styles.buttonSubmit}>
           Enviar
         </button>
       </form>

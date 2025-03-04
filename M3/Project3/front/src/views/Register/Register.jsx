@@ -75,7 +75,7 @@ export default function Register() {
   // COMPONENTE
   return (
     <div>
-      <h1>Formulario en Registro</h1>
+      <h2>Formulario en Registro</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="name">Nombre:</label>
         <input
