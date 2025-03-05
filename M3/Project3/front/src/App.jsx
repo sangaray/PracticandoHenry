@@ -8,6 +8,7 @@ import Login from "./views/login/Login.jsx";
 import Contact from "./views/contact/Contact.jsx";
 import Home from "./views/contact/Contact.jsx";
 // import Landing from "./views/landing/Landing.jsx";
+import SubjectCard from "./components/subjectCard/SubjectCard.jsx";
 
 function App() {
   const { pathname } = useLocation();
@@ -23,6 +24,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
+        {/* Ruta para el SubjectCard, recibiendo el id como parámetro */}
+        <Route path="/subject/:subjectId" element={<SubjectCard />} />
       </Routes>
     </div>
   );

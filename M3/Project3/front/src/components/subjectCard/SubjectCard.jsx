@@ -1,19 +1,14 @@
 import math from "../../assets/Matematica.jpg";
+import React from "react";
 import styles from "./SubjectCard.module.css";
 
-const SubjectCard = () => {
+const SubjectCard = ({ subject }) => {
   return (
     <div className={styles.container}>
-      <img src={math} alt="matematica" />
+      <img src={subject?.imagen} alt={subject.tema} />
       <div className={styles.subjectInfo}>
-        <h2>Matemáticas - El Encanto Oculto de los Números</h2>
-        <p>
-          A menudo, las matemáticas son vistas como una asignatura fría y
-          distante, un conjunto de reglas y fórmulas a memorizar. Sin embargo,
-          para aquellos que logran descubrir su belleza intrínseca, las
-          matemáticas se transforman en un apasionante viaje de descubrimiento y
-          creación.
-        </p>
+        <h2>{subject?.tema}</h2>
+        <p>{subject?.descripcion}</p>
       </div>
     </div>
   );

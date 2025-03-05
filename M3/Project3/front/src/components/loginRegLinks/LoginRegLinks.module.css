@@ -3,20 +3,17 @@
   display: flex;
   justify-content: space-between;
   margin: 0 10px;
-  a {
+
+  span {
+    border-radius: 10px;
     font-family: audiowide;
     text-decoration: none;
     padding: 2px 10px;
     color: #a99cb9;
     font-size: 1.2rem;
-    border-radius: 10px;
   }
 
-  span {
-    border-radius: 10px;
-  }
-
-  span:hover a:hover {
+  span:hover {
     color: rgb(34, 1, 144);
     background-color: rgba(196, 182, 242, 0.8);
     box-shadow: 0 0 15px 5px rgba(225, 225, 243, 0.5);
