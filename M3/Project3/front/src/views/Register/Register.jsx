@@ -2,6 +2,7 @@ import { useState } from "react";
 import validateUser from "../../helpers/validateUser";
 import styles from "./Register.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const POSTUSER_URL = "http://localhost:3000/users/register";
 
@@ -16,6 +17,9 @@ const initialState = {
 };
 
 export default function Register() {
+  // HOOKS
+  const navigate = useNavigate();
+
   // ESTADOS
   const [input, setInput] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
@@ -56,6 +60,7 @@ export default function Register() {
         console.log(data);
         alert(data.message);
         setInput(initialState);
+        navigate("/login");
       })
       .catch((error) => {
         console.log(error);

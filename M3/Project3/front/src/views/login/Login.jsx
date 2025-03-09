@@ -2,15 +2,18 @@ import { useState } from "react";
 import validateUserLogin from "../../helpers/validateUserLogin";
 import styles from "./Login.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const POSTUSERLOGIN_URL = "http://localhost:3000/users/login";
 
-const initialState = {
-  username: "",
-  password: "",
-};
+export default function Login() {
+  const navigate = useNavigate();
 
-export default function Register() {
+  const initialState = {
+    username: "",
+    password: "",
+  };
+
   // ESTADOS
   const [input, setInput] = useState(initialState);
   const [errors, setErrors] = useState(initialState);
@@ -44,6 +47,7 @@ export default function Register() {
         console.log(data);
         alert("Usuario logueado con éxito");
         setInput(initialState);
+        navigate("/appointments");
       })
       .catch((error) => {
         alert(

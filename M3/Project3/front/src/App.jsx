@@ -10,13 +10,16 @@ import Home from "./views/home/Home.jsx"; // Corrige la importación de Home
 import SubjectCard from "./components/subjectCard/SubjectCard.jsx"; // Importa SubjectCard
 import Landing from "./views/landing/Landing.jsx";
 import About from "./views/about/about.jsx";
+import ErrorPage from "./views/ErrorPage/ErrorPage.jsx";
 
 function App() {
   const { pathname } = useLocation();
 
   return (
     <div>
-      {pathname !== "/" ? <NavBar /> : null}
+      {pathname !== "/" && pathname !== "/login" && pathname !== "/register" ? (
+        <NavBar />
+      ) : null}
 
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -26,6 +29,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<ErrorPage />} />
 
         <Route path="/servicios/:subjectId" element={<Servicios />} />
         <Route path="/subject/:subjectId" element={<SubjectCard />} />
