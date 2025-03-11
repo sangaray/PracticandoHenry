@@ -4,3 +4,23 @@ Hooks
 - contextProvider
 - useContext
 
+CREATCONTEXT
+Se puede necesitar tener varios archivos de contexto.
+El archivo también va a llevar la extensión jsx, porque también vamos a trabajar elementos de React
+Con este hook podemos guardar nuestro contexot en una variable y la vamos a poder exportar
+Por defecto se crea con un valor nulo, pero puede recibir cualquier tipo de valor, aunque más comunmente los construimos como objetos, para tener múltiples propiedades que guarden la información de la aplicación
+const {createContext} from React
+
+export const TodoContext = createContext([{
+  todos: [],
+}])
+
+CONTEXTPROVIDER
+Va a representar a un componente. Un componente que vammos a utilizar para distribuir el contenido del contexto.
+La estructura básica de un contextProvider es un componente funcional, que va a recibir como props a todos aquellos componentes que necesiten la información que tiene el contexto del provider.
+Va a recibir como argumento a otros componentes llamados children y va a retornar todos esos componentes que se encuentren dentro del proveedor, envueltos por él.
+Todos los componentes que se reciben por parametro se convierten automáticamente en una propiedade del proveedor
+
+export const TodosProvider = ({ children }) => {
+  return <>{children}</>;
+};
