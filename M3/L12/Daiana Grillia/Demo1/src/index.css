@@ -1,0 +1,14 @@
+/* CSS LEGACY */
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(45deg, #464545 20%, #333 80%);
+  color: #333;
+}
+
