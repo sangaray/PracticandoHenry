@@ -92,3 +92,11 @@ Actions: objeto que contiene información sobre el cambio solicitado por un comp
 
 Action Creators
 Es una función constructora que retorna las actions
+
+INSLACIÓN DE REDUX CORE (Puro)
+npm install redux@4.0.5
+Se instala esta versión porque las nuevas ya no permiten trabajar de la forma antigua. Esta forma de trabajar redux está deprecada.
+
+Reducer: Es una función pura que toma dos argumentos
+- Estado: contiene el estado inicial de la aplicación, sobre el estado global
+- Analiza el tipo de acción mediante un switch statement y ejecuta la función correspondiente
