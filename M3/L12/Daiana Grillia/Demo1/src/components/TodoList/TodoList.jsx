@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { TodosContext } from "../../context/Todos";
 
-const ToDoList = () => {
-  const [todos, setTodos] = useState(["Tarea 1", "Tarea 2", "Tarea 3"]);
+const TodoList = () => {
+  const { todos } = useContext(TodosContext);
+  // const [todos, setTodos] = useState([]);
 
   return (
     <ul>
-      {todos.map((tarea) => {
-        return <li key={tarea}>{tarea}</li>;
-      })}
+      {todos.map((tarea, index) => (
+        <li key={index}>
+          <div>{tarea.title}</div>
+          <div>{tarea.description}</div>
+        </li>
+      ))}
     </ul>
   );
 };
 
-export default ToDoList;
+export default TodoList;

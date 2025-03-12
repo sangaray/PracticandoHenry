@@ -24,3 +24,19 @@ Todos los componentes que se reciben por parametro se convierten automáticament
 export const TodosProvider = ({ children }) => {
   return <>{children}</>;
 };
+
+USECONTEXT
+Recibe como argumento el contexto que se quiere utilizar, del cual queremos extraer información. Tendremos como resultado la información que hay en el contexto.
+
+const { todos } = useContext(TodoContext);
+
+SECUENCIA TRABAJANDO CON REACT 
+1. Crear el contexto
+2. Crear el provider
+3. En el provider crear el estado inicial
+4. Crear las funciones que modifican el estado
+5. En el provider retornar el contexto con el valor del estado y las funciones
+6. En el componente que necesite el contexto, utilizar el hook useContext para acceder al contexto
+7. Importar el provider en el componente que necesita el contexto y envolverlo con el provider
+8. Importar el contexto en el componente que necesita el contexto y utilizar el hook useContext para acceder al contexto
+8. Utilizar las funciones del contexto para modificar el estado
