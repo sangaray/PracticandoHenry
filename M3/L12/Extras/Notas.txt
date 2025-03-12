@@ -1,4 +1,4 @@
-M3-L12 - React Context
+M3-L12 - React Context (Daiana)
 Hooks
 - createContext
 - contextProvider
@@ -40,3 +40,55 @@ SECUENCIA TRABAJANDO CON REACT
 7. Importar el provider en el componente que necesita el contexto y envolverlo con el provider
 8. Importar el contexto en el componente que necesita el contexto y utilizar el hook useContext para acceder al contexto
 8. Utilizar las funciones del contexto para modificar el estado
+
+M3-L12 - REDUX (Ariel)
+Flujo Estados Locales (React)
+Un componente puede tener un estado interno, le podemos pasar por props el estado interno o el set del estado a los hijos, el hijo puede pasar el setState lo que desencadena un evento que modifica al componente dueño del estado, regresando al padre y sus descendientes
+Flujo de datos unidireccional de datos hacia abajo y los eventos hacia arriba
+No se puede enviar información a hermanos o hacia arriba
+
+Estado Global (Redux)
+Da un estado global que se puede acceder desde cualquier componentes y lo puedo manejar desde cualquier componente
+No usa props, se trabaja con hooks, se guarda en el store.
+
+Qué es Redux?
+- Es una librería
+- Maneja el estado global de una app de JS 
+- Facilita la gestión del estado global
+- Permite hacer escalable la aplicación
+- Proporciona un almacén centralizado para el estado de la aplicación
+-  Facilita el mannejo y sincronización de los datos entre las distintas partes que lo consumen
+- Mejora el mantenimiento del flujo de información
+
+3 PRINCIPIOS DE REDUX
+Fuente ünica de Verdad
+- Todo lo que necesitas saber sobre la aplicación se encuentra en un solo lugar (store)
+- Facilita la gestión y comprensión del estado general
+
+Estado Sólo Lectura
+- Sólo puedes cambiar el estado emitiendo las llamadas actions
+- Los estado son considerados inmutables
+
+Los Cambios se Realizan Mediantes Funciones Puras
+- Las transformaciones del estado son manejadas por funciones predecibles y sin efectos secundarios, conocidos como reducers
+
+Flujo de Redux
+
+No me importa donde estén estos componentes ni su relación
+
+Reducer = el único que puede modificar la lista. Recibe el estado y la acción y devuelve el nuevo estado
+Actións = es el medio de comunicación entre los componentes y el reducer. Es un objeto
+Dispatch = es el medio de comunicación entre el reducer y los componentes
+
+Se desencadena un evento en el componente Stock, que envía un Action al Reducer que crea el estado nuevo pisando al anterior y el reducer envía el nuevo listado al componente Carrito donde se actualiza el componente
+Action
+Type: qué quiero hacer
+Payload: información adicional para realizar la tarea
+
+READUX CORE
+Actions: objeto que contiene información sobre el cambio solicitado por un componente de la aplicación
+- Action Type: indica el tipo de acción a efectuar. Actúa como una clave que será utilizada por el reducer para determinar qué cambio realizar
+- Action Payload: contiene la información necesaria enviada por el componente para modificar el esado, esta información es opcional dependiendo de la acción a realizar
+
+Action Creators
+Es una función constructora que retorna las actions
