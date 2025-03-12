@@ -24,8 +24,8 @@ module.exports = {
 // console.log(agregarProducto({ id: 1, name: "Monitor" }));
 // console.log(quitarProducto(1));
 
-const carritoEjemplo = [
+/* const carritoEjemplo = [
   { id: 1, name: "Monitor" },
   { id: 2, name: "Teclado" },
   { id: 3, name: "Mouse" },
-];
+]; */
