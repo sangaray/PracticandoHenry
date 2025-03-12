@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { TodosContext } from "../../context/Todos.jsx";
 
 const CreateTodo = () => {
-  const { todos, setTodos } = useContext(TodosContext);
+  const { addTodo } = useContext(TodosContext);
 
   const [input, setInput] = useState({
     title: "",
@@ -18,7 +18,7 @@ const CreateTodo = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setTodos([...todos, input]);
+    addTodo(input);
   };
 
   return (
