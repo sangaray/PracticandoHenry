@@ -100,3 +100,18 @@ Se instala esta versión porque las nuevas ya no permiten trabajar de la forma a
 Reducer: Es una función pura que toma dos argumentos
 - Estado: contiene el estado inicial de la aplicación, sobre el estado global
 - Analiza el tipo de acción mediante un switch statement y ejecuta la función correspondiente
+Es una función que tiene un switch que va a estar escuchando a nuestro payload.
+Recibe el estado previo y el action
+
+Store: 
+- Es un objeto centralizado que almacena el estado global de la aplicación
+- Se encarga de ejecutar el reducer para modificar el estado y notificar a los componentes sobre los cambios
+
+ESTRUCTURA DEL STORE
+const redux = require("redux");
+const reducer = require("./reducers");
+const store = redux.createStore(reducer);
+
+module.exports = store;
+
+REDUX TOOLKIT
