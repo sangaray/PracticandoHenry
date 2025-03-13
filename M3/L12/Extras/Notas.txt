@@ -115,3 +115,57 @@ const store = redux.createStore(reducer);
 module.exports = store;
 
 REDUX TOOLKIT
+- Es una librería oficial de Redux
+- Creada para incorporar la lógica de Redux Core de una manera simple y eficiente
+- Cuenta con métodos y configuraciones quenos ayudan a simplificar el manejo de las estructuras básicas de Redux
+
+INSTALACIÓN
+npm install @reduxjs/toolkit
+- @reduxjs/toolkit, para instalar los paquetes correspondientes a Redux toolkit
+- react-redux, para integrar React con Redux
+
+CONFIGUACIÓN
+ConfigureStore
+- Crea una carpeta denominada redux dentro de sincronización
+- Crea un archivo llamado store.js
+-Utilizar el método configureStore de Redux toolkit
+
+createSlice
+- Toolkit toma el reducers como funciones independientes
+- Estos reducers son creados mediante la función createSlice
+- Es una colección de fragmentos de lógica de Redux correspondiente a las actions y el reducer
+- Cada una de estas porciones se encarga de manejar una sola pieza del estado.
+Create Slice requiere un objeto con tres propiedades:
+- Name: nombre en string para identificar el slice creados
+- initialState: el estado inicial
+- Objeto reducers: con una o más funciones reducer que definirán como actualizar el estado
+
+REACT-REDUX
+Component Provider
+Provee a todos sus componentes hijos con la información y funcionalidades de la store que recibe como atributo
+
+INSTALACIÓN
+npm install React-Redux
+
+Plugin: Redux Devtools
+        React Developer Tools
+
+Para utilizar Redux Devtools hacer lo siguiente
+npm install redux-devtools-extension --legacy-peer-deps
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = configureStore({
+  reducer: {
+    carrito: carritoSlice,
+  },
+  devTools: composeWithDevTools(), // Habilitar Redux DevTools
+});
+
+HOOKS DE READUX
+useSelector
+Recibe una función callback que "selecciona" a qué propiedad del estado global deseamos suscribirnos
+
+useDispatch
+Toma como argumento la acción que deseamos despachar al reducer
+
+La conexión al back se hace en Carrito en nuestro ejemplo, la llamada no se hace en el s
