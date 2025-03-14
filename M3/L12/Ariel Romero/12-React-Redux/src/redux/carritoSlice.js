@@ -28,4 +28,4 @@ console.log(carritoSlice);
 export const { agregarProducto, quitarProducto } = carritoSlice.actions;
 
 // Exportamos reducer:
-export default carritoSlice.reducer;
+export default carritoSlice.reducer

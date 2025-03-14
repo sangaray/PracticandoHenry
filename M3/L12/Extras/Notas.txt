@@ -145,13 +145,14 @@ Component Provider
 Provee a todos sus componentes hijos con la información y funcionalidades de la store que recibe como atributo
 
 INSTALACIÓN
-npm install React-Redux
+npm install react-redux
 
 Plugin: Redux Devtools
         React Developer Tools
 
 Para utilizar Redux Devtools hacer lo siguiente
 npm install redux-devtools-extension --legacy-peer-deps
+
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const store = configureStore({
