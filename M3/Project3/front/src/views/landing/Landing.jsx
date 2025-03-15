@@ -13,6 +13,10 @@ export default function Landing() {
       <Link to="/login">
         <button>Ingresá</button>
       </Link>
+      <h2>¿Querés saber de que se trata nuestra app?</h2>
+      <Link to="/home">
+        <button>Ingresá como Invitado</button>
+      </Link>
     </div>
   );
 }

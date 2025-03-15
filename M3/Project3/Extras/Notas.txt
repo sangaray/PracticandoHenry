@@ -93,6 +93,10 @@ formData.map(({ label, name, type }) => (
 Otra forma de desabilitar el botón submit
 disabled={Object.keys(user).some((e) => !user[e])}
 
+Orden del código
+1. Hooks
+2. Estados
+
 Recursos
 Cursores de CSS
 https://www.eniun.com/cursores-css/
@@ -101,5 +105,6 @@ https://developer.mozilla.org/es/docs/Web/CSS/cursor
 
 REACT-ROUTER-DOM
 
+44:00 hs clase 12 React-Redux
 
-1:40:00 hs clase 10 Forms
+Eli09Ate89

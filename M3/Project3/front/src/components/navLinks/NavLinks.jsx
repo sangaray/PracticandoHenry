@@ -2,8 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavLinks.module.css";
 import subjectData from "../../helpers/subjectData";
+import { useSelector } from "react-redux";
 
 const NavLinks = () => {
+  const login = useSelector((state) => state.actualUser.userData.login);
+  console.log(login);
+
   return (
     <div className={styles.container}>
       <Link to="/home">
@@ -21,9 +25,13 @@ const NavLinks = () => {
           ))}
         </div>
       </div>
-      <Link to="/appointments">
-        <span>Reservas</span>
-      </Link>
+
+      {login && (
+        <Link to="/appointments">
+          <span>Reservas</span>
+        </Link>
+      )}
+
       <Link to="/about">
         <span>El Profe</span>
       </Link>

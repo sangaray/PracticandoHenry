@@ -2,7 +2,9 @@ import { useState } from "react";
 import validateUserLogin from "../../helpers/validateUserLogin";
 import styles from "./Login.module.css";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setUserData } from "../../redux/userSlice";
 
 const POSTUSERLOGIN_URL = "http://localhost:3000/users/login";
 
@@ -34,6 +36,7 @@ export default function Login() {
     );
   };
 
+  const dispatch = useDispatch();
   const handleSubmit = (event) => {
     event.preventDefault();
     const userData = {
@@ -44,6 +47,9 @@ export default function Login() {
     axios
       .post(POSTUSERLOGIN_URL, userData)
       .then(({ data }) => {
+        // Despachamos la acción
+        dispatch(setUserData(data));
+
         console.log(data);
         alert("Usuario logueado con éxito");
         setInput(initialState);
