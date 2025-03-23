@@ -105,6 +105,10 @@ https://developer.mozilla.org/es/docs/Web/CSS/cursor
 
 REACT-ROUTER-DOM
 
-44:00 hs clase 12 React-Redux
+Para evitar problemas con Redux y Redux Toolkit, se debe instalar el módulo con la opción --legacy-peer-deps
+npm install --legacy-peer-deps
+npm install --force
+
+01:23:00 hs clase 12 React-Redux
 
 Eli09Ate89
