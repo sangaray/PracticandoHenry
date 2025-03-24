@@ -32,3 +32,8 @@ En este repositorio tengo guardadas todas mis prácticas del nuevo Henry Bootcam
 - Vite
 - Formik
 - React Router DOM
+- Redux
+- Redux Toolkit
+- Redux Saga
+- Styled Components
+- React Hooks
