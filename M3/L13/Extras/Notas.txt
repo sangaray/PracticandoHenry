@@ -1,0 +1,5 @@
+Frontend Avanzado
+Hooks Personalizados
+Los hook personalizados se llaman de esa forma porque hacen uso del estado de react (useState)
+
+useFetch es un custom hook muy utilizado por su utilidad
