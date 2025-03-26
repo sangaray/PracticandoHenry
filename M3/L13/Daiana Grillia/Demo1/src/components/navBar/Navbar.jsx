@@ -1,5 +1,5 @@
 import { useToggle } from "../../hooks/useToggle";
-import UserPortrait from "../../componentes/userPortrait/UserPortrait";
+import UserPortrait from "../userPortrait/UserPortrait";
 import "./NavBar.module.css";
 
 export default function Navbar() {
