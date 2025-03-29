@@ -41,3 +41,8 @@ const LazyDataLoader = () => {
 export default LazyDataLoader;
 
 donde se indica en qué caso se ejecutará Lazy loader
+
+SERVICES  
+Creamos el archivo de servicios para el api.
+Luego al hacer la conexión con el backend se agregará la url que usamos en el backend
+
