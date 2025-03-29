@@ -3,3 +3,41 @@ Hooks Personalizados
 Los hook personalizados se llaman de esa forma porque hacen uso del estado de react (useState)
 
 useFetch es un custom hook muy utilizado por su utilidad
+
+REACT LAZY loader
+En app.jsx se agrega
+const LazyDataLoader = React.lazy(() =>
+  import("./components/lazyDataLoader/LazyDataLoader")
+);
+Este es un componente que viene incluido en react, por lo cual es necesario importar react from react
+
+También en app se agrega
+<Suspense fallback={<div>Loading...</div>}>
+        <LazyDataLoader />
+      </Suspense>
+    </div>
+que es donde aparecerá el mensaje de loading
+
+En el componente lazyDataLoader.jsx se crea la función
+const LazyDataLoader = () => {
+  const { data, error } = useFetch(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+  return (
+    <div>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <ul>
+          {data?.map((user) => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default LazyDataLoader;
+
+donde se indica en qué caso se ejecutará Lazy loader

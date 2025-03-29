@@ -1,26 +1,18 @@
-import { useFetch } from "./hooks/useFetch";
 import Navbar from "./components/navBar/Navbar";
-
+import React, { Suspense } from "react";
 import "./App.css";
 
-// Codeium: Refactor | Explain | Generate JSDoc | X
-function App() {
-  const { data, error } = useFetch(
-    "https://jsonplaceholder.typicode.com/users"
-  );
+const LazyDataLoader = React.lazy(() =>
+  import("./components/lazyDataLoader/LazyDataLoader")
+);
 
+function App() {
   return (
     <div className="app-container">
       <Navbar />
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        <ul>
-          {data?.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      )}
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyDataLoader />
+      </Suspense>
     </div>
   );
 }
