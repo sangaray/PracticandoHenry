@@ -1,8 +1,21 @@
 import styles from "./AppointmentCard.module.css";
 
-const AppointmentCard = ({ id, date, time, status, description }) => {
+const AppointmentCard = ({
+  id,
+  date,
+  time,
+  status,
+  description,
+  handleAppointmentCancel,
+}) => {
   const handlerClick = () => {
-    alert(`Desea cancelar el turno ${id}`);
+    if (
+      window.confirm(
+        `Desea cancelar el turno del día ${date} a las ${time} hs?`
+      )
+    ) {
+      handleAppointmentCancel(id);
+    }
   };
 
   return (

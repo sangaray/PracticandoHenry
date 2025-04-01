@@ -9,7 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { setUserAppointments } from "../../redux/userSlice";
 
 // const GET_APPOINTMENTS_URL = "http://localhost:3000/appointments";
+
 const GET_USERBYID_URL = "http://localhost:3000/users/";
+const CANCEL_URL = "http://localhost:3000/appointments/cancel/";
 
 const Appointments = () => {
   // const [appointmentsList, setAppointmentsList] = useState([]);
@@ -44,6 +46,22 @@ const Appointments = () => {
     (state) => state.actualUser.userAppointments
   );
 
+  const handleAppointmentCancel = (appointmentId) => {
+    axios
+      .put(CANCEL_URL + appointmentId)
+      .then((response) => response.data)
+      .then((data) => {
+        axios
+          .get(GET_USERBYID_URL + actualUserId)
+          .then((response) => response.data)
+          .then((actualUser) =>
+            dispatch(setUserAppointments(actualUser.appointments))
+          )
+          .catch((error) => console.log(error.message));
+      })
+      .catch((error) => `Error al cancelar: ${error?.response.data.message}`);
+  };
+
   return (
     <>
       <h2>Tus Turnos</h2>
@@ -57,6 +75,7 @@ const Appointments = () => {
                 time={appointment.time}
                 status={appointment.status}
                 description={appointment.description}
+                handleAppointmentCancel={handleAppointmentCancel}
               />
             </div>
           ))

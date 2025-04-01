@@ -97,18 +97,27 @@ Orden del código
 1. Hooks
 2. Estados
 
+REACT-ROUTER-DOM
+Para evitar problemas con Redux y Redux Toolkit, se debe instalar el módulo con la opción --legacy-peer-deps
+npm install --legacy-peer-deps
+npm install --force
+
+CANCELANDO UN TURNO 
+Para cancelar un turno y que este cambio se renderice en el componente debemos hacer una segunda petición al backend
+
 Recursos
 Cursores de CSS
 https://www.eniun.com/cursores-css/
 
 https://developer.mozilla.org/es/docs/Web/CSS/cursor
 
-REACT-ROUTER-DOM
+DETENER EL SERVIDOR SI SIGUE CORRIENDO O EN USO EL PUERTO QUE SE NECESITA
+Ejecutar los siguientes comandos en PowerShell en ese orden
+netstat -ano | findstr :PUERTO
+taskkill /PID 14516 /F
 
-Para evitar problemas con Redux y Redux Toolkit, se debe instalar el módulo con la opción --legacy-peer-deps
-npm install --legacy-peer-deps
-npm install --force
 
-01:23:00 hs clase 12 React-Redux
+
+00:43:00 hs Homework React-Redux
 
 Eli09Ate89
