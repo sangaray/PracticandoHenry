@@ -1,6 +1,6 @@
 enum AppointmentStatus {
-  ACTIVE = "Active",
-  CANCELED = "Canceled",
+  ACTIVE = "Activo",
+  CANCELED = "Cancelado",
 }
 
 export default AppointmentStatus;

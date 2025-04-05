@@ -11,7 +11,7 @@ const AppointmentCard = ({
   const handlerClick = () => {
     if (
       window.confirm(
-        `Desea cancelar el turno del día ${date} a las ${time} hs?`
+        `Desea cancelar el turno del día ${date} a las ${time} hs con id ${id}?`
       )
     ) {
       handleAppointmentCancel(id);
@@ -24,11 +24,11 @@ const AppointmentCard = ({
       <span>Hora: {time}</span>
       <span>Descripción: {description}</span>
       {status === "Activo" ? (
-        <span className={styles.active} onClick={handlerClick}>
+        <span className={styles.activo} onClick={handlerClick}>
           Activo (Cancelar)
         </span>
       ) : (
-        <span className={styles.canceled}>Cancelado</span>
+        <span className={styles.cancelado}>Cancelado</span>
       )}
     </div>
   );

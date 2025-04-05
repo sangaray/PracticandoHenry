@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./NavLinks.module.css";
 import subjectData from "../../helpers/subjectData";
 import { useSelector } from "react-redux";
+import AppointmentForm from "../../views/appointmentForm/AppointmentForm";
 
 const NavLinks = () => {
   const login = useSelector((state) => state.actualUser.userData.login);
@@ -29,6 +30,12 @@ const NavLinks = () => {
       {login && (
         <Link to="/appointments">
           <span>Reservas</span>
+        </Link>
+      )}
+
+      {login && (
+        <Link to="/appointmentForm">
+          <span>Reservar</span>
         </Link>
       )}
 

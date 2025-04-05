@@ -11,6 +11,7 @@ import SubjectCard from "./components/subjectCard/SubjectCard.jsx"; // Importa S
 import Landing from "./views/landing/Landing.jsx";
 import About from "./views/about/about.jsx";
 import ErrorPage from "./views/ErrorPage/ErrorPage.jsx";
+import AppointmentForm from "./views/appointmentForm/AppointmentForm.jsx";
 
 function App() {
   const { pathname } = useLocation();
@@ -29,6 +30,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="appointmentForm" element={<AppointmentForm />} />
+
         <Route path="*" element={<ErrorPage />} />
 
         <Route path="/servicios/:subjectId" element={<Servicios />} />

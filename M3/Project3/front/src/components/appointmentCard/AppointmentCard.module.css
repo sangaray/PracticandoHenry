@@ -15,7 +15,7 @@
   }
 }
 
-.active {
+.activo {
   color: lawngreen;
   background-color: rgb(3, 69, 3);
   border: 2px solid lawngreen;
@@ -26,7 +26,7 @@
   }
 }
 
-.canceled {
+.cancelado {
   color: rgb(243, 197, 206);
   background-color: rgb(77, 3, 18);
   border: 2px solid rgb(243, 197, 206);
