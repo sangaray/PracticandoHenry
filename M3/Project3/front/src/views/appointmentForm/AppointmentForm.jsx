@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import styles from "../Register/Register.module.css";
+import "../../App.css";
+import styles from "./AppointmentForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -123,7 +124,7 @@ export default function AppointmentForm(props) {
 
   // RENDERIZADO
   return (
-    <div className={styles.formContainer}>
+    <div className={styles.form}>
       <h2>Nueva Reserva</h2>
       <hr />
       <form onSubmit={handleSubmit}>
@@ -184,7 +185,10 @@ export default function AppointmentForm(props) {
           )}
         </div>
 
-        <button type="submit" disabled={Object.keys(errors).length > 0}>
+        <button
+          className={styles.buttonSubmit}
+          type="submit"
+          disabled={Object.keys(errors).length > 0}>
           Enviar
         </button>
       </form>
