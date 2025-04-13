@@ -17,3 +17,6 @@ CASOS DE USO
 Los hooks son componentes de React que no retorna un elemento html sino que va a retornar javascript, retorna el estado interno y la función
 
 Es estado interno es el del padre (el hook)
+Cuando el hook se importa como array no importa el orden, si lo hacemos como objeto necesitamos usar el mismo nombre.
+
+2:57:12 clase 13
