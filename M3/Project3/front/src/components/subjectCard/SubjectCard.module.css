@@ -1,4 +1,5 @@
 .container {
+  width: 700px;
   background-color: rgba(66, 2, 175, 0.5);
   color: #ffffff;
   display: flex;
@@ -8,10 +9,10 @@
   align-items: center;
   border: 2px solid #ffffff;
   border-radius: 10px;
-  margin: 2px;
+  margin: auto;
 
   img {
-    width: 50vw;
+    width: 300px;
     margin: auto;
     margin: 20px;
     border-radius: 15px;
