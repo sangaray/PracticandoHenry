@@ -5,6 +5,7 @@ const regexNumeros = /(?=.*\d)/; // Al menos un número
 const regexSoloNumeros = /^[0-9]+$/;
 const regexEspeciales = /(?=.*[@$!%*?&#])/; // @$!%*?&# al menos uno de estos caracteres
 const regexDate = /^\d{2}-\d{2}-\d{4}$/; // DD-MM-YYYY
+const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
 const validateUser = ({
   name,
@@ -21,7 +22,7 @@ const validateUser = ({
   if (!name) {
     errors.name = "Ingresa un nombre";
   } else {
-    if (!regexSoloLetras.test(name)) {
+    if (!regexNombre.test(name)) {
       errors.name = "Nombre debe contener solo letras";
     }
     if (name.length < 4 || name.length > 50) {

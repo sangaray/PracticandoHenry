@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavLinks.module.css";
-import subjectData from "../../helpers/subjectData";
 import { useSelector, useDispatch } from "react-redux";
-import AppointmentForm from "../../views/appointmentForm/AppointmentForm";
+import { selectSubjects } from "../../redux/subjectSlice";
+import { setUserData } from "../../redux/userSlice";
 
 const NavLinks = () => {
   const login = useSelector((state) => state.actualUser.userData.login);
   console.log(login);
+  const subjects = useSelector(selectSubjects);
 
   const dispatch = useDispatch();
 
@@ -16,9 +17,12 @@ const NavLinks = () => {
       "¿Estás seguro que quieres cerrar sesión?"
     );
     if (confirmed) {
-      dispatch({ setUserData: { login: false, user: {} } });
+      console.log("Cerrando sesión...");
+
+      dispatch(setUserData({ login: false, user: {} })); // ✅ Corrección aquí
     }
   };
+
   return (
     <div className={styles.container}>
       <Link to="/home">
@@ -29,8 +33,9 @@ const NavLinks = () => {
         <span>Servicios</span>
 
         <div className={styles.dropdownContent}>
-          {subjectData.map((subject) => (
-            <Link to={`/subject/${subject.id}`} key={subject.id}>
+          {/* Generar dinámicamente los enlaces para cada subject */}
+          {subjects.map((subject) => (
+            <Link to={`/servicios/${subject.id}`} key={subject.id}>
               <p className={styles.dropdownItem}>{subject.tema}</p>
             </Link>
           ))}

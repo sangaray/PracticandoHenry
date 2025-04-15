@@ -35,7 +35,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
 
         <Route path="/servicios/:subjectId" element={<Servicios />} />
-        <Route path="/subject/:subjectId" element={<SubjectCard />} />
+        {/*<Route path="/subject/:subjectId" element={<SubjectCard />} />*/}
       </Routes>
     </div>
   );

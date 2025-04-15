@@ -49,8 +49,6 @@ export default function Login() {
       .then(({ data }) => {
         // Despachamos la acción
         dispatch(setUserData(data));
-
-        console.log(data);
         alert("Usuario logueado con éxito");
         setInput(initialState);
         navigate("/appointments");
