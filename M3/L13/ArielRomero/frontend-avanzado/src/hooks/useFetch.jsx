@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-export default function useFetch(url) {
+import { useState, useEffect } from "react";
+import { getCharacters } from "../services/apiService";
+export default function useFetch(endpoint) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -7,18 +8,22 @@ export default function useFetch(url) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
-        const responseBody = await response.json();
-
-        if (!response.ok) {
-          throw new Error(`Error en la solicitud, status ${response.status}`);
+        if (endpoint === "character") {
+          const characters = await getCharacters();
+          setData(characters);
+        } else if (endpoint === "locations") {
+          const locations = await getLocations();
+          setData(locations);
+        } else if (endpoint === "episodes") {
+          const episodes = await getEpisodes();
+          setData(episodes);
         }
-        setData(responseBody);
       } catch (error) {
         setError(error);
+        console.log("Error en useFetch:", error);
       }
     };
     fetchData();
-  }, [url]);
+  }, [endpoint]);
   return { data, error };
 }

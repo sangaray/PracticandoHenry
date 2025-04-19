@@ -19,4 +19,99 @@ Los hooks son componentes de React que no retorna un elemento html sino que va a
 Es estado interno es el del padre (el hook)
 Cuando el hook se importa como array no importa el orden, si lo hacemos como objeto necesitamos usar el mismo nombre.
 
-2:57:12 clase 13
+LAZY LOADING Y SUSPENSE
+Son características introducidas por react
+Permiten
+- La carga diferida (lazy loading) de componentes
+- La gestión de la espera (suspense) mientras se cargan los recursos asíncronos
+- Mejorar significativament el rendimiento de la aplicación
+- Mejorar la experiencia de usuario
+
+REACT LAZY
+- Es una técnica que consite en cargar recursos solo cuando son necesarios
+- Ayuda al rendimiento de nuestras aplicaciones
+- Se usa escialmente en proyectos grandees con muchos recursos- Reduce el tiempo de carga de la página
+
+SUSPENSE
+- es un componente que envuelve a aquellos que se cargan de forma diferida y muestra un componente mientras se cargan los recursos asíncronos
+import React, { Suspense } from 'react';
+import Navbar from './components/Navbar';
+
+import './styles/App.css';
+
+const LazyDataLoader = React.lazy(() => import('./components/LazyDataLoader'));
+
+function App() {
+  return (
+    <div className='app-container'>
+      <Navbar />
+      <Suspense fallback={<p>Loading Data ...</p>}>
+        <LazyDataLoader />
+      </Suspense>
+    </div>
+  );
+}
+
+export default App;
+
+IMPLEMENTACIÓN DE SERVICIOS
+- Se refiere a la creación y uso de módulos o clases para manejar la lógica relacionada con la comunicación de agentes externos
+- Los Servicios en React separan la lógica de comunicación de los componentes con terceros
+- Facilita la modularidad y reutilización del código
+- Encapsulan funciones para manejar solicitudes HTTP, procesar datos, gestionar autenticación y manejar errores
+
+Axios permite que le demos la estructura base de una url y luego darle el resto en el momento de hacer la solicitud.
+
+useFetch recibirá ahora un endpoint para gestionar la información
+
+Este nos permitirá invocar, dentro del hook, al servicio correspondiente de manear condicional
+
+import { useState, useEffect } from "react";
+import { getUsers } from "../services/apiService";
+
+export default function useFetch(endpoint) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        if (endpoint === "users") {
+          const usersData = await getUsers();
+          setData(usersData);
+        }
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchData();
+  }, [endpoint]);
+
+  return { data, error };
+};
+
+En el componente LazyDataLoader indica el tipo de dato que deseas y useFetch se cargará de ejecutar el servicio correspondiente para renderizar la solicitud
+
+import useFetch from "../hooks/useFetch";
+
+function LazyDataLoader() {
+  const { data, error } = useFetch("users");
+
+  return (
+    <div>
+      {error ? (
+        <p>{error.message}</p>
+      ) : (
+        <ul>
+          { Array.isArray(data) &&
+            data.map((user) => <li key={user.id}>{user.name}</li>)
+          }
+        </ul>
+      )}
+    </div>
+  );
+}
+
+// Assuming the standard export based on the previous examples and conventions
+// (though not fully visible in this specific crop)
+export default LazyDataLoader;

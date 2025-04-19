@@ -5,7 +5,12 @@ import styles from "./Character.module.css";
 const URL = "https://rickandmortyapi.com/api/character";
 
 export default function Characters() {
-  const { data, error } = useFetch(URL);
+  const { data, error } = useFetch("character"); // Cambio URL por character
+  // const { data, error } = useFetch("episode");
+  // const { data, error } = useFetch("location");
+
+  console.log("Data recibida:", data);
+  console.log("Error recibido:", error);
 
   return (
     <div>
