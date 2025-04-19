@@ -37,3 +37,5 @@ En este repositorio tengo guardadas todas mis prácticas del nuevo Henry Bootcam
 - Redux Saga
 - Styled Components
 - React Hooks
+- Custom Hooks
+- Lazy Loading / Suspense
