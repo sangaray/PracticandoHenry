@@ -23,9 +23,11 @@ function arrayGenerador(n) {
   return newArray;
 }
 
-busquedaSuma(arrayGenerador(10), 100); //* [ 0, 1, 2, ..., 9 ]
+busquedaSuma(arrayGenerador(10), 100); // [ 0, 1, 2, ..., 9 ]
 busquedaSuma(arrayGenerador(100), 1000);
 busquedaSuma(arrayGenerador(1000), 10000);
 busquedaSuma(arrayGenerador(10000), 100000);
+
 // n = n^2
+// O(n^2) => Cuadrática
 // 10.000 = 100.000.000
