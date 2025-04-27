@@ -25,8 +25,104 @@ Big O (O) => O(n) <= number of operations (n)
 
 Todo problema tiene solución el tema es cuánto tiempo me va a llevar
 
+ALGORITMOS EN CÓDIGO
+Complejidad constante O(1)
+En este caso el tamaño de dicho array sería totalmente indiferente.
 
+const food = ["🍟", "🍔", "🍩", "🍗"];
 
+function printFirstElement(array) {
+  console.log(array[0]);
+}
+
+printFirstElement(food);
+
+Categorías
+O(1) - Constante (no hay for ni while)
+O(log n) - Logarítmica (un while que divide a la mitad)
+O(n) - Lineal (hay un for que no divide a la mitad)
+O(n log n) - Lineal logarítmica
+O(n^2) - Cuadrática (for dentro de otro for)
+O(2^n) - Exponencial (un subset y genera un arrego de otro arreglo, combinaciones)
+
+Algoritmos de Búsqueda
+Son métodos sistemáticos que se usan para localizar la ubicación de un elemento particular dentro de un conjunto de datos.
+Son fundamentales en la resolución de problemas relacionados con la recuperación de información.
+
+Búsqueda Lineal
+Se recorrerá el array de principio a fin comparando cada elemento con el valor objetivo.
+En el peor de los casos, este valor coincide con el último elemento del array, el tiempo de resolución será proporcional al tamaño de dicho arreglo.
+
+const list = [
+  1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+];
+
+const linealSearch = (array, target) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      return `El número ${target} se encuentra en la posición ${i} del array.`;
+    }
+  }
+  return `El número ${target} no se encuentra en el array.`;
+};
+
+console.log(linealSearch(list, 1));
+console.log(linealSearch(list, 22));;firstElement(food);
+
+Binary Search
+Este algoritmo consiste en encontrar el valor intermedio del array ordenado y compararlo con el valor objetivo.
+
+const binarySearch = (array, target) => {
+  let left = 0;
+  let right = array.length - 1;
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
+    if (array[middle] === target) {
+      return `El número ${target} se encuentra en la posición ${middle} del array.`;
+    }
+    if (array[middle] < target) {
+      left = middle + 1;
+    } else {
+      right = middle - 1;
+    }
+  }
+  return `El número ${target} no se encuentra en el array.`;
+};
+
+console.log(binarySearch(list, 1));
+console.log(binarySearch(list, 22));
+
+Bubble Sort
+Compara elementos de a pares y los ordena dentro de un array.
+Este proceso se repetirá hasta que los datos estén ordenados.
+
+const datosDesordenados = [5, 3, 7, 1, 2, 8, 4, 9, 6, 10];
+
+function bubbleSort(array) {
+
+  let cambio = true;
+
+  while (cambio) {
+    cambio = false;
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        let aux = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = aux;
+        cambio = true;
+      }
+    }
+  }
+
+  return array;
+}
+
+console.log(bubbleSort(datosDesordenados));
+
+Merge Sort
+Divide: Divide el array desordenado en dos sublistas de tamaño aproximadamente igual.
+Ordena: Ordena recursivamente cada sublista. Este paso se repite hasta que cada sublista tenga un solo elemento, lo que se considera que está ordenado.
+Combina(merge): Combina las sublistas ordenadas para producir una lista única y ordenada.
 
 Referencias
 Links
@@ -36,3 +132,7 @@ Video sobre doblar papel
 https://www.youtube.com/shorts/35loZtGK38k
 Algoritmos
 https://github.com/sangaray/ft53-m3-demo/blob/main/Xtras/readmes/m3-14.md
+
+API VIDEO GAMES PARA PRACTICAR
+https://www.freetogame.com/api-doc
+https://www.freetogame.com/api/games
