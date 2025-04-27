@@ -34,3 +34,6 @@ busquedaBinaria(arrayGenerador(100), 50);
 busquedaBinaria(arrayGenerador(1000), 500);
 busquedaBinaria(arrayGenerador(10000), 5000);
 busquedaBinaria(arrayGenerador(100000), 50000);
+
+// n: 10 => pasos: 3.32
+// O(log n) => Logarítmica
