@@ -1,0 +1,38 @@
+M3-L14 - Ariel Romero - JavaScript avanzado II
+Objetivos
+- Aprende que es la eficiencia y la complejida de un algoritmo
+- Conocer e implementar algoritmos para comparar su complejidad
+- Utilizar la inteligencia artificial para mejorar la eficiencia de un código
+
+1. Time Complexity & Space Complexity
+RECURSOS
+COMPLEJIDAD TEMPORAL
+Representa la cantidad de tiempo que requiere un programa para ejecutarse en función del tamaño de su entrada.
+Se mide normalmente en unidades de tiempo como segundos, milisegundos, etc. (este es el recurso más importante y difícil de manejar, se espera que las respuestas sean rápidas, cuando se habla de complejidaad de algoritmos, se refiere al temporal)
+
+COMPLEJIDAD ESPACIAL
+Se refiere a la cantidad adicional de memoria que utiliza un programa mientras se ejecuta.
+Incluye la memoria asignada para variables, estructuras de datos, pilas de llamadas, entre otros, en función del tamaño de la entrada. (Este recurso puede ser expandido a través de servidores o agregando más memoria, por lo que no se toma tanto en cuenta al hablar de complejidad de algoritmos)
+
+2. Algoritmos ¿Qué es?
+- Es una secuencia ordenada y finita de pasos que permiten realizar una actividad o tarea.
+- Estos pasos deben ser sucesivos y exactos.
+- Debe ser preciso, claro y no ambiguo.
+- Cualquier persona que siga los pasos correctamente pueda obtener el resultado deseado.
+
+¿Cómo se mide la eficiencia de un algoritmo?
+Big O (O) => O(n) <= number of operations (n)
+
+Todo problema tiene solución el tema es cuánto tiempo me va a llevar
+
+
+
+
+Referencias
+Links
+Calculadora de Logaritmos en Base 2
+https://miniwebtool.com/es/log-base-2-calculator/
+Video sobre doblar papel
+https://www.youtube.com/shorts/35loZtGK38k
+Algoritmos
+https://github.com/sangaray/ft53-m3-demo/blob/main/Xtras/readmes/m3-14.md
