@@ -22,9 +22,9 @@ generarSubsets([1, 2, 3, 4, 5]);
 generarSubsets([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // n = 2^n
-// O(2^n) => EXPONENCIAL
 // 3 = 2^3 = 8
 // 4 = 2^4 = 16
 // 5 = 2^5 = 32
 // 6 = 2^6 = 64
 // 100 = 2^100
+// O(2^n) => EXPONENCIAL
