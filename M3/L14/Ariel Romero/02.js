@@ -15,3 +15,6 @@ sumaArray([1, 2]);
 sumaArray([1, 2, 3]);
 sumaArray([1, 2, 3, 4]);
 sumaArray([1, 2, 3, 4, 5]);
+
+// n: 10 => pasos: 10
+// O(n) => LINEAL
