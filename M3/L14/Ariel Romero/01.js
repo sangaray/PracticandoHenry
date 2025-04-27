@@ -14,5 +14,5 @@ devuelveLongitud([1, 2, 3]);
 devuelveLongitud([1, 2, 3, 4]);
 devuelveLongitud([1, 2, 3, 4, 5]);
 
-//* n: 10 => pasos: 1
-//* O(1) => CONSTANTE
+// n: 10 => pasos: 1
+// O(1) => CONSTANTE
