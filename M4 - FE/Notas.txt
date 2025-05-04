@@ -1,0 +1,24 @@
+M4FE-L1 Daina Grillia
+TRABAJANDO CON FIGMA
+Vamos a usar figma: en el documento debe esta la paleta de colores con los códigos de color y las variables a utilizar para no tener que esta escribiendo el código de color cada vez que lo vayamos a utilizar
+Vamos a tener colores primarios, secuendiarios y de acentuación, estos colores son los únicos que podrán ser usados a través de la aplicación, no se puede usar otros colores que no estaén en esta paleta, en la documentación. Si se quiere agregar un color debe agregarse con todos los detalles para ese nuevo color en la documentación
+También se va a detallar la tipografía, color, tamaño, fuente,  para cada tipo de texto que tengamos en la aplicación
+Todos estos modelos van con todos los detalles y ejemplos agregados
+Lo mismo vamos a tener para los botones, con los colores, tamaños etc.
+La iconografía también debe estar descripta en la documentación, estos deben estar en una sola imagen
+Todo esto se hace para mantener consitencia en toda la página y a través de las distintas páginas de la aplicación
+Las cards también se dan los detalles de color, fuente, etc.
+Si en el diseño hay algo que no está en la documentación debemos avisar al diseñador que lo agregue a la documentación o usar un elemento de los que estén en la documentación
+Cards con la imágenes
+Si hay un selector en el diseño que indica que hay opciones, debemos hablar conlos diseñadores para que las agreguen, nosotros no podemos agregar nada  que no esté en el diseño en la documentación
+CREAR UNA DE LAS PÁGINAS DEL PROYECTO
+Primero analizarla para identificar los componentes que se van a necesitar
+1.	Logo, navbar, botón (suponemos que ya existe)
+2.	Títulos, escrito
+3.	Dos imágenes
+4.	Subtítulo
+5.	Componente contenedor de seis cards en tres columnas
+6.	Subtítulo
+7.	Dos columnas de cards
+
+(Fin Notas del Video)

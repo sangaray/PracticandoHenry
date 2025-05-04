@@ -1,5 +1,11 @@
+// Components
+import Career from "./career/Career";
 function App() {
-  return <></>;
+  return (
+    <>
+      <Career />
+    </>
+  );
 }
 export default App;
 
