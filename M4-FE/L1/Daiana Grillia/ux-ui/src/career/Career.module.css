@@ -12,8 +12,23 @@
   flex-direction: column;
 }
 
+.subContainer > span {
+  margin-bottom: 39px;
+}
+
 .subContainer > button {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
   border-radius: 39px;
   background-color: #5236ff;
   padding: 25px 123px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
 }

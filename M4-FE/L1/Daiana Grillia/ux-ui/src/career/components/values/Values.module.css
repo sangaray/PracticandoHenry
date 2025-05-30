@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  padding: 25px 54px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #efecff;
+  border-radius: 39px;
+  border: none;
+  margin-bottom: 31px;
+
+  color: #242331;
+  font-family: "Montserrat";
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 110%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.container > span {
+  color: #242331;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 50px;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 110%; /* 55px */
+}

@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  width: 1200px;
+  background-color: #333;
+  border: 2px solid #fff;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  font-family: sans-serif;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.logoContainer img {
+  width: 35px;
+  height: 35px;
+  box-shadow: 0 0 5px #fff;
+}
+
+p {
+  color: #0d0e10;
+  font-family: "Geist";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 75% */
+}
+
+.buttonsContainer {
+  display: flex;
+  padding: 24px 52px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

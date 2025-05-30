@@ -21,4 +21,7 @@ Primero analizarla para identificar los componentes que se van a necesitar
 6.	Subtítulo
 7.	Dos columnas de cards
 
+Es una buena práctica comentar los imports
+
+
 

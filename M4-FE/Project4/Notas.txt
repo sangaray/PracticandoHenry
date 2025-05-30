@@ -1,0 +1,74 @@
+Proyecto 4 - Henry
+1. Buscar inspiracion en Pinterest
+2. Buscar diagrama de flujo en figma
+3. Crear nuestro diagrama de flujo
+4. Crear un portotipo en figma
+
+Principios de ui/ux
+Interfaz de Usuario
+Todo elemento visible e interactivo para el usuario que visite un sitio web
+PRINCIPIOS
+- Simplicidad
+- Consistencia
+- Jerarquía Visual
+- Contraste
+- KISS = Keep it simple stupid
+- Regla del 60-30-10: 60% de texto, 30% de imagenes y 10% de botones
+- Regla del 60-30-10: 60% color dominante, 30% color secundario y   
+  10% color de acentuación
+
+Experiencia de Usuario
+Se refiere a la percepcpción global que tiene una persona al interactuar con un producto, servicio o sistema, en términos de facilidad de uso, eficiencia y satisfacción.
+
+UI y UX son lo mismo
+¡Cuidado!
+Un sitio web puede cumplir con todos los principios UI para verse de lo mejor, y aún así no brindar una buena experiencia de navegación a sus usuarios.
+
+PRINCIPIOS
+- Predictibilidad (tool tips)
+- Encontrabilidad
+- Tiempo de Respuesta (carga y retroalimentativa)
+
+USABILIDAD Y ACCESIBILIDAD
+Usabilidad
+Facilidad con la que un usuario puede navegar y utilizar un sitio  web. Se centra en la eficiencia, simplicidad y satisfacción durante la interacción
+
+Accesibilidad 
+Buscar conseguir la universalidad de la interacción o, en otras palabras, que el sitio pueda ser usado or el mayor número de personas posible.
+
+1. Rapidez: Se llega al objetivo en la menor cantidad de tiempo posible
+2. Apariencia: Apariencia limpia y sencilla para ayudar en la navegación
+3. Información y legibilidad: Los textos deben tener información clara y concisa
+
+Nosotros nos vamos a dedicar en este caso a un e-commerce, pero todo va a depender del tipo de usuarios al que nos estamos dirigiendo
+
+4. Wireframes y Prototipos
+Wireframe: representación global primaria de como queremos nostros que se vea la web, es una especie de esqueleto de la página web. Es volcar la idea lo que queremos que se vea. No nos preocupamos por colores, precisión de pixelado, etc., tampoco se hace con texto real ni con imágenes.
+
+COMPONENTES
+- Bloques de contenido
+- Bloque de imágenes o multimedia
+- Formularios de contacto
+- Espacio de búsqueda
+- navegación
+- Espacio de gráficos
+Prototipos
+- Imagen real
+- Texto real
+- colores
+- Es más visual 
+- Tiene interacción
+
+figma
+Education Edition Free Account
+
+Quien hace el diseño debe usar números redondos para los tamaños de las imagenes
+
+Para usar fuentes de google fonts, usar el link en el index.html y el css en app.css
+
+
+RECURSOS
+trheejs.org
+leap-for-minkind.com
+
+1:09:00 hs Homework UI / UX
