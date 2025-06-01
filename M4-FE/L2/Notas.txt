@@ -2,10 +2,15 @@ M4FE-L2 Daiana Grillia
 Type Annotations
 Nos permite tipar una variable, con lo cual no podemos cambiar ni a propósito, ni por error el tipo de dato que va a guardar esa variable
 let name: type = valor;
+ejemplo
+let a: number = 2;
+// a = "3" no se puede asignar un tipo distinto de dato al que se uso al declarar la variable
 
 Funciones
 En una función debemos indicar tipo de dato de los parámetros si los tiene y el tipo de dato que devuelve
 function name(a: type, b: type): type (retorno) {}
+ejemplo
+const addition = (a: number, b: number): number => a + b;
 
 Interfaces
 Los nombres de estar en CamelCase y primera letra siempre en mayúscula
@@ -15,7 +20,34 @@ Interface nombre {
     propiedad2: type;
     propiedad3: type;
 }
+Ejemplo
+export interface product {
+  title: string;
+  description: string;
+  price: number;
+  images: Array<string>;
+  active: boolean;
+}
+Uso export porque así ts entiende que si bien la interface no está siendo usada en este archivo lo está en algún otro lugar
 
 Declaración de Arrays
 1. nombre: Array<tipo>
 2. nombre: tipo[]
+
+OBJETOS
+Cuando declaramos un objeto este debe seguir a la estructura de la interface.
+
+CLASES
+El tipado no va solo en el parámetro del constructor también debe ir en la propiedad específica de la clase 
+Hay tres formas de hacerlo
+Public: podemos acceder al valor desde cualquier lugar del código
+Private: podeos acceder a esa propiedad sólo dentro de la clase
+Protected: concede acceso desde la clase y las subclases de esa clase
+
+GENÉRICOS
+Se crea un funcion genérica, recibe un array de algo y devuelve un array de algo
+Ejemplo
+const getLastItem = <T>(items: T[]): T => {
+  return items[items.length - 1];
+}
+T: es un tipo genérico
