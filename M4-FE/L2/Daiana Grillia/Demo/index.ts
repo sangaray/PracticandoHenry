@@ -59,7 +59,7 @@ console.log(getLastItem([[], {}, 2, 4, "e"]));
 
 const reult1 = getLastItem<number>([1, 2, 3, 4, 5]);
 const reult2 = getLastItem<string>(["a", "b", "c", "d", "e"]);
-const reult3 = getLastItem<string>([[], {}, 2, 4, "e"]);
+const reult3 = getLastItem<any>([[], {}, 2, 4, "e"]);
 
 console.log(reult1);
 console.log(reult2);
