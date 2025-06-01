@@ -51,3 +51,31 @@ const getLastItem = <T>(items: T[]): T => {
   return items[items.length - 1];
 }
 T: es un tipo genérico
+
+PROYECTO DE EJEMPLO
+vite
+1. Creamos el proyecto 
+npm create vite@latest
+2. nos desplazamos a la carpeta del proyecto
+cd nombreDelProyecto (demo2)
+3. Instalamos las dependencias
+npm install
+
+React
+4. Creamos un componente
+ReactFC.tsx
+5. Se debe evitar usar any como tipo de dato, es una mala práctica en typescript
+6. No es suficiente la extensión tsx para indicar que es un componente, se necesita especificarlo
+import React from 'react'
+- export const FirstCompnent: React<React.FunctionComponent> = () => {
+}
+- export const FirstCompnent: React.FC = () => {
+}
+7. Otra cosa que podemos hacer pero no es extremadamente necesaria es tipar el retorno de la función
+- export const FirstCompnent: React.FC<Props> = (): React.ReactElement => {
+}
+Al tipar de esta manera no puedo retornar nada que no sea un elemento de HTML en esa función
+8. Otra forma de tipar el componente es usando React.ReactNode, la diferencia con el anterior es que  puedo retornar otro tipo de dato que no sea sólo un elemento de HTML
+9. Props, necesitamos tiparlas. Las props son un objeto,
+- puedo hacer destructuring y poner la propiedad, pero debo espcificar que son props y de qué tipo son
+- Si recibo una o dos props puedo usar un genérico
