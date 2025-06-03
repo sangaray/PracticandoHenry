@@ -88,3 +88,6 @@ const Saludador: React.FC<{
 
 INTERFACES 
 Para casos en el que tengamos más de dos props vamos a usar interfaces para determinar qué props para a recibir el componente y qué tipo de props van a ser
+
+GENÉRICOS
+
