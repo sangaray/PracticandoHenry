@@ -79,3 +79,12 @@ Al tipar de esta manera no puedo retornar nada que no sea un elemento de HTML en
 9. Props, necesitamos tiparlas. Las props son un objeto,
 - puedo hacer destructuring y poner la propiedad, pero debo espcificar que son props y de qué tipo son
 - Si recibo una o dos props puedo usar un genérico
+
+Este tipo de tipado solo se puede usar si tenemos una o dos props, con más ya es muy grande y no se puede usar
+const Saludador: React.FC<{
+  children: React.ReactElement;
+  name: string;
+}> = ({ name, children }): React.ReactElement => {}
+
+INTERFACES 
+Para casos en el que tengamos más de dos props vamos a usar interfaces para determinar qué props para a recibir el componente y qué tipo de props van a ser
