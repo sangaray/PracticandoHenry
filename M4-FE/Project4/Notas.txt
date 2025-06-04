@@ -66,9 +66,26 @@ Quien hace el diseño debe usar números redondos para los tamaños de las image
 
 Para usar fuentes de google fonts, usar el link en el index.html y el css en app.css
 
+FRONTEND
+Pasos a seguir:
+1. Hacemos una copia de .env.example y lo renombramos a .env
+2. Creamos la base de datos en PostgreSQL:
+ecommercep4
+3. Completamos las variables de entorno en .env
+PORT=3002 # Server
+DB_HOST=localhost 
+DB_PORT=5432 
+DB_USER=postgres 
+DB_PASSWORD=Eli09Ate89 
+DB_NAME=ecommercep4 
+JWT_SECRET=secretamentemio
+4. instalar dependencias en el back
+
+
+
+
 
 RECURSOS
 trheejs.org
 leap-for-minkind.com
 
-1:09:00 hs Homework UI / UX
