@@ -80,6 +80,9 @@ DB_PASSWORD=Eli09Ate89
 DB_NAME=ecommercep4 
 JWT_SECRET=secretamentemio
 4. instalar dependencias en el back
+5. Inciamos el Servidor
+6. Verificar que las rutas funcionan con Thunder Client
+
 
 
 
