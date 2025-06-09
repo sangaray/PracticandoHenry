@@ -1,5 +1,4 @@
-// Type Annotations
-var a = 1;
+// Type Annotationet a: number = 1;
 var c = "Maximiliano";
 var b = true;
 var k = [2, 3, false];
@@ -28,13 +27,17 @@ var ProductoMemoryRepository = /** @class */ (function () {
 var arrNumbers = [1, 2, 3, 4, 5, 6];
 var arrStrings = ["Hola", "Chau"];
 var arrAnys = ["Hola", 1, false, {}];
-var getLastNumber = function (arrayNumbers) {
-    return arrayNumbers.pop();
+// const getLastNumber = (arrayNumbers: number[]): number | undefined =>
+//   arrayNumbers.pop();
+// const getLastString = (arrayStrings: string[]): string | undefined =>
+//   arrayStrings.pop();
+// const getLastAny = (arrayAnys: any[]): any | undefined => arrayAnys.pop();
+// console.log(getLastNumber(arrNumbers));
+// console.log(getLastString(arrStrings));
+// console.log(getLastAny(arrAnys));
+var getLastItem = function (arrayGenerico) {
+    return arrayGenerico.pop();
 };
-var getLastString = function (arrayStrings) {
-    return arrayStrings.pop();
-};
-var getLastAny = function (arrayAnys) { return arrayAnys.pop(); };
-console.log(getLastNumber(arrNumbers));
-console.log(getLastString(arrStrings));
-console.log(getLastAny(arrAnys));
+console.log(getLastItem(arrNumbers));
+console.log(getLastItem(arrStrings));
+console.log(getLastItem(arrAnys));

@@ -118,6 +118,25 @@ GENÉRICOS
 Sirve para tener un dato genérico que podemos pasar a una función
 Debemos hacer un método por cada tipo de dato.
 
+RELEVANCIA DE TYPESCRIPT DENTRO DE REACT
+Typescript => Mantenibilidad
+           => Rich IDE
+           => Soporte ES6
+           => Plataforma cross
+           => Lenguaje orientado a OBJETOS
+           => Manipulación DOM
+
+02 TYPESCRIPT Y REACT
+Configuración de un proyecto
+- Selecciona TypeScript + SWC como opción.
+SWC: Compilador rápido que mejora los tiempos de compilación, optimizando el rendimiento de los proyectos web.
+
+Instalación
+npm create vite@latest
+
+
+
+
 
 
 1:25:12 Clase React & Typescript
