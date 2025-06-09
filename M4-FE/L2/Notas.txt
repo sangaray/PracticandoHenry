@@ -89,5 +89,35 @@ const Saludador: React.FC<{
 INTERFACES 
 Para casos en el que tengamos más de dos props vamos a usar interfaces para determinar qué props para a recibir el componente y qué tipo de props van a ser
 
-GENÉRICOS
+M4FE-L2 Maxi Gadea
+TYPESCRIPT Y REACT 
+Repaso de Typescript
+Type Annotations
+Es una forma de decir de qué tipo son las variables
+Tipo any, no es conveniente usarlo, que sirve para decir que puede ser cualquier cosa, solo se usa en casos muy especiales
 
+INTERFACES
+Es un conjunto de tipos 
+
+¿Recuerdas que...?
+Existen dos formas de declarar un arreglo de tipo X en tsPuedes utilizar la notación de generics con " Array<X> o la sintaxis de arrays convencionales con "X[]".
+Ejemplo
+// Usando la notacion de generics
+const arregloGenerico: Array<number> = [1, 2, 3];
+
+// Usando la sintaxis de arrays convencional
+const arregloConvencional: number[] = [4, 5, 6];
+
+console.log(arregloGenerico);      // Output: [1, 2, 3]
+console.log(arregloConvencional);  // Output: [4, 5, 6]
+
+CLASES
+Podemos tipar variables públicas, privadas y protegidas
+
+GENÉRICOS
+Sirve para tener un dato genérico que podemos pasar a una función
+Debemos hacer un método por cada tipo de dato.
+
+
+
+1:25:12 Clase React & Typescript
