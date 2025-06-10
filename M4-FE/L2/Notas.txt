@@ -139,4 +139,5 @@ npm create vite@latest
 
 
 
-1:25:12 Clase React & Typescript
+
+1:35:12 Clase React & Typescript
