@@ -24,7 +24,7 @@ type TProducto = {
 };
 
 let productos: Array<IProduct>; // Genérico
-let productosTradicional: TProducto[]; // Tradicional
+let productosTradicional: IProduct[]; // Tradicional
 
 // Objeto basado en la Interface
 const productExample: IProduct = {
