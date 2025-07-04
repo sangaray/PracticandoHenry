@@ -136,10 +136,36 @@ SWC: Compilador rápido que mejora los tiempos de compilación, optimizando el r
 Instalación
 npm create vite@latest
 
+Uso de Archivos tsx y ts
+.ts: se utiliza para todas aquellas funcionalidades que no tenga como fin crear un elemento de react
+.tsx: toda notación xml será leída por el compilador para generar la función createElemnt de react
 
+rafce = crear un componente Footer
 
+Anotaciones de Tipo e Interfaces
+Hay formas distintas de declarar un componente en typescript y de que tipo son las props
+Uso de React.FC
+ReactElement: indica que nuestro componente React.FC únicamente debe devolver un elemento JSX
+ReactNode: puede ser cualquier contenido como un string, númber, undefined, null, incluyendo un ReactElement
+ No es necesario tipar el retorno de la función, lo infiere dependiendo de lo que retorna el componente, es más es una buena práctica no tipar todo
 
+Un componente de React tiene como única tarea retornar un componente funcional, por eso no tipamos el retorno
+Tipamos el retorno cuando tenemos módulos .ts
+Cuando tenemos módulos .tsx no es necesario tipar el retorno
 
+¿Como definir las props?
+Debes definir el type annotation que corresponde a las propiedades del componente. Indídcalo desde la definición del React.FC. Utiliza el operador diamante
 
+Interfaces
+Podemos usar interfaces para tipear las propiedades de un componente. La diferencia con el type annotation es que las interfaces pueden extenderse a otras interfaces.
+
+Siempre tenemos que tipar las properties que va a recibir mi componente funcional
+La interface se puede poner dentro del mismo componente donde se van a usar
+
+Genéricos en React
+Uso de Genéricos
+Permiten crear funciones que puedan manejar diferentes tipos de datos de manera flexible y la reutilización dentro del msimo contexto de otros componentes
+
+Cuando tenemos una petición que setea un estado local
 
 1:35:12 Clase React & Typescript
