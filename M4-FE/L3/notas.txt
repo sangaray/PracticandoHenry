@@ -1,0 +1,13 @@
+M4FE-L3 Daiana
+NextJS
+INSTALACIÓN
+npm create-next-app@latest
+Ok to proceed? (y) y
+What is your project named? next-project (ejemplo)
+Would you like to use TypeScript? no / yes (respondemos yes)
+Would you like to use ESLint? no / yes (respondemos yes)
+Would you like to use Tailwind CSS? no / yes (respondemos no)
+Would you like your code inside a "src" directory? no / yes (respondemos yes) 
+Would you like to use App Router? (recommended) no / yes (respondemos yes)
+Would you like to use Turbopack por "next dev"? no / yes (respondemos no)
+Would you like to customize the import alias (@/* by default)? no / yes (respondimos no)
