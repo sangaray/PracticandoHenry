@@ -85,7 +85,7 @@ JWT_SECRET=secretamentemio
 
 
 
-
+41:03 Clase React & Ts - Hands-On
 
 
 RECURSOS
