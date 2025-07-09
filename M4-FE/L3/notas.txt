@@ -11,3 +11,6 @@ Would you like your code inside a "src" directory? no / yes (respondemos yes)
 Would you like to use App Router? (recommended) no / yes (respondemos yes)
 Would you like to use Turbopack por "next dev"? no / yes (respondemos no)
 Would you like to customize the import alias (@/* by default)? no / yes (respondimos no)
+
+COMPONENTES REUTILIZABLES
+Si el componente se llama index no hace falta ponerlo en la importación, si tiene otro nombre sí se debe poner luego de la carpeta donde se encuentra el componentea
