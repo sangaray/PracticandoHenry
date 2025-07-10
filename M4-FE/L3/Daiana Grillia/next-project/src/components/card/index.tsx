@@ -7,7 +7,8 @@ const Card: React.FC<ICardProps> = ({ title, description }) => {
   return (
     <div>
       <h2>{title}</h2>
-      <p>{description}</p>
+      {description && <p>{description}</p>}{" "}
+      {/* o description ? <p>{description}</p> : null */}
     </div>
   );
 };
