@@ -1,7 +1,7 @@
 M4FE-L3 Daiana
 NextJS
 INSTALACIÓN
-npm create-next-app@latest
+npm create-next-app@14
 Ok to proceed? (y) y
 What is your project named? next-project (ejemplo)
 Would you like to use TypeScript? no / yes (respondemos yes)
@@ -9,8 +9,8 @@ Would you like to use ESLint? no / yes (respondemos yes)
 Would you like to use Tailwind CSS? no / yes (respondemos no)
 Would you like your code inside a "src" directory? no / yes (respondemos yes) 
 Would you like to use App Router? (recommended) no / yes (respondemos yes)
-Would you like to use Turbopack por "next dev"? no / yes (respondemos no)
 Would you like to customize the import alias (@/* by default)? no / yes (respondimos no)
 
 COMPONENTES REUTILIZABLES
 Si el componente se llama index no hace falta ponerlo en la importación, si tiene otro nombre sí se debe poner luego de la carpeta donde se encuentra el componentea
+
