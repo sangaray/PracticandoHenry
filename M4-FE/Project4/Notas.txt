@@ -83,7 +83,7 @@ JWT_SECRET=secretamentemio
 5. Inciamos el Servidor
 6. Verificar que las rutas funcionan con Thunder Client
 
-Usar la versión de next 14.2.10
+Usar la versión de next 14.2.9
 
 
 41:03 Clase React & Ts - Hands-On
