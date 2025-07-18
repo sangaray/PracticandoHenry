@@ -2,7 +2,6 @@ import React from "react";
 import { ICardProps } from "./types";
 
 const Card: React.FC<ICardProps> = ({
-  id,
   name,
   description,
   price,
