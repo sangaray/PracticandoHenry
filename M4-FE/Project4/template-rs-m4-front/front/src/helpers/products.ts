@@ -1,5 +1,7 @@
+import { IProduct } from "@/interfaces/types";
 const productsToPreLoad: IProduct[] = [
   {
+    id: 1,
     name: "iPhone 11",
     price: 699,
     description:
@@ -10,6 +12,7 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
   {
+    id: 2,
     name: "MacBook Air",
     price: 999,
     description:
@@ -20,6 +23,7 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
   {
+    id: 3,
     name: "iPad Pro",
     price: 799,
     description:
@@ -30,6 +34,7 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
   {
+    id: 4,
     name: "Apple Watch Series 6",
     price: 399,
     description:
@@ -40,6 +45,7 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
   {
+    id: 5,
     name: "AirPods Pro",
     price: 249,
     description:
@@ -50,6 +56,7 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
   {
+    id: 6,
     name: "HomePod mini",
     price: 99,
     description:
@@ -60,3 +67,5 @@ const productsToPreLoad: IProduct[] = [
     stock: 10,
   },
 ];
+
+export default productsToPreLoad;
