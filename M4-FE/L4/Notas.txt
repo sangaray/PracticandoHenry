@@ -1,0 +1,15 @@
+M4FE-L4 - Daiana Grillia
+Routing Nextjs
+Rutas dinámicas
+
+Rutas anidadas
+Next recomienda que a la ruta que va a recibir el parametro se la llame [slug], 
+cuando se trata de un id usamos [id]
+Esta carpeta se coloca dentro de la que vamos a anidar
+
+Si estoy en app: localhost:3000
+si estoy en profile: localhost:3000/profile
+dentro tengo una ruta dinámica que depende de profile
+localhost:3000/profile/[slug] (cualquier cosa o ruta interna)
+
+Rutas dinámicas
