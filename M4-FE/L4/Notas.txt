@@ -13,3 +13,10 @@ dentro tengo una ruta dinámica que depende de profile
 localhost:3000/profile/[slug] (cualquier cosa o ruta interna)
 
 Rutas dinámicas
+
+M4FE-L4 - Maxi
+Routing
+Page Router
+Forma standard de gestionar rutas. Cada archivo en el directorio page corresponde auna ruta. Enforque es simple y directo.
+
+App RouterEnforque más personalizable. Se puede utilizar un componente de enrutamiento personalizado para manejar las rutas en toda la aplicación. Permite una mayor flexibilidad en el manejo de rutas, como la agrupación de rutas, rutas anidadas y rutas protegidas, entre otras cosas.
