@@ -150,3 +150,64 @@ No es necesario llamar al hook useParams en los componentes para acceder a los p
 const params = useParams();
 import { useParams } from "next/navigation";
 Es suficiente poner {params} como parámetro de la función del componente
+
+ENRUTAMIENTO ANIDADO
+- Mejora la organización del código, la experiencia del usuario.
+- Proporciona una estructura más intuitiva y flexible para desarrollar interfaces complejas.
+
+- Toma la propiedad profile de params.
+- Agregalo al componente para que se renderice.
+- De esta manera puedes tener un diferenciador cada vez que visites estas rutas.
+
+Profile.jsx
+const Profile = ({ params }) => {
+  return (
+    <div>
+      <h1>Soy el profile: {params.profile}</h1>
+    </div>
+  );
+};
+
+export default Profile;
+
+Resultado en el Navegador
+URL: localhost:3000/soyhenry_ok
+Contenido:
+Soy el profile: soyhenry_ok
+
+- Crea una ruta estática llamada profile.
+- Crea los archivos page.js y Profile.jsx
+
+Estructura de Archivos
+ROUTING-NEXT
+└── src
+    └── app
+        ├── [profile]
+        ├── estatica
+        └── profile
+            ├── page.js
+            └── Profile.jsx
+
+Profile.jsx
+const Profile = () => {
+  return <div>Profile</div>;
+};
+
+export default Profile;
+
+page.js
+export { default } from "./Profile";
+
+CASOS DE USO
+Aplicaciones con estructura de páginas complejas
+- En aplicaciones que tienen muchas páginas, algunas de las cuales son subsecciones de otras.
+- Permite organizar las páginas de manera que refleje su relación jerárquica.
+
+Reutilización de layouts
+- Facilita la reutilización de layouts comunes a varias páginas.
+- Sin necesidad de duplicar código.
+
+Autenticación y autorización
+- Puede usarse para agrupar páginas que requieren un usuario autenticado de aquellas que no.
+- Esto permite aplicar middleware de autenticación a un nivel superior en la jerarquía de rutas.
+
