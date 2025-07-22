@@ -64,7 +64,7 @@ Ok to proceed? (y) y
 
 Las que están entre paréntesis son las respuestas que debemos dar para crear el proyecto.
 
-Ruta Estática
+ENRUTAMIENTO ESTÁTICO
 - Genera una carpeta nueva dentro del directorio "app".
 - Crea un archivo denominado "page.js".
 - Este archivo determinará el contenido que se mostrará al acceder a dicha ruta.
@@ -98,3 +98,55 @@ page.js
 export { default } from "./Estatica";
 
 Hay quienes usan este sistema, donde tenemos una carpeta con el nombre de la ruta y el page sólo exporte esa ruta, pero nosotros vamos a estar trabajando con page como enrutador principal.
+
+ENRUTAMIENTO DINÁMICO
+Dinamismo
+- Next.js introduce con el App Router una evolución en el enrutado.
+- Facilita la creación de aplicaciones web modernas y eficientes.
+- Este avance es especialmente relevante para el enrutado dinámico.
+
+CONCEPTOS CLAVES:
+Rutas basadas en Archivos
+- Utiliza un sistema de rutas basadas en archivos.
+- La estructura de directorios y nombres de archivos en el proyecto definen las URL de la aplicación.
+- Este enfoque se extiende al enrutado dinámico, donde archivos con nombres especiales representan parámetros dinámicos en la ruta.
+
+Parámetros de Ruta Dinámicos
+- Es posible capturar valores dinámicos en las URL utilizando parámetros de ruta, que se indican mediante corchetes ([ ]).
+- Estos parámetros se pueden utilizar luego para cargar contenido específico basado en el valor capturado.
+
+useParams Hook
+- Next.js ofrece el hook useParams para acceder a los parámetros de la ruta dentro de los componentes.
+- Esto facilita el manejo de datos dinámicos en la aplicación.
+
+PARAMSHOOK
+Crea una carpeta [profile] y sus archivos pertinentes: page.js y Profile.jsx
+Estructura de Archivos
+ROUTING-NEXT
+└── src
+    └── app
+        ├── [profile]
+        │   ├── page.js
+        │   └── Profile.jsx
+        └── estatica
+            ├── Estatica.jsx
+            └── page.js
+
+Profile.jsx
+const Profile = () => {
+  return (
+    <div>
+      <h1>Soy el profile</h1>
+    </div>
+  );
+};
+
+export default Profile;
+
+page.js
+export { default } from "./Profile";
+
+No es necesario llamar al hook useParams en los componentes para acceder a los parámetros dinámicos.
+const params = useParams();
+import { useParams } from "next/navigation";
+Es suficiente poner {params} como parámetro de la función del componente
