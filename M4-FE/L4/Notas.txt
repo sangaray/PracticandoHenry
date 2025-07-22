@@ -32,3 +32,69 @@ Es más fácil manejar rutas anidadas y jerárquicas con un enrutador personaliz
 
 Middleware
 Puedes implementar middleware para pre procesar las solicitudes de enrutamiento, como la autenticación de usuario, antes de que se carguen los componentes.
+
+Ventajas de Page Router
+Simplicidad
+Para aplicaciones más pequeñas o menos complejas.
+El enfoque estándar de Next.js con el "page router" puede ser más fácil de entender y mantener.
+
+Convención sobre Configuración
+Sigue el principio de "convención sobre configuración".
+Significa que hay menos configuración necesaria para comenzar a trabajar con las rutas.
+
+Menos dependencias externas
+Es menos probable que necesites dependencias externas, lo que puede simplificar tu proyecto.
+
+Implementación de App Router
+Recuerda que para crear un nuevo repositorio debemos abrir la terminal donde quieres que se cree la carpeta.
+npx create-next-app@latest
+
+¿Cuáles son las configuraciones que debemos plantear para crear este proyecto?
+
+PS C:\Users\NoMorePls2.0\Desktop\Creación M4 Front\Routing Next> (npx create-next-app@latest)
+
+Ok to proceed? (y) y
+√ What is your project named? ... (routing-next)
+√ Would you like to use TypeScript? ... No / (Yes)
+√ Would you like to use ESLint? ... No / (Yes)
+√ Would you like to use Tailwind CSS? ... (No) / Yes
+√ Would you like to use `src/` directory? ... No / (Yes)
+√ Would you like to use App Router? (recommended) ... No / Yes
+√ Would you like to customize the default import alias (@/*)? ... (No) / Yes
+
+Las que están entre paréntesis son las respuestas que debemos dar para crear el proyecto.
+
+Ruta Estática
+- Genera una carpeta nueva dentro del directorio "app".
+- Crea un archivo denominado "page.js".
+- Este archivo determinará el contenido que se mostrará al acceder a dicha ruta.
+- Siguiendo las buenas prácticas, desarrolla un componente en un archivo .jsx para gestionar el contenido.
+
+Estructura de Archivos
+ROUTING NEXT
+├── .next
+├── node_modules
+├── public
+└── src
+    ├── app
+    │   ├── estatica
+    │   │   ├── Estatica.jsx
+    │   │   └── page.js
+    │   ├── favicon.ico
+    │   ├── globals.css
+    │   ├── layout.js
+    │   ├── page.js
+    │   └── page.module.css
+    └── components
+
+Estatica.jsx
+const Estatica = () => {
+  return <div>Estamos en nuestra ruta http://localhost:3000/estatica</div>;
+};
+
+export default Estatica;
+
+page.js
+export { default } from "./Estatica";
+
+Hay quienes usan este sistema, donde tenemos una carpeta con el nombre de la ruta y el page sólo exporte esa ruta, pero nosotros vamos a estar trabajando con page como enrutador principal.
