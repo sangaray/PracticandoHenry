@@ -211,4 +211,21 @@ Autenticación y autorización
 - Puede usarse para agrupar páginas que requieren un usuario autenticado de aquellas que no.
 - Esto permite aplicar middleware de autenticación a un nivel superior en la jerarquía de rutas.
 
-1:55:08
+PARÁMETROS DE RUTA Y CADENAS DE CONSULTAS
+Segmentos Dinámicos
+Demo en el navegador:
+URL: localhost:3000/shop/category
+Contenido:
+Demo
+Estoy en la ruta: /shop/category
+Explicación:
+- Pueden capturar múltiples partes de una URL extendiéndose con puntos suspensivos dentro de los corchetes, como [...nombreCarpeta].
+- Esto permite que un segmento dinámico abarque varios segmentos subsiguientes de la ruta.
+- Diferentes URLs se mapean a params usando la siguiente configuración. (Se indica que se pueden usar muchos parámetros dinámicos o en cadena)
+Ruta	                      URL de Ejemplo	Params
+app/shop/[...slug]/page.js	/shop/a	        { slug: ['a'] }
+app/shop/[...slug]/page.js	/shop/a/b	      { slug: ['a', 'b'] }
+app/shop/[...slug]/page.js	/shop/a/b/c	    { slug: ['a', b', 'c'] }
+
+
+
