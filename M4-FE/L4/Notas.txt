@@ -227,5 +227,13 @@ app/shop/[...slug]/page.js	/shop/a	        { slug: ['a'] }
 app/shop/[...slug]/page.js	/shop/a/b	      { slug: ['a', 'b'] }
 app/shop/[...slug]/page.js	/shop/a/b/c	    { slug: ['a', b', 'c'] }
 
+PÁGINAS 404
+Personalización
+- Comunicar claramente la falta de disponibilidad de la página buscada.
+- Ofrecer opciones útiles para continuar la navegación, como enlaces a la página de inicio o páginas populares.
+- Presentar un diseño ingenioso o un mensaje amigable pueden transformar la experiencia del error en una interacción positiva con la marca.
+- Analizar errores comunes o rutas perdidas puede proporcionar información crítica para mejorar el sitio web.
 
+Recursos
+https://nextjs.org/docs/app/api-reference/file-conventions/
 
