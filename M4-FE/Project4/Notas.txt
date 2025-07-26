@@ -86,10 +86,12 @@ JWT_SECRET=secretamentemio
 Usar la versión de next 14.2.9
 
 
-41:03 Clase React & Ts - Hands-On
+1:12:41 Tailwind
 
 
 RECURSOS
 trheejs.org
 leap-for-minkind.com
 
+pagina 404
+https://easyfrontend.com/component-details/404-page-not-found-image-button-background-image?lang=react-js&frame=tailwind-css-react&mode=sources&colorScheme=light
