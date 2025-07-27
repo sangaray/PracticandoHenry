@@ -1,0 +1,11 @@
+M4FE-L5 Daiana Grillia
+Nextjs y Tailwind
+DIFERENCIA ENTRE TAILWIND Y CSS PURO
+Se pone una clase de tailwind dentro del elemento HTML al que quiero darle estilos
+
+
+
+
+Recursos
+imagenes gratuitas
+https://placehold.co

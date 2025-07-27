@@ -25,3 +25,15 @@ body {
     text-wrap: balance;
   }
 }
+
+.parrafo-grande-azul {
+  font-size: 18px;
+  background-color: blue;
+  color: rgb(159, 215, 246);
+}
+
+.div-con-margen-y-relleno {
+  margin: 16px; /* 1rem */
+  padding: 8px; /* .5rem */
+}
+
