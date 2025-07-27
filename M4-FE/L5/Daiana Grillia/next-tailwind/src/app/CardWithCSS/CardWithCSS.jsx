@@ -19,9 +19,9 @@ export const CardWithCSS = () => {
         </p>
       </div>
       <div className="card-tags">
-        <span className="cart-tag">#tag1</span>
-        <span className="cart-tag">#tag2</span>
-        <span className="cart-tag">#tag3</span>
+        <span className="card-tag">#tag1</span>
+        <span className="card-tag">#tag2</span>
+        <span className="card-tag">#tag3</span>
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 .card {
   max-width: 20rem;
-  border-radius: 5rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
+  /* margin: 1rem; */
+  margin-top: 1rem;
 }
 
 .card-image {
@@ -31,4 +32,10 @@
 .card-tag {
   display: inline-block;
   background-color: #edf2f7;
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.999rem;
+  margin-right: 0.5rem;
 }
