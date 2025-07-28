@@ -3,8 +3,13 @@ Nextjs y Tailwind
 DIFERENCIA ENTRE TAILWIND Y CSS PURO
 Se pone una clase de tailwind dentro del elemento HTML al que quiero darle estilos
 
+INSTALAR TAILWIND MANUALMENTE
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+en mi caso
+npm i -D tailwindcss@^3.4.1 postcss@^8.x.x autoprefixer@^10.x.x
 
-
+Agregar Archivos de Configuración
+npx tailwindcss init -p
 
 Recursos
 imagenes gratuitas
