@@ -8,10 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "blue-001": "#1DA1F2",
+        "green-001": "#18CF2A",
+      },
+      spacing: {
+        1: "8px",
+        2: "12px",
+        3: "16px",
+        4: "24px",
+        5: "32px",
+        6: "48px",
       },
     },
   },
   plugins: [],
 };
+
