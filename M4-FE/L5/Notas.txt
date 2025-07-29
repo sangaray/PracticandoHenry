@@ -1,5 +1,5 @@
 M4FE-L5 Daiana Grillia
-Nextjs y Tailwind
+NEXTJS Y TAILWIND
 DIFERENCIA ENTRE TAILWIND Y CSS PURO
 Se pone una clase de tailwind dentro del elemento HTML al que quiero darle estilos
 
@@ -10,6 +10,16 @@ npm i -D tailwindcss@^3.4.1 postcss@^8.x.x autoprefixer@^10.x.x
 
 Agregar Archivos de Configuración
 npx tailwindcss init -p
+
+PURGA EN TAILWIND
+// purge:['./src/**/*.{js,jsx,ts,tsx}'], esto se hizo hasta la versión 3.0.0, ahora no es necesario ya que se incluye en content:[] en el archivo tailwind.config.js
+
+EXTENSIONES ÚTILILES EN VSCODE
+- Tailwind CSS IntelliSense
+  Me muestra o permite autocompletar las clases de tailwind
+- Tailwind Docs (Austen Cameron)
+  Brinda una forma rápida de acceder a la doucumentación de tailwind
+- 
 
 Recursos
 imagenes gratuitas
