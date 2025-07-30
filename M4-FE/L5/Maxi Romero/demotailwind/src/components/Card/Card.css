@@ -1,0 +1,10 @@
+.parrafo-grande-azul {
+  font-size: 18px;
+  color: #0000ff;
+}
+
+.div-con-margen-y-relleno {
+  margin: 16px;
+  padding: 8px;
+  background-color: gray;
+}
