@@ -19,7 +19,252 @@ EXTENSIONES ÚTILILES EN VSCODE
   Me muestra o permite autocompletar las clases de tailwind
 - Tailwind Docs (Austen Cameron)
   Brinda una forma rápida de acceder a la doucumentación de tailwind
-- 
+
+M4FE-L5 mAXI ROMERO
+TAILWIND Y NEXTJS
+Introducción Tailwind CSS
+Tailwindcss
+- Es un famework de CSS
+- Clases de utilidad para el diseño en línea
+- Proporciona clases atómicas que representan propiedades individuales de CSS
+
+Clases Atómicas
+Son pequeñas reglas de estilo independientes y reutilizables que se aplican directamente a los elementos HTML para construir interfaces de usuario de manera modular y eficiente.
+
+Class	                  Properties
+block	display:          block;
+inline-block	display:  inline-block;
+inline	display:        inline;
+flex	display:          flex;
+inline-flex	display:    inline-flex;
+table	display:          table;
+
+Conceptos:
+- Aplicar estilos CSS a través de clases individuales.
+- Corresponden a propiedades específicas y sus valores.
+- Promueve la creación de interfaces eficientes y de rápida construcción.
+
+Sistema de Clases de Utilidad
+
+CSS (pura)
+Generated css
+.parrafo-grande-azul {
+  font-size: 18px;
+  color: blue;
+}
+
+HTML
+<p class="parrafo-grande-azul">Este es un gran texto azul.</p>
+
+HTML (clases de utilidad)
+<p class="text-lg text-blue-500">Este es un gran texto azul.</p>
+
+Margen y Relleno
+CSS (pura)
+.div-con-margen-y-relleno {
+  margin: 16px;
+  padding: 8px;
+}
+
+HTML
+<div class="div-con-margen-y-relleno">Contenido con margen y relleno.</div>
+
+HTML (clases de utilidad)
+<div class="m-4 p-2">Contenido con margen y relleno.</div>
+
+Estados de Hover y Focus
+- Uso de pseudo-clases de CSS.
+
+HTML (clases de utilidad)
+<button class="bg-blue-500 hover:bg-blue-700 ...">Botón</button>
+
+Diseños responsivos
+- Tailwind permite que sea sencillo crear diseños responsivos.
+
+HTML (clases de utilidad)
+<div class="w-full md:w-1/2">Este div ocupa </div>
+
+Breakpoint  prefix	Minimum width	CSS
+sm	640px	  @media  (min-width: 640px) { ... }
+md	768px	  @media  (min-width: 768px) { ... }
+lg	1024px	@media  (min-width: 1024px) { ... }
+xl	1280px	@media  (min-width: 1280px) { ... }
+2xl	1536px	@media  (min-width: 1536px) { ... }
+
+¿Por qué utilizar un Framework de CSS?
+Productividad mejorada
+- Proporcionan un conjunto predefinido de componentes y estilos que puedes usar directamente en tu proyecto.
+- Permite construir interfaces de usuario de manera más rápida y eficiente.
+Consistencia visual
+- Garantizamos una apariencia consistente en toda la aplicación.
+- Mejora la experiencia del usuario.
+Responsividad integrada
+- Los componentes y estilos proporcionados se adaptarán automáticamente a diferentes tamaños de pantalla.
+- Simplifica el proceso de desarrollo para dispositivos móviles y de escritorio.
+
+Tailwind CSS	 
+Filosofía: clases de utilidad para estilos en HTML
+Curva de Aprendizaje: pronunciada debido a clases de utilidad
+Flexibilidad: muy flexible con clases de utilidad
+Tamaño del Paquete: pequeño y optimizado
+Popularidad: creciendo rápida
+
+Bulma
+Filosofía: componentes prediseñados
+Curva de Aprendizaje: relativamente fácil
+Flexibilidad: moderadamente flexible
+Tamaño del Paquete: moderado
+Popularidad: popular y activa
+
+Foundation
+Filosofía: componentes y estilos
+Curva de Aprendizaje: moderada
+Flexibilidad: moderadamente flexible
+Tamaño del Paquete: moderado
+Popularidad: menos popular y activa
+
+Materialize CSS
+Filosofía: componentes y estilos
+Curva de Aprendizaje: moderada
+Flexibilidad: flexible
+Tamaño del Paquete: moderado
+Popularidad: activa, pero menos que Bootstrap
+
+Bootstrap
+Filosofía: componentes y estilos
+Curva de Aprendizaje: relativamente fácil
+Flexibilidad: flexible
+Tamaño del Paquete: moderado
+Popularidad: ampliamente popular
+
+Integrando Tailwind a un proyecto de Next.js (Via NPM)
+Comando de instalación:
+Para nextjs 14.2.10
+npm install -D tailwindcss@^3.4.17 postcss@^8.5.6 autoprefixer@^10.4.21
+
+Los @latest son para asegurarnos de instalar la última versión disponible y utilizamos el -D para instalarlos como dependencias de desarrollo.
+
+Generar los archivos postcss.config.js y tailwind.config.js
+Ejecuta el comando:
+Generated bash
+npx tailwindcss init -p
+
+> .next
+> node_modules
+> public
+> src
+eslintrc.json
+jsconfig.json
+next-env.d.ts
+next.config.mjs
+package-lock.json
+package.json
+README.md
+tsconfig.json
+
+> .next
+> node_modules
+> public
+> src
+eslintrc.json
+=> jsconfig.json
+next-env.d.ts
+next.config.mjs
+package-lock.json
+package.json
+=> JS postcss.config.js
+README.md
+=> JS tailwind.config.js
+tsconfig.json
+
+- Tailwind tiene valores predeterminados en su sistemas de clases de utilidad.
+- Aquí podrás cambiar o asignar nuevos valores para este sistema.
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+content
+- Es una propiedad.
+- Se utiliza para especificar los archivos que Tailwind CSS debe analizar para generar las clases de estilo correspondientes.
+- Dentro del arreglo content define el listado de patrones de estos archivos. 
+
+- Define las rutas donde se encuentran.
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+
+theme
+- Es una propiedad.
+- Puedes personalizar todos los aspectos del sistema de diseño de Tailwind CSS.
+- Esto incluye colores, tipografía, espaciado, sombras, bordes, transiciones, y más. 
+
+ Dentro de la propiedad colors ubicada en extend de theme conserva los valores predeterminados.
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "blue-001": "#1DA1F2",
+        "green-001": "#1BCF2A",
+      },
+    },
+  },
+  plugins: [],
+};
+
+plugins
+- Pueden ser utilizados para sumar componentes, utilidades y variantes personalizadas.
+
+Para terminar la configuración...
+- En el archivo global.css agregar lo siguiente al comienzo del archivo:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+DISEÑO RESPONSIVE Y MOVILE-FIRST CON TAILWIND
+¿Qué es el Mobile-First?
+- Es un enfoque de diseño web.
+- Prioriza la creación y optimización de una experiencia de usuario para dispositivos móviles antes que para dispositivos de escritorio.
+- Asegura que el diseño y la funcionalidad sean adecuados y eficientes en pantallas pequeñas antes de considerar pantallas más grandes.
+
+Sistema de Clases Responsive
+
+Breakpoint Minimum CSS
+prefix	   width	
+sm         640px	 @media (min-width: 640px) { ... }  
+md	       768px	 @media (min-width: 768px) { ... }
+lg	       1024px  @media (min-width: 1024px) { ... }
+xl	       1280px  @media (min-width: 1280px) { ... }
+2xl	       1536px  @media (min-width: 1536px) { ... }
+👉 Basadas en prefijos que corresponden a diferentes tamaños de pantalla (breakpoints).
+👉 Permiten aplicar estilos que solo se activan en el tamaño de pantalla adecuado.
+
+
+
+
+
 
 Recursos
 imagenes gratuitas
