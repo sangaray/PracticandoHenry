@@ -258,14 +258,62 @@ md	       768px	 @media (min-width: 768px) { ... }
 lg	       1024px  @media (min-width: 1024px) { ... }
 xl	       1280px  @media (min-width: 1280px) { ... }
 2xl	       1536px  @media (min-width: 1536px) { ... }
-👉 Basadas en prefijos que corresponden a diferentes tamaños de pantalla (breakpoints).
-👉 Permiten aplicar estilos que solo se activan en el tamaño de pantalla adecuado.
+- Basadas en prefijos que corresponden a diferentes tamaños de pantalla (breakpoints).
+- Permiten aplicar estilos que solo se activan en el tamaño de pantalla adecuado.
 
+Enfoque Mobile-First con Tailwind CSS
+- El enfoque mobile-first es intrínseco al sistema.
+- Las clases de utilidad se aplican desde el tamaño más pequeño hacia arriba.
 
+<div class="w-full md:w-1/2 lg:w-1/3"></div>
 
+Personalización y Extensión de Tailwind CSS
+@apply
+- Es una directiva de Tailwind CSS.
+- Permite combinar múltiples clases de utilidad en una sola clase personalizada.
+- Es útil para evitar la repetición de clases en nuestro HTML, promoviendo un código más limpio y mantenible.
+- Permite parametrizar clases de utilidad para luego usarlas de mejor manera.
 
+MEJORES PRÁCTICA, OPTIMIZACIÓN Y HERRAMIENTAS
+Configurar la Purga en Tailwind CSS
+- Es un proceso sencillo especialmente para proyectos en producción.
+- La configuración se realiza dentro del archivo tailwind.config.js.
+- Tailwind puede identificar y eliminar cualquier clase que no se utiliza.
+- Optimiza el archivo CSS final.
+Esta funcionalidad ya se encuentra agregada de forma automática en content. 👌
+
+Herramientas y Extensiones para Mejorar el Desarrollo con Tailwind CSS
+- Tailwind CSS se complementa con diversas herramientas y extensiones de editor.
+- Enriquecen la experiencia de desarrollo.
+- Ofrecen funcionalidades como autocompletado de clases, visualización de estilos y ayuda en la depuración de CSS.
+
+Tailwind CSS Intellisense (tailwind labs)
+- Es una extensión para Visual Studio Code.
+- Mejora la experiencia de desarrollo con Tailwind al proporcionar autocompletado de clases, vista previa de colores y sombras, y validación de sintaxis.
+- Esta extensión puede aumentar significativamente tu productividad al escribir HTML y aplicar estilos con Tailwind.
+
+Headwind (Ryan Heybourn)
+- Es una extensión para VS Code.
+- Organiza automáticamente las clases de Tailwind en tus archivos.
+- Ayuda a mantener el código limpio y consistente, siguiendo un orden específico que facilita la lectura y mantenimiento del código.
+
+Tailwind Docs
+- Permite tener acceso rápido a la documentación de Tailwind CSS desde el editor.
+- Algunos plugins y extensiones ofrecen funcionalidades que permiten buscar y acceder a esta documentación sin salir del entorno de desarrollo.
+
+RESUMEN DE LA CLASE
+- Tailwind framework de CSS que se centra en la construcción de interfaces web mediante la aplicación de clases de utilidad directamente en el HTML.
+- Diseño responsivo y estrategias para garantizar una experiencia fluida en dispositivos móviles.
+- Enfoque mobile-first definición de breakpoints que representan distintas dimensiones de dispositivos.
+- Configuraciones avanzadas, optimización de rendimiento y algunas herramientas útiles para facilitar el desarrollo con Tailwind.
 
 
 Recursos
 imagenes gratuitas
 https://placehold.co
+
+Playground de SQL
+https://shell.duckdb.org/
+
+Tailwind Cheat Sheet
+https://www.creative-tim.com/twcomponents/cheatsheet
