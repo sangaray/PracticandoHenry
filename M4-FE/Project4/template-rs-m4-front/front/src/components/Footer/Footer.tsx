@@ -3,22 +3,18 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="w-full py-3">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-4 lg:px-4">
         <div className="max-w-3xl mx-auto">
           <a href="https://pagedone.io/" className="flex justify-center ">
             {/*  */}
           </a>
-          <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-3 mb-3 border-b border-gray-200">
+          <ul className="text-sm flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-3 mb-3 border-b border-gray-200">
             <li>
               <a href="#" className=" text-gray-800 hover:text-gray-900">
                 Products
               </a>
             </li>
-            <li>
-              <a href="#" className=" text-gray-800 hover:text-gray-900">
-                Resources
-              </a>
-            </li>
+
             <li>
               <a href="#" className=" text-gray-800 hover:text-gray-900">
                 About
@@ -30,12 +26,12 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div className="flex space-x-10 justify-center items-center mb-3">
+          <div className="flex space-x-6 justify-center items-center mb-2">
             <a
               href="#"
               className="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 ">
               <svg
-                className="w-[1.688rem] h-[1.688rem]"
+                className="w-[1.5rem] h-[1.5rem]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="none">
@@ -49,7 +45,7 @@ const Footer = () => {
               href="#"
               className="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 ">
               <svg
-                className="w-[1.688rem] h-[1.688rem] "
+                className="w-[1.5rem] h-[1.5rem] "
                 viewBox="0 0 29 29"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +59,7 @@ const Footer = () => {
               href="#"
               className="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 ">
               <svg
-                className="w-[0.938rem] h-[1.625rem]"
+                className="w-[0.7rem] h-[1.5rem]"
                 viewBox="0 0 15 26"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +73,7 @@ const Footer = () => {
               href="#"
               className="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 ">
               <svg
-                className="w-[1.875rem] h-[1.375rem]"
+                className="w-[1.5rem] h-[1.1rem]"
                 viewBox="0 0 30 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -90,8 +86,8 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <span className="text-lg text-gray-500 text-center block">
-            © Find Your Dreamed Product - 2025, All rights reserved.
+          <span className="text-sm text-gray-500 text-center block">
+            © Dreamed Products - 2025, All rights reserved.
           </span>
         </div>
       </div>
