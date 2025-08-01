@@ -9,13 +9,16 @@ const Card: React.FC<ICardProps> = ({
   image,
 }) => {
   return (
-    <div>
-      <img src={image} alt="imagen del producto" />
-      <div>
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <p>Price:Price ${price}</p>
-        <p>Stock:Stock: {stock}</p>
+    <div className="flex flex-row items-center rounded-lg gap-2 justify-center border p-2 w-[360px] h-[200px] hover:shadow-xl hover:translate-x-1 hover:translate-y-1 transition-all duration-300">
+      <img
+        className="max-w-[120px] w-full h-auto "
+        src={image}
+        alt="imagen del producto"
+      />
+      <div className="flex flex-col w-full h-full items-center justify-center gap-2">
+        <h2 className="font-semibold test-xs">{name}</h2>
+        <p className="text-xs">Price:Price ${price}</p>
+        <p className="text-xs">Stock:Stock: {stock}</p>
       </div>
     </div>
   );
