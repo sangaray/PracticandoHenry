@@ -22,10 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.className} flex h-screen flex-col items-center justify-between w-full p-4`}>
+      <body className={`${roboto.className} flex h-screen flex-col w-full p-4`}>
         <Navbar />
-        {children}
+        <main className="flex flex-1 w-full px-4 justify-center">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

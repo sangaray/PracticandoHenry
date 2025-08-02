@@ -86,7 +86,7 @@ JWT_SECRET=secretamentemio
 Usar la versión de next 14.2.9
 
 
-1:12:41 Tailwind
+1:04:38 Tailwind
 
 
 RECURSOS
@@ -95,3 +95,18 @@ leap-for-minkind.com
 
 pagina 404
 https://easyfrontend.com/component-details/404-page-not-found-image-button-background-image?lang=react-js&frame=tailwind-css-react&mode=sources&colorScheme=light
+
+Tailwind Documentation
+https://tailwindcss.com/docs/responsive-design
+
+Tailwind Cheat Sheet
+https://www.creative-tim.com/twcomponents/cheatsheet
+
+componentes predefinidos
+https://flowbite.com/docs/components/footer/
+
+https://pagedone.io/docs/navbar
+
+https://tailwindflex.com/search?q=navbar
+
+https://wpdean.com/css-hover-effects/
