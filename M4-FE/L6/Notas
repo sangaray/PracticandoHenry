@@ -5,6 +5,15 @@ Cuando se usan los componentes del cliente dependen de si la solicitud es una ca
 Si es una carga completa, el componente se renderiza del lado del cliente. Si es una navegación posterior, el componente se renderiza del lado del servidor.
 El componente que se renderiza del lado del servidor se renderiza en el servidor y luego se envía al cliente. El componente que se renderiza del lado del cliente se renderiza en el cliente.
 
+Al usar variables de entorno en next debemos llamar al archivo .env.local y dentro de este archivo debo poner
+NEXT_PUBLIC_URL=http://localhost:3000
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+etc.
 
+No se puede usar variables de entorno en el lado del servidor, cuando debe estar del lado del cliente
+Para solucionar esto debemos instalar un nuevo paquete llamado server-only
+Este paquete va a indicar los errores que se están comentiendo.
+
+También existe el paquete client-only que nos va a indicar los errores que se están cometiendo en el lado del cliente.
 
 npx npq install -dependencia- para verificar la dependencia en el package.json
