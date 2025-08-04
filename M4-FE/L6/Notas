@@ -1,4 +1,10 @@
 M4FE-L6 - Daiana
 NEXTJS COMPONENTS
+Si tengo un componente que necesita o utiliza un hook este se va a renderizar del lado del cliente
+Cuando se usan los componentes del cliente dependen de si la solicitud es una carga completa o si es una navegación posterior
+Si es una carga completa, el componente se renderiza del lado del cliente. Si es una navegación posterior, el componente se renderiza del lado del servidor.
+El componente que se renderiza del lado del servidor se renderiza en el servidor y luego se envía al cliente. El componente que se renderiza del lado del cliente se renderiza en el cliente.
+
+
 
 npx npq install -dependencia- para verificar la dependencia en el package.json
