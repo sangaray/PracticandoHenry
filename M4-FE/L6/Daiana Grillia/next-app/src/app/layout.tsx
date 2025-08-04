@@ -1,5 +1,5 @@
 "use client";
-import { MobileNav } from "./mobile-nav";
+import { MobileNav } from "./components/mobile-nav";
 
 export default function RootLayout({
   children,
