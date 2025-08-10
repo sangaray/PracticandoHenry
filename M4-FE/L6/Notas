@@ -17,3 +17,98 @@ Este paquete va a indicar los errores que se están comentiendo.
 También existe el paquete client-only que nos va a indicar los errores que se están cometiendo en el lado del cliente.
 
 npx npq install -dependencia- para verificar la dependencia en el package.json
+
+M4FE-L6 - Maxi
+SERVER COMPONENTS VS CLIENT COMPONENTS
+Comprensión de Componentes del Servidor
+Componentes del Servidor
+
+- Next.js radica en su enforque de creación y uso de componentes del servidor.
+- Cada componente que creamos dentro de Next.js se considera un Server Component.El componente character es... ¿asíncrono?
+
+import { fetchServerResponse } from "next/dist/client/components/router-reducer/fetch-server-response";
+import React from "react";
+
+const fetchCharacter = async (): Promise<typeof fetchServerResponse> => {
+const response = await fetch("https://rickandmortyapi.com/api/character/1");
+const character = await response.json();
+return character;
+};
+
+const Character = async (): Promise<React.JSX.Element> => {
+const character = await fetchCharacter();
+return <div>{JSON.stringify(character)}</div>;
+};
+
+Cuando se crea un componente nuevo, Next.js lo toma como client component, al ejecutarlo, se levanta y carga todo lo que necesita desde el servidor y luego devuelve al cliente el HTML resultante
+Para indicar que queremos trabajar con un componente del cliente se escribe en la primera línea antes de los imports
+"use client"
+
+Cosas a Tener en Cuenta
+Cliente Component: usarlo sólo cuando sea necesario y ailarlos, no hacerlos globales
+
+Al trabajar con componentes de servidor, se puede pedir al componente que espere una respuesta antes de renderizarse. Esto se hace con el await y el async.
+
+server components: los que de mostrar información, no interactuar
+client components: con los que se interactua, formularios y botones. Se usa sólo para formularios e interacción que tenga que tener el usuario.
+
+Para next todos los componentes que se crean son server components pueden ser asincrónicos y esperar una respuesta de una petición asincrónica, guardar la respuesta y renderizarla directamente en pantalla.
+Los client components los vamos ausar solamente cuando tengamos interacción del usuario y alguna api de react, un redux, algún hook.
+
+Beneficios de los Componentes del Servidor
+Seguridad
+Te permiten mantener datos y lógica sensibles en el servidor, como tokens y claves de API, sin riesgo de exponerlos al cliente.
+Cache
+
+- Al renderizar en el servidor, el resultado puede ser almacenado en caché.
+- Puede ser reutilizado en solicitudes posteriores y entre usuarios.
+- Puede mejorar el rendimiento y reducir costos al bajar la cantidad de renderizaciones y obtención de datos realizada en cada solicitud.
+  Tamaños de Paquetes
+- Permiten mantener dependencias grandes que previamente podrían afectal el tamaño del paquete de JavaScript del lado cliente
+- Es beneficioso para los usuarios con una conexión a internet más lente o dispositivos menos potentes.
+
+Estrategias de Renderizado del Servidor
+Renderización estática
+
+- Es la renderización por defecto en Next.js.
+- Esta implica generar y almacenar las páginas como archivos estáticos durante la fase de compilación.
+- Ofrece un rendimiento mejorado al entregar contenido pregenerado sin la necesidad de ejecutar lógica del servidor en cada solicitud.
+- Es útil cuando una ruta tiene datos que no están personalizados para el usuario y que pueden conocerse en el momento de la compilación.
+
+Renderización dinámica
+
+- Las rutas se representan para cada usuario en el momento de la solicitud, mejorando la personalización y la eficiencia en la entrega de contenido web.
+- Permite generar páginas con contenido que se adapta a los datos y contextos específicos de cada petición del usuario.
+- Es ideal cuando una ruta tiene datos personalizados para el usuario o tiene información que solo se puede conocer en el momento de la solicitud.
+
+Cambiando de Renderizado Estático a Dinámico
+
+- Durante el renderizado, si se descubre una función dinámica o una solicitud de datos no almacenados en caché, Next.js cambiará para renderizar
+  Funciones dinámicas Datos Ruta
+  No En caché Renderizado estáticamente
+  Sí En caché Renderizado dinámicamente
+  No No almacenado en caché Renderizado dinámicamente
+  Sí No almacenado en caché Renderizado dinámicamente
+
+Comprensión de Componentes del Cliente
+Componentes del Cliente
+
+- Son herramientas que posibilitan la creación de interfaces de usuario más dinámicas y receptivas.
+- Pueden ser visualizadas por el cliente al realizar una solicitud.
+- En Next.js el uso de estos componentes es opcional.
+- Debemos especificar qué componentes deben renderizarse en el lado cliente.
+
+Uso de componentes del cliente
+
+- Utiliza la directiva 'use client' al inicio del componente.
+- Se utiliza para declarar un límite entre los módulos de un servidor y un componente de cliente.
+
+"use client";
+import Button from "@/components/Button/Button";
+import React from "react";
+
+¿Cómo se representan los componentes del cliente?
+Carga de página completa
+Para optimizar la carga de la página inicial, Next.js utilizará las API de React para representar una vista previa HTML estática en el servidor para ambos componentes (cliente y servidor).
+Navegación posterior
+En las navegaciones siguientes, los componentes del cliente se muestran solo en el navegador, sin utilizar el HTML generado por el servidor.
