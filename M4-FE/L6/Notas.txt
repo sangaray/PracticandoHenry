@@ -112,3 +112,123 @@ Carga de página completa
 Para optimizar la carga de la página inicial, Next.js utilizará las API de React para representar una vista previa HTML estática en el servidor para ambos componentes (cliente y servidor).
 Navegación posterior
 En las navegaciones siguientes, los componentes del cliente se muestran solo en el navegador, sin utilizar el HTML generado por el servidor.
+
+Beneficios de los componentes del cliente
+Interactividad
+
+- Permiten crear experiencias web altamente interactivas y dinámicas.
+- Ejecutan lógica en el navegador del usuario sin requerir una nueva solicitud al servidor.
+  Velocidad de carga
+- Mejoran la velocidad de carga inicial de la página al delegar la renderización y la lógica de presentación al navegador del cliente.
+  Reduce la carga en el servidor y optimizando los tiempos de respuesta.
+  Separación de preocupaciones
+  Facilitan la separación de la lógica del cliente y del servidor.
+- Permite un desarrollo más modular y mantenible al dividir la aplicación en componentes reutilizables.
+
+Flujo de Datos de Componentes del Servidor
+Patrones de componentes del servidor
+
+- Son estrategias y técnicas utilizadas para estructurar y gestionar la lógica del lado del servidor.- Permite la renderización eficiente de contenido y la optimización del rendimiento de la aplicación web
+
+Compartir datos entre componentes
+
+- Es posible que al recuperar datos del servidor, queramos compartirlos con otro componente, es decir, que tengamos dos componentes dependientes de la misma información.
+- Next.js nos proporciona una solución bastante óptima para estas situaciones.
+- Se basa en la particularidad de cómo trabaja Next.js con la obtención de datos o fetching.
+- Next.js almacena los datos en caché y nos permite luego acceder a ellos sin necesidad de tener que hacer la consulta nuevamente.
+
+Manteniendo código del servidor fuera del entorno del cliente
+
+- Es importante recordar que los módulos de JavaScript pueden ser compartidos entre componentes de servidor y cliente.
+- Esto puede llevarnos a cometer el error de utilizar código que está diseñado únicamente en el servidor, para ejecutarse en el cliente.
+- Es fundamental realizar una correcta gestión de esto para evitar posibles problemas y asegurar el correcto funcionamiento tanto de ambos lados.
+
+Usando paquetes de terceros
+
+- Cuando utilizamos paquetes y proveedores de terceros en un proyecto con Next.js, es crucial tener en cuenta que el concepto de componentes del servidor es relativamente nuevo en el mercado.
+- Algunos desarrolladores de estos paquetes pueden no haber actualizado sus herramientas para incluir la directiva "use client" cuando sea necesario.
+
+- Cuando utilicemos <Slider /> dentro de un componente del cliente, funcionará como esperamos.
+
+"use client";
+import { useState } from 'react';
+import { Slider } from 'henry-slider';
+
+function Gallery() {
+let [isOpen, setIsOpen] = useState(false);
+
+return (
+
+<div>
+<button onClick={() => setIsOpen(true)}>View pictures</button>
+{/_ Funcionaría, porque está siendo usado en un componente del cliente _/}
+{isOpen && <Slider />}
+</div>
+);
+}
+
+- Cuando lo utilicemos en un componente del servidor, nos encontramos con un error.
+
+import { Slider } from 'henry-slider';
+
+function Galeria() {
+  return (
+    <div>
+      <p>View Pictures</p>
+      {/* Error: 'useState' can not be user within Server Components */}
+      <Slider />
+    </div>
+  );
+}
+
+👉 Envuelve el componente de terceros que depende de estas funcionalidades de componentes del cliente, en otro nuevo componente.
+Nuevo componente Wrapper (Ej: Slider.js):
+
+"use client";
+import { Slider } from "henry-slider";
+
+export default Slider;
+Componente de Servidor (Ej: Galeria.js):
+
+import { Slider } from "@componentes/Slider";
+
+function Galeria() {
+  return (
+    <div>
+      <p>View Pictures</p>
+      {/* Ahora sí funcionaría porque lo encerramos en la directiva 'use client' */}
+      <Slider />
+    </div>
+  );
+}
+
+Proveedores de contexto en componentes del servidor
+- Son una herramienta para nuestras aplicaciones.
+- Permiten compartir datos entre varios componentes sin tener que pasar propiedades manualmente.
+- Varios gestores de estados globales se basan en ellos y los utilizan internamente para su funcionamiento.
+
+ Crear el proveedor de contexto dentro de un componente del cliente.
+
+"use client";
+import { createContext } from "react";
+
+const ThemeContext = createContext({});
+
+function ThemeProvider({children}: {children: React.ReactNode}) {
+  return <ThemeContext.Provider value="dark">{children}</ThemeContext.Provider>
+}
+
+- En el componente del servidor, renderiza el proveedor de contexto.
+- De esta manera, accede a este SOLO desde nuestros otros componentes del cliente.
+
+import ThemeProvider from "./apptheme-provider";
+
+function RootLayout({children}: {children: React.ReactNode}) {
+  return (
+    <html>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
