@@ -278,3 +278,63 @@ Iterables que contienen valores serializables (primitivas):
 Objetos planos: aquellos creados con inicializadores de objetos, con propiedades serializables	
 Funciones que son acciones del servidor	
 Promesas
+
+Interpolación de componentes de servidor y cliente
+- Nos referimos a la integración y combinación de elementos renderizados tanto en el servidor como en el cliente en una aplicación web.
+- Esto implica la utilización de ambos tipos de componentes.
+- Con el servidor generando parte del contenido de la página y el cliente añadiendo o modificando elementos adicionales después de que la página se haya cargado inicialmente.
+
+Importar componentes de servidor a componentes de cliente - NO ADMITIDO
+- No podemos importar un componente del servidor dentro de un componente del cliente.
+
+import { useState } from 'react'
+"use client"
+
+// Esto está completamente prohibido.
+// No se puede importar C. de servidor en el cliente.
+import ServerComponent from './ServerComponent'
+
+function ClientComponent({children}: {children: React.ReactNode}) {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+      <ServerComponent />
+    </>
+  )
+}
+
+Pasar componentes del servidor a cliente como 'props' - ADMITIDO
+- Este patrón admitido nos permite pasarle un componente del servidor al cliente como 'props'.
+
+"use client";
+import { useState } from 'react';
+
+function ClientComponent({children}: {children: React.ReactNode}) {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+      {children}
+    </>
+  );
+}
+
+- En un componente servidor padre, puedes importar tanto al ClientComponent como al ServerComponent y pasar este último como un hijo del primero.
+
+// Pasamos el C. de servidor como 'children' por props al C. de cliente
+import ClientComponent from './ClientComponent';
+import ServerComponent from './ServerComponent';
+
+// Pages en Next.js son componentes del servidor por defecto
+function Page() {
+  return (
+    <ClientComponent>
+      <ServerComponent />
+    </ClientComponent>
+  );
+}
+
+
