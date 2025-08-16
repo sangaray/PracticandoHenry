@@ -232,3 +232,49 @@ function RootLayout({children}: {children: React.ReactNode}) {
     </html>
   );
 }
+
++++ Ver sobre Server Actions +++
+
+Flujo de Datos de Componentes del Cliente
+Patrones de componentes del cliente
+- Son enfoques y prácticas de desarrollo que aprovechan, en este caso, la capacidad de ejecutar lógica en el navegador del usuario.
+- Estos patrones permiten crear experiencias interactivas, dinámicas y eficientes, en las aplicaciones web construidas con Next.js.
+
+Optimizando la ubicación de nuestros componentes del cliente en el árbol
+- Cuando trabajamos con componentes del cliente, debemos esforzarnos por ubicarlos en la parte más baja posible de nuestro árbol de componentes.
+(La imagen muestra un árbol frondoso que representa los "Server Components" y las hojas individuales en las ramas representan los componentes con la directiva "use client").
+
+- Buscamos reducir el tamaño del paquete de Javascript del cliente.
+
+import SearchBar from "../components/SearchBar/SearchBar";
+import Logo from "../components/Logo/Logo";
+
+// Layout es un componente del servidor por defecto.
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <nav>
+        <Logo />
+        <SearchBar />
+      </nav>
+      <main>{children}</main>
+    </>
+  );
+}
+
+👉 Pasando datos por 'props' de un componente del servidor al cliente
+Soportados	    No Soportados
+Primitivos:	    React elements, o JSX
+- string     	  Functions, incluyendo funciones de componente o cualquier otra función que no sea una acción del servidor
+- number	      Classes
+- bigint	      Objects that are instances of any class (other than the built-ins mentioned) or objects with a null prototype
+- boolean	      Symbols not registered globally, ex. Symbol('my new symbol')
+- undefined	
+- null	
+- symbol, sólo símbolos registrados globalmente a través de Symbol.for	
+Iterables que contienen valores serializables (primitivas):	
+- Date	
+- Instancias de FormData	
+Objetos planos: aquellos creados con inicializadores de objetos, con propiedades serializables	
+Funciones que son acciones del servidor	
+Promesas
