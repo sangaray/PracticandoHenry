@@ -34,7 +34,7 @@ const LoginView: React.FC = () => {
   return (
     <div>
       <div>
-        <h1>Sign In in Dreamed Products </h1>
+        <h1>Login in Dreamed Products </h1>
       </div>
       <form onSubmit={handleSubmit}>
         <div>
@@ -62,7 +62,7 @@ const LoginView: React.FC = () => {
           {errors?.password && <span>{errors.password}</span>}
         </div>
         <button disabled={errors.email ? true : false} type="submit">
-          Sign In
+          Login
         </button>
       </form>
     </div>
