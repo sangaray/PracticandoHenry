@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-const CardProduct = ({ id, title, price, image }) => {
+export const CardProduct = ({ id, title, price, image }) => {
   return (
     <div className="flex flex-col self-center w-full max-w-xs overflow-hidden bg-gray-700 border rounded-lg shadow-md max-h-96 group border-gray-100/30">
       <a
