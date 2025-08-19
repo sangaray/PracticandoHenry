@@ -17,3 +17,4 @@ const TimeZone = async () => {
 };
 
 export default TimeZone;
+
