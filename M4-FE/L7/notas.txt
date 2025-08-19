@@ -1,0 +1,109 @@
+Data Fetching
+Generación de Sitios Estáticos (SSG)
+- Son páginas web generadas previamente durante la compilación.
+- El contenido de estas páginas se genera una vez y se sirve tal cual.
+- Este enfoque mejora el rendimiento y la velocidad de carga de un sitio web.
+- El servidor solo necesita enviar los archivos estáticos al navegador del usuario.
+
+¿Cómo se generan Sitios Estáticos con Next.js?
+- Desarrollo:	Se desarrollan componentes y páginas utilizando React, aprovechando las poderosas abstracciones de Next.js para la gestión de rutas y datos.
+- Compilación:	Al ejecutar el comando de construcción (next build), Next.js pre-renderiza todas las páginas utilizando los datos disponibles en ese momento. Esto incluye la ejecución de funciones como getStaticProps, para buscar datos específicos de cada página y getStaticPaths, para las rutas dinámicas.
+- Exportación:	Una vez que todas las páginas han sido pre-renderizadas, se exportan como archivos HTML estáticos junto con los archivos JavaScript y CSS necesarios. Este paso se realiza con el comando next export.
+- Despliegue:	Los archivos estáticos generados se pueden desplegar en cualquier servidor de archivos estáticos o servicios de alojamiento especializados en sitios estáticos como Vercel, Netlify, entre otros.
+
+VENTAJAS:
+- Alto rendimiento
+Los sitios estáticos generados con Next.js son extremadamente rápidos. Al generar páginas estáticas, se elimina la necesidad de procesamiento en el servidor para cada solicitud.
+- SEO mejorado
+Los motores de búsqueda tienden a favorecer los sitios estáticos debido a su estructura simple y clara.
+- Seguridad
+Al no tener una base de datos en tiempo de ejecución ni procesamiento del lado del servidor, los sitios estáticos son más seguros.
+- Escalabilidad
+Los sitios pueden ser fácilmente almacenados en caché y distribuidos a través de CDNs para una escalabilidad óptima.
+- Facilidad de implementación
+Al estar pre-generados, los sitios estáticos son más fáciles de implementar y hospedar en comparación con las aplicaciones web tradicionales.
+- Experiencia de desarrollo más fluida
+Permite a los desarrolladores aprovechar tecnologías modernas como React.js para crear interfaces de usuario interactivas.
+
+Renderizado del Lado del Servidor (SSR)
+- Es una técnica para mejorar la experiencia del usuario y la optimización de motores de búsqueda en aplicaciones web modernas.
+- Next.js, ofrece soporte integrado para SSR.
+- Permite generar páginas web en el servidor antes de enviar el HTML renderizado al navegador del cliente.
+- Permite que cada página de nuestra aplicación sea pre-renderizada en el servidor en cada solicitud.
+- El servidor genera el HTML necesario para la página solicitada dinámicamente, basándose en los datos actuales y la lógica de la aplicación, antes de enviarla al cliente.
+
+VENTAJAS
+01 → Mejora del SEO
+SSR ayuda a mejorar el SEO al permitir que los motores de búsqueda indexen y clasifiquen el contenido de manera más efectiva.
+02 → Interactividad dinámica
+Es especialmente útil para aplicaciones que requieren interactividad en tiempo real o contenido personalizado basado en el usuario.
+03 → Rendimiento inicial mejorado
+Esto se debe a que el HTML inicial se genera en el servidor y se envía al navegador, lo que permite una representación más rápida de la página y una mejor experiencia del usuario.
+04 → Compatibilidad con APIs externas y db
+Facilita la integración con sistemas de backend existentes y la obtención de datos en tiempo real para su visualización en la página.
+
+Obtención de Datos del Lado del Cliente
+- Se refiere al proceso de obtener datos de una fuente externa, directamente desde el navegador del usuario después de que una página ha sido cargada.
+- Esta técnica es complementaria al renderizado del lado del servidor y la generación estática de sitios.
+- Ofrece una forma dinámica y en tiempo real de manejar los datos en aplicaciones web modernas construidas con Next.js.
+
+VENTAJAS
+01 → Interactividad dinámica
+La obtención de datos del lado del cliente permite cargar datos de forma asíncrona después de que la página se haya cargado inicialmente, lo que permite una experiencia de usuario más dinámica e interactiva.
+02 → Mejora del rendimiento percibido
+Al cargar datos de forma asíncrona en el lado del cliente, se puede mejorar el tiempo de carga percibido de la página, ya que el usuario puede interactuar con la interfaz de usuario mientras se obtienen los datos adicionales en segundo plano.
+03 → Menos carga en el servidor
+Al trasladar la obtención de datos al lado del cliente, se reduce la carga en el servidor, ya que no tiene que manejar solicitudes de datos para cada carga de página.
+04 → Integración con APIs externas y servicios de terceros
+Facilita la integración con APIs externas y servicios de terceros, ya que las solicitudes pueden realizarse directamente desde el navegador del usuario.
+
+stale-while-revalidate
+- SWR es obsoleto mientras se valida.
+- Es una estrategia de caché que devuelve inmediatamente datos obsoletos (stale) del caché mientras realiza una nueva petición para validar y actualizar los datos.
+- Esto mejora significativamente la experiencia del usuario al reducir los tiempos de carga percibidos.
+
+VENTAJAS:
+- Gestión Automática del Caché
+- Revalidación en Foco
+- Intervalo de Revalidación
+- Petición de Datos bajo Demanda
+- Suspense y SSR
+
+React Query
+- Es otra biblioteca para la gestión de datos asíncronos en aplicaciones React.
+- Proporciona herramientas para recuperar, sincronizar y actualizar datos en el cliente, con un enfoque en mejorar el rendimiento y la experiencia del usuario.
+
+VENTAJAS:
+- Gestión del Estado del Servidor en el Cliente
+- Mutaciones y Actualizaciones de Datos
+- Paginación y Carga Infinita
+- Herramientas de Desarrollador
+- Gran Compatibilidad
+
+Regeneración Estática Incremental (ISR)
+- Permite combinar las mejores partes de la generación de sitios estáticos con la flexibilidad de la renderización del lado del servidor.
+- Ofrece una solución óptima para crear sitios web rápidos, eficientes y dinámicos.
+- Mejora significativamente la experiencia del usuario y la eficiencia del servidor al mismo tiempo.
+- Permite definir un intervalo de tiempo para regenerar páginas estáticas.
+- Permite actualizar el contenido estático sin reconstruir todo el sitio.
+
+VENTAJAS:
+- Rendimiento Óptimo
+- Contenido Dinámico y Actualizado
+- Escalabilidad
+- Costo-Eficiencia
+- Mejoras en SEO
+
+CASOS DE USO:
+- Blogs y Sitios de Noticias
+El contenido se actualiza con frecuencia. Es esencial que las páginas carguen rápidamente para mantener a los lectores comprometidos.
+- Sitios de E-commerce
+Las páginas de productos, categorías y ofertas pueden pre-renderizarse y actualizarse en intervalos definidos o bajo demanda.
+- Eventos y Conferencias
+Permite actualizar esta información de forma incremental sin reconstruir todo el sitio, asegurando que los asistentes potenciales siempre tengan acceso a la información más reciente.
+- Sitios de Reseñas
+Se puede garantizar que los usuarios vean la información más actualizada sin comprometer la velocidad de carga del sitio.
+
+
+
+52 minutos (m4 fe 6)
