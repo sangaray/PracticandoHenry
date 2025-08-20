@@ -85,6 +85,13 @@ JWT_SECRET=secretamentemio
 
 Usar la versión de next 14.2.9
 
+Si no se pasa objeto force-cache si quiero que no se guarde pongo no-cache o revalidate: tiempo en segundos
+getProducts para obtener todos los productos
+lo paso a la card y luego mapear.
+
+En react lado del cliente se usa useEffect para aplicar el fetch en el lado del servidor aplicamos sólo el fetch con async / await
+
+
 
 1:04:38 Tailwind
 
@@ -110,3 +117,4 @@ https://pagedone.io/docs/navbar
 https://tailwindflex.com/search?q=navbar
 
 https://wpdean.com/css-hover-effects/
+
