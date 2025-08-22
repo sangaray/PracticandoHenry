@@ -83,8 +83,6 @@ JWT_SECRET=secretamentemio
 5. Inciamos el Servidor
 6. Verificar que las rutas funcionan con Thunder Client
 
-Usar la versión de next 14.2.9
-
 Si no se pasa objeto force-cache si quiero que no se guarde pongo no-cache o revalidate: tiempo en segundos
 getProducts para obtener todos los productos
 lo paso a la card y luego mapear.
@@ -92,8 +90,8 @@ lo paso a la card y luego mapear.
 En react lado del cliente se usa useEffect para aplicar el fetch en el lado del servidor aplicamos sólo el fetch con async / await
 
 
+51:52 Auth
 
-1:04:38 Tailwind
 
 
 RECURSOS

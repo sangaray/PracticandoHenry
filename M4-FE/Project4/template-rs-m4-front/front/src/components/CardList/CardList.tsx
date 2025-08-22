@@ -12,7 +12,7 @@ const CardList = async () => {
         products?.map((product) => {
           return (
             <Link key={product.id} href={`/products/${product.id}`}>
-              <Card {...product} />;
+              <Card {...product} />
             </Link>
           );
         })}
