@@ -1,0 +1,10 @@
+Estas son las credenciales para ingresar en el login de la app:
+username: "mor_2314",
+password: "83r5^_"
+
+Si uso solamente:
+setToken(json.token);
+cada vez que recargue la página me va a desloguear, porque no le esto diciendo que guarde el token, sino que solo vive en el estado del componente
+Para que sí lo guarde debo usar:
+localStorage.setItem("userToken", json.token);
+que va a almacenar el token y mantener la sesión activa aunque se recargue la página
