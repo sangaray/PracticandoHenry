@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className={styles.page}>
       <div>
-        <Navbar />
+        <Navbar token={token} setToken={setToken} />
         {token ? <Products /> : <AuthForm token={token} setToken={setToken} />}
       </div>
     </main>
