@@ -19,14 +19,14 @@
 .subContainer > button {
   color: #fff;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 
   border-radius: 39px;
   background-color: #5236ff;
-  padding: 25px 123px;
+  padding: 20px 40px;
   justify-content: center;
   align-items: center;
   gap: 10px;
