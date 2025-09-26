@@ -8,4 +8,8 @@ y.push(1);
 y.push("hola");
 console.log(y);
 
+const obj = { width: 10, height: 15 };
+const area = obj.width * obj.height;
+
+
 export {};
